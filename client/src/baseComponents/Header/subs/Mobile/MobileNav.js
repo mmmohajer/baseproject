@@ -33,10 +33,8 @@ const MobileNav = ({ changesThePage = true, isAppPage }) => {
       {mobileNavIsActive && <AllPageClickable onClick={() => dispatch(hideMobileNav())} />}
       <MobNav
         type="flex"
-        className={cx(
-          'w-px-300 bgThemeOne transition1 HeaderMobNavContainerZIndex',
-          styles.mobNavContainer
-        )}
+        className={cx('w-px-300 transition1 HeaderMobNavContainerZIndex', styles.mobNavContainer)}
+        activeClassName={styles.mobNavContainerIsActive}
         isActive={mobileNavIsActive}>
         {MENU_ITEMS?.map((item, idx) => {
           if (
@@ -49,7 +47,7 @@ const MobileNav = ({ changesThePage = true, isAppPage }) => {
                 key={idx}
                 isActive={activeMenu === item.identifier}
                 className={cx('mouse-hand', styles.mobNavItem)}
-                activeClassName={cx('test')}
+                activeClassName={cx('nothing')}
                 onClick={() => {
                   if (!item?.hasSubMenu) {
                     dispatch(hideMobileNav());
@@ -74,7 +72,13 @@ const MobileNav = ({ changesThePage = true, isAppPage }) => {
                   }
                 }}>
                 <Div type="flex">
-                  <Div className={cx(styles.mobNavItemTitle)}>{item.title}</Div>
+                  <Div
+                    className={cx(
+                      styles.mobNavItemTitle,
+                      activeMenu === item.identifier ? 'f-b' : ''
+                    )}>
+                    {item.title}
+                  </Div>
                 </Div>
                 {item?.hasSubMenu && (
                   <HeightTransitionEffect

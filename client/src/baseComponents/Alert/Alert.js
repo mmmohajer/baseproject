@@ -16,7 +16,7 @@ const Alert = () => {
 
   return (
     <>
-      <BaseAlert className="AlertContainerZIndex">
+      <BaseAlert className={cx('AlertContainerZIndex', styles.container)}>
         {notifications.map((notif) => (
           <AlertItem
             key={notif.key}
@@ -25,8 +25,10 @@ const Alert = () => {
               'm1 boxShadowType1 br-rad-px-5',
               notif?.type === 'success' && styles.success,
               notif?.type === 'error' && styles.error,
-              notif?.type === 'warning' && styles.warning
-            )}>
+              notif?.type === 'warning' && styles.warning,
+              styles.item
+            )}
+            activeClassName={cx(styles.itemIsActive)}>
             <Div className="w-per-100" direction="vertical" type="flex">
               <Close
                 barHeight="30px"

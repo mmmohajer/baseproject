@@ -66,6 +66,11 @@ const Select = ({
             setIsOptionsActive={setIsOptionsActive}
             selectIntialShownText={selectIntialShownText}
             placeholder={placeHolder || ''}
+            iconSearchContainerClassName={cx(styles.iconSearchContainer)}
+            optinsContainerToDownClassName={cx(styles.optionsContainerToDown)}
+            optinsContainerToUpClassName={cx(styles.optionsContainerToUp)}
+            optinsContainerIsActiveClassName={cx(styles.optionsContainerIsActive)}
+            arrowContainerClassName={cx(styles.arrowContainer)}
           />
         </Div>
         <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>

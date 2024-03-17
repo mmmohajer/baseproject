@@ -21,7 +21,8 @@ const Search = React.forwardRef(
         <Div className={cx('flex')}>
           <Div
             className={cx(
-              'min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center iswad_search_container ml1 boxShadowType1',
+              'min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center ml1 boxShadowType1',
+              styles.container,
               containerClassName
             )}>
             {closable ? (
@@ -45,11 +46,7 @@ const Search = React.forwardRef(
             )}
             <input
               type="text"
-              className={cx(
-                'iswad_search_input bgWhite',
-                activeSearch && 'iswad_search_input_active',
-                className
-              )}
+              className={cx(styles.input, activeSearch && styles.inputActive, className)}
               {...props}
             />
           </Div>
