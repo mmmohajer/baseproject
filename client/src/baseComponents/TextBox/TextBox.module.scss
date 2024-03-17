@@ -1,0 +1,17 @@
+@import '@/styles/base/_variables';
+
+.icon {
+  position: absolute;
+  top: 12px;
+  left: 6px;
+}
+
+.lineThrough {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  height: 18px;
+  background-color: #595959;
+  width: 1.5px;
+  transform: rotate(45deg);
+}

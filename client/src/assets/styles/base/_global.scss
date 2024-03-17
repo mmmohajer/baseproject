@@ -1,0 +1,195 @@
+%fontclass {
+  font-family: $fontFamily;
+  color: black;
+  font-size: $fontSize;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $appGrayBrightColor;
+
+  @extend %fontclass;
+  overflow-x: hidden;
+
+  @include atSmall {
+    font-size: $fontSmallSize;
+  }
+
+  @include atMedium {
+    font-size: $fontMediumSize;
+  }
+
+  @include atLarge {
+    font-size: $fontLargeSize;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.appContainer {
+  width: 100%;
+  // max-width: $maxContainerWidth;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  background-color: white;
+}
+
+.maxContainerWidth {
+  width: 100%;
+  max-width: $maxContainerWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.maxContainerWidthForApp {
+  width: 100%;
+  max-width: $maxContainerWidthForApp;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.captcha {
+  font-family: 'Rubik Maze', cursive;
+  letter-spacing: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.tranistion1 {
+  transition: $transition1;
+}
+
+.noTransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+textarea,
+.inputText,
+button {
+  @extend %fontclass;
+}
+
+textarea,
+.inputText {
+  font-size: 12px;
+}
+
+.inputwithLessPadding {
+  padding: 0 4px !important;
+}
+
+.height-per-100 {
+  height: 100%;
+}
+
+.text-upperCase {
+  text-transform: uppercase;
+}
+
+.text-title {
+  text-transform: capitalize;
+}
+
+.hasHeaderHeight {
+  height: $HeaderHeight;
+}
+
+.hasAppHeaderHeight {
+  height: $appHeaderHeight;
+}
+
+.height-px-5 {
+  height: 5px;
+}
+
+.rotate {
+  &90 {
+    transform: rotate(90deg);
+  }
+
+  &180 {
+    transform: rotate(180deg);
+  }
+
+  &270 {
+    transform: rotate(270deg);
+  }
+}
+
+.font-type2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.flex--1 {
+  flex: 1;
+}
+
+.go-under {
+  z-index: -1;
+}
+
+.centralizedInSmDesign {
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include atMedium {
+    text-align: left;
+    justify-content: start;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.w-per-one-third {
+  width: 33.33%;
+}
+
+.hasMarginRightOnlyInDesktop {
+  margin-right: 0;
+  @include atMedium {
+    margin-right: 1rem;
+  }
+}
