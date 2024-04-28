@@ -27,6 +27,7 @@ export const STRIPE_ADD_ACTIVE_CARD_FOR_CUSTOMER = '/api/add-active-card-to-stri
 export const STRIPE_CUSTOMER_SOURCE_HANDLER = '/api/stripe-customer-source-handler/';
 export const PUBLIC_CAHT_ROOM_API_ROUTE = '/api/public-chat-room/';
 export const USER_EVENT_API_ROUTE = '/api/user-event/';
+export const CONTACT_FORM_API_ROUTE = '/api/contact-form/';
 
 // WEBSOCKET API ROUTES
 export const WEBSOCKET_CHAT_API_ROUTE = `/wss/public-chat/`;

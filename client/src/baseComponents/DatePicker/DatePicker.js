@@ -19,7 +19,9 @@ const DatePicker = ({
   showMonthDropdown = false,
   errorMessage,
   errorHandler,
-  placeHolder
+  placeHolder,
+  showTimeSelect = false,
+  showTimeSelectOnly = false
 }) => {
   return (
     <>
@@ -29,7 +31,7 @@ const DatePicker = ({
             <Label className={cx(isRequired && 'required', 'labelForInput')}>{labelText}</Label>
           </Div>
         )}
-        <Div className={cx('inputFieldContainer')}>
+        <Div className={cx('inputFieldContainer customDatePickerWidth')}>
           <BaseDatePicker
             selected={chosenDate}
             onChange={(date) => setChosenDate(date)}
@@ -40,6 +42,11 @@ const DatePicker = ({
             showYearDropdown={showYearDropdown}
             showMonthDropdown={showMonthDropdown}
             placeholderText={placeHolder}
+            showTimeSelect={showTimeSelect}
+            showTimeSelectOnly={showTimeSelectOnly}
+            // timeFormat="HH:mm"
+            // timeIntervals={15}
+            // timeCaption="Time"
           />
         </Div>
         <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>
