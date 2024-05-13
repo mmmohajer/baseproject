@@ -9,7 +9,7 @@
 }
 
 %label {
-  color: $appGrayDarkColor;
+  color: #777;
   font-size: 14px;
 
   &Container {
@@ -23,17 +23,14 @@
   &Container {
     margin-bottom: 4px;
     font-size: 12px;
-    color: $appGrayDarkColor;
+    color: #777;
   }
 }
 
 .labelForCheckBoxField {
   @extend %label;
-  color: $appGrayDarkColor;
+  color: #777;
   font-size: 12px;
-  // &Container {
-  //   margin-bottom: 16px;
-  // }
 }
 
 .labelForCheckBox {
@@ -53,17 +50,14 @@
 }
 
 %inputField {
-  // border: none;
   border-color: #ccc !important;
-  // box-shadow: $boxShadow1;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   padding: 8px 1rem;
   border: solid 1px #ccc;
 
   &:focus {
-    border: solid 1px $themeOne !important;
-    // background-color: $focusBgColor;
+    border: solid 1px $borderLightGray !important;
   }
 
   &Container {

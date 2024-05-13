@@ -1,0 +1,57 @@
+.bg {
+  &Tertiary {
+    background-color: $bgTertiary;
+
+    &OnHover:hover {
+      background-color: $bgTertiary;
+    }
+  }
+
+  &Success2 {
+    background-color: $bgSuccess2;
+
+    &OnHover:hover {
+      background-color: $bgSuccess2;
+    }
+  }
+
+  &Warning {
+    background-color: $bgWarning;
+
+    &OnHover:hover {
+      background-color: $bgWarning;
+    }
+  }
+
+  &Primary {
+    background-color: $bgPrimary;
+
+    &OnHover:hover {
+      background-color: $bgPrimary;
+    }
+  }
+
+  &Secondary {
+    background-color: $bgSecondary;
+
+    &OnHover:hover {
+      background-color: $bgSecondary;
+    }
+  }
+
+  &Brand {
+    background-color: $bgBrand;
+
+    &OnHover:hover {
+      background-color: $bgBrand;
+    }
+  }
+
+  &BrandSecondary {
+    background-color: $bgBrandSecondary;
+
+    &OnHover:hover {
+      background-color: $bgBrandSecondary;
+    }
+  }
+}

@@ -1,59 +1,71 @@
-.br-color-primary {
-  border-color: $primaryColor;
-}
+.br {
+  &LightGray {
+    border-color: $borderLightGray;
 
-.br-color-faded {
-  border-color: $fadedColor;
-}
+    &OnHover:hover {
+      border-color: $borderLightGray;
+    }
+  }
 
-.br-color-info {
-  border-color: $infoColor;
-}
+  &Success2 {
+    border-color: $borderSuccess2;
 
-.br-color-inverse {
-  border-color: $inverseColor;
-}
+    &OnHover:hover {
+      border-color: $borderSuccess2;
+    }
+  }
 
-.br-color-success {
-  border-color: $successColor;
-}
+  &Warning {
+    border-color: $borderWarning;
 
-.br-color-warning {
-  border-color: $warningColor;
-}
+    &OnHover:hover {
+      border-color: $borderWarning;
+    }
+  }
 
-.br-color-danger {
-  border-color: $dangerColor;
-}
+  &Gray {
+    border-color: $borderGray;
 
-.br-color-themeOne {
-  border-color: $themeOne;
-}
+    &OnHover:hover {
+      border-color: $borderGray;
+    }
+  }
 
-.br-color-themeTwo {
-  border-color: $themeTwo;
-}
+  &OffBlack {
+    border-color: $borderOffBlack;
 
-.br-color-themeThree {
-  border-color: $themeThree;
-}
+    &OnHover:hover {
+      border-color: $borderOffBlack;
+    }
+  }
 
-.br-color-themeFour {
-  border-color: $themeFour;
-}
+  &Brand {
+    border-color: $borderBrand;
 
-.br-color-themeFive {
-  border-color: $themeFive;
-}
+    &OnHover:hover {
+      border-color: $borderBrand;
+    }
+  }
 
-.br-color-themeSix {
-  border-color: $themeSix;
-}
+  &SecondaryBrand {
+    border-color: $borderSecondaryBrand;
 
-.br-color-grayDark {
-  border-color: $appGrayDarkColor;
-}
+    &OnHover:hover {
+      border-color: $borderSecondaryBrand;
+    }
+  }
 
-.br-color-grayBright {
-  border-color: $appGrayBrightColor;
+  &Radius {
+    &Minimal {
+      border-radius: $radiusMinimal;
+    }
+
+    &Rounded {
+      border-radius: $radiusRounded;
+    }
+
+    &Full {
+      border-radius: $radiusFull;
+    }
+  }
 }

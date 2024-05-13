@@ -1,0 +1,10 @@
+@import '@/styles/base/_variables';
+@import '@/styles/base/mixins';
+
+.copyRightContainer {
+  height: 60px;
+
+  @include atMedium {
+    height: 40px;
+  }
+}

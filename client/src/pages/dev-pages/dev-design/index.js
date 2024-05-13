@@ -3,10 +3,10 @@ import cx from 'classnames';
 import { Div } from 'basedesign-iswad';
 
 import PublicRoute from '@/components/PublicRoute';
-import RoleBasedRoute from '@/components/RoleBasedRoute';
 import Seo from '@/components/Seo';
-import DevDesign from '@/components/DevDesign';
 import PageContainer from '@/components/PageContainer';
+import DevDesign from '@/components/PublicPages/DevDesign';
+import NotFound from '@/components/PublicPages/NotFound';
 
 import { USER_GROUPS } from '@/constants/userGroups';
 import { PRODUCTION } from 'config';
@@ -15,14 +15,11 @@ import styles from './Index.module.scss';
 
 const Index = () => {
   return (
-    <RoleBasedRoute
-      hasAccessRole={PRODUCTION ? [USER_GROUPS.APP_ADMIN, USER_GROUPS.DEVELOPER] : 'Public'}>
+    <PublicRoute>
       <Seo>
-        <PageContainer pageDashboardIdentifier="dev-design">
-          <DevDesign />
-        </PageContainer>
+        <PageContainer>{PRODUCTION ? <NotFound /> : <DevDesign />}</PageContainer>
       </Seo>
-    </RoleBasedRoute>
+    </PublicRoute>
   );
 };
 

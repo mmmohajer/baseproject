@@ -1,0 +1,452 @@
+.m {
+  &L {
+    &None {
+      margin-left: 0;
+    }
+
+    &Xs {
+      margin-left: $spacingXs;
+    }
+
+    &Sm {
+      margin-left: $spacingSm;
+    }
+
+    &Md {
+      margin-left: $spacingMd;
+    }
+
+    &Lr {
+      margin-left: $spacingLr;
+    }
+
+    &XL {
+      margin-left: $spacingXL;
+    }
+
+    &XXL {
+      margin-left: $spacing2XL;
+    }
+  }
+
+  &R {
+    &None {
+      margin-right: 0;
+    }
+
+    &Xs {
+      margin-right: $spacingXs;
+    }
+
+    &Sm {
+      margin-right: $spacingSm;
+    }
+
+    &Md {
+      margin-right: $spacingMd;
+    }
+
+    &Lr {
+      margin-right: $spacingLr;
+    }
+
+    &XL {
+      margin-right: $spacingXL;
+    }
+
+    &XXL {
+      margin-right: $spacing2XL;
+    }
+  }
+
+  &B {
+    &None {
+      margin-bottom: 0;
+    }
+
+    &Xs {
+      margin-bottom: $spacingXs;
+    }
+
+    &Sm {
+      margin-bottom: $spacingSm;
+    }
+
+    &Md {
+      margin-bottom: $spacingMd;
+    }
+
+    &Lr {
+      margin-bottom: $spacingLr;
+    }
+
+    &XL {
+      margin-bottom: $spacingXL;
+    }
+
+    &XXL {
+      margin-bottom: $spacing2XL;
+    }
+  }
+
+  &T {
+    &None {
+      margin-top: 0;
+    }
+
+    &Xs {
+      margin-top: $spacingXs;
+    }
+
+    &Sm {
+      margin-top: $spacingSm;
+    }
+
+    &Md {
+      margin-top: $spacingMd;
+    }
+
+    &Lr {
+      margin-top: $spacingLr;
+    }
+
+    &XL {
+      margin-top: $spacingXL;
+    }
+
+    &XXL {
+      margin-top: $spacing2XL;
+    }
+  }
+
+  &X {
+    &None {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &Xs {
+      margin-left: $spacingXs;
+      margin-right: $spacingXs;
+    }
+
+    &Sm {
+      margin-left: $spacingSm;
+      margin-right: $spacingSm;
+    }
+
+    &Md {
+      margin-left: $spacingMd;
+      margin-right: $spacingMd;
+    }
+
+    &Lr {
+      margin-left: $spacingLr;
+      margin-right: $spacingLr;
+    }
+
+    &XL {
+      margin-left: $spacingXL;
+      margin-right: $spacingXL;
+    }
+
+    &XXL {
+      margin-left: $spacing2XL;
+      margin-right: $spacing2XL;
+    }
+  }
+
+  &Y {
+    &None {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &Xs {
+      margin-top: $spacingXs;
+      margin-bottom: $spacingXs;
+    }
+
+    &Sm {
+      margin-top: $spacingSm;
+      margin-bottom: $spacingSm;
+    }
+
+    &Md {
+      margin-top: $spacingMd;
+      margin-bottom: $spacingMd;
+    }
+
+    &Lr {
+      margin-top: $spacingLr;
+      margin-bottom: $spacingLr;
+    }
+
+    &XL {
+      margin-top: $spacingXL;
+      margin-bottom: $spacingXL;
+    }
+
+    &XXL {
+      margin-top: $spacing2XL;
+      margin-bottom: $spacing2XL;
+    }
+  }
+
+  &None {
+    margin: 0;
+  }
+
+  &Xs {
+    margin: $spacingXs;
+  }
+
+  &Sm {
+    margin: $spacingSm;
+  }
+
+  &Md {
+    margin: $spacingMd;
+  }
+
+  &Lr {
+    margin: $spacingLr;
+  }
+
+  &XL {
+    margin: $spacingXL;
+  }
+
+  &XXL {
+    margin: $spacing2XL;
+  }
+}
+
+// -----------------------------------
+// -----------------------------------
+// -----------------------------------
+// -----------------------------------
+
+.p {
+  &L {
+    &None {
+      padding-left: 0;
+    }
+
+    &Xs {
+      padding-left: $spacingXs;
+    }
+
+    &Sm {
+      padding-left: $spacingSm;
+    }
+
+    &Md {
+      padding-left: $spacingMd;
+    }
+
+    &Lr {
+      padding-left: $spacingLr;
+    }
+
+    &XL {
+      padding-left: $spacingXL;
+    }
+
+    &XXL {
+      padding-left: $spacing2XL;
+    }
+  }
+
+  &R {
+    &None {
+      padding-right: 0;
+    }
+
+    &Xs {
+      padding-right: $spacingXs;
+    }
+
+    &Sm {
+      padding-right: $spacingSm;
+    }
+
+    &Md {
+      padding-right: $spacingMd;
+    }
+
+    &Lr {
+      padding-right: $spacingLr;
+    }
+
+    &XL {
+      padding-right: $spacingXL;
+    }
+
+    &XXL {
+      padding-right: $spacing2XL;
+    }
+  }
+
+  &B {
+    &None {
+      padding-bottom: 0;
+    }
+
+    &Xs {
+      padding-bottom: $spacingXs;
+    }
+
+    &Sm {
+      padding-bottom: $spacingSm;
+    }
+
+    &Md {
+      padding-bottom: $spacingMd;
+    }
+
+    &Lr {
+      padding-bottom: $spacingLr;
+    }
+
+    &XL {
+      padding-bottom: $spacingXL;
+    }
+
+    &XXL {
+      padding-bottom: $spacing2XL;
+    }
+  }
+
+  &T {
+    &None {
+      padding-top: 0;
+    }
+
+    &Xs {
+      padding-top: $spacingXs;
+    }
+
+    &Sm {
+      padding-top: $spacingSm;
+    }
+
+    &Md {
+      padding-top: $spacingMd;
+    }
+
+    &Lr {
+      padding-top: $spacingLr;
+    }
+
+    &XL {
+      padding-top: $spacingXL;
+    }
+
+    &XXL {
+      padding-top: $spacing2XL;
+    }
+  }
+
+  &X {
+    &None {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &Xs {
+      padding-left: $spacingXs;
+      padding-right: $spacingXs;
+    }
+
+    &Sm {
+      padding-left: $spacingSm;
+      padding-right: $spacingSm;
+    }
+
+    &Md {
+      padding-left: $spacingMd;
+      padding-right: $spacingMd;
+    }
+
+    &Lr {
+      padding-left: $spacingLr;
+      padding-right: $spacingLr;
+    }
+
+    &XL {
+      padding-left: $spacingXL;
+      padding-right: $spacingXL;
+    }
+
+    &XXL {
+      padding-left: $spacing2XL;
+      padding-right: $spacing2XL;
+    }
+  }
+
+  &Y {
+    &None {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &Xs {
+      padding-top: $spacingXs;
+      padding-bottom: $spacingXs;
+    }
+
+    &Sm {
+      padding-top: $spacingSm;
+      padding-bottom: $spacingSm;
+    }
+
+    &Md {
+      padding-top: $spacingMd;
+      padding-bottom: $spacingMd;
+    }
+
+    &Lr {
+      padding-top: $spacingLr;
+      padding-bottom: $spacingLr;
+    }
+
+    &XL {
+      padding-top: $spacingXL;
+      padding-bottom: $spacingXL;
+    }
+
+    &XXL {
+      padding-top: $spacing2XL;
+      padding-bottom: $spacing2XL;
+    }
+  }
+
+  &None {
+    padding: 0;
+  }
+
+  &Xs {
+    padding: $spacingXs;
+  }
+
+  &Sm {
+    padding: $spacingSm;
+  }
+
+  &Md {
+    padding: $spacingMd;
+  }
+
+  &Lr {
+    padding: $spacingLr;
+  }
+
+  &XL {
+    padding: $spacingXL;
+  }
+
+  &XXL {
+    padding: $spacing2XL;
+  }
+}

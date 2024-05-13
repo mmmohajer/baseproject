@@ -1,0 +1,99 @@
+%paragraphText {
+  font-family: $fontFamilyRegular;
+}
+
+.text {
+  &Paragraph {
+    @extend %paragraphText;
+
+    font-size: 14px;
+
+    @include atSmall {
+      font-size: 14px;
+    }
+
+    @include atMedium {
+      font-size: 16px;
+    }
+
+    @include atLarge {
+      font-size: $regular;
+    }
+  }
+
+  &paragraph2 {
+    @extend %paragraphText;
+
+    font-size: 12px;
+
+    @include atSmall {
+      font-size: 12px;
+    }
+
+    @include atMedium {
+      font-size: 14px;
+    }
+
+    @include atLarge {
+      font-size: $small;
+    }
+  }
+
+  &small {
+    @extend %paragraphText;
+
+    font-size: 8px;
+
+    @include atSmall {
+      font-size: 8px;
+    }
+
+    @include atMedium {
+      font-size: 10px;
+    }
+
+    @include atLarge {
+      font-size: 10px;
+    }
+  }
+
+  &Primary {
+    color: $textPrimary;
+
+    &OnHover:hover {
+      color: $textPrimary;
+    }
+  }
+
+  &Secondary {
+    color: $textSecondary;
+
+    &OnHover:hover {
+      color: $textSecondary;
+    }
+  }
+
+  &Tertiary {
+    color: $textTertiary;
+
+    &OnHover:hover {
+      color: $textTertiary;
+    }
+  }
+
+  &Brand {
+    color: $textBrand;
+
+    &OnHover:hover {
+      color: $textBrand;
+    }
+  }
+
+  &SecondaryBrand {
+    color: $textSecondaryBrand;
+
+    &OnHover:hover {
+      color: $textSecondaryBrand;
+    }
+  }
+}

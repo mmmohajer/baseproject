@@ -1,54 +1,112 @@
 %headingText {
-  font-weight: $fontHeadingWeight;
+  font-family: $fontFamilyTitle;
+  font-weight: bold;
 }
 
 h1 {
   @extend %headingText;
-  font-size: $fontH1Size;
+
+  font-size: 38px;
 
   @include atSmall {
-    font-size: $fontH1SmallSize;
+    font-size: 38px;
   }
 
   @include atMedium {
-    font-size: $fontH1MediumSize;
+    font-size: 48px;
   }
 
   @include atLarge {
-    font-size: $fontH1LargeSize;
+    font-size: $xxxLarge;
   }
 }
 
 h2 {
   @extend %headingText;
-  font-size: $fontH2Size;
+
+  font-size: 32px;
 
   @include atSmall {
-    font-size: $fontH2SmallSize;
+    font-size: 32px;
   }
 
   @include atMedium {
-    font-size: $fontH2MediumSize;
+    font-size: 40px;
   }
 
   @include atLarge {
-    font-size: $fontH2LargeSize;
+    font-size: $xxLarge;
   }
 }
 
 h3 {
   @extend %headingText;
-  font-size: $fontH3Size;
+
+  font-size: 26px;
 
   @include atSmall {
-    font-size: $fontH3SmallSize;
+    font-size: 26px;
   }
 
   @include atMedium {
-    font-size: $fontH3MediumSize;
+    font-size: 32px;
   }
 
   @include atLarge {
-    font-size: $fontH3LargeSize;
+    font-size: $xLarge;
+  }
+}
+
+h4 {
+  @extend %headingText;
+
+  font-size: 18px;
+
+  @include atSmall {
+    font-size: 18px;
+  }
+
+  @include atMedium {
+    font-size: 26px;
+  }
+
+  @include atLarge {
+    font-size: $large;
+  }
+}
+
+h5 {
+  @extend %headingText;
+
+  font-size: 18px;
+
+  @include atSmall {
+    font-size: 18px;
+  }
+
+  @include atMedium {
+    font-size: 20px;
+  }
+
+  @include atLarge {
+    font-size: $medium;
+  }
+}
+
+h6 {
+  @extend %headingText;
+
+  font-size: 16px;
+
+  @include atSmall {
+    font-size: 16px;
+  }
+
+  @include atMedium {
+    font-size: 18px;
+  }
+
+  @include atLarge {
+    font-size: $base;
   }
 }

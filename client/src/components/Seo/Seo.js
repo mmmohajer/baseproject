@@ -22,9 +22,9 @@ const Seo = ({ title, keywords, description, children }) => {
 };
 
 Seo.defaultProps = {
-  title: 'Troop',
-  description: `A social impact tool that brings together needs from local charities to help businesses do corporate social responsibility differently.`,
-  keywords: 'Troop, troop impact inc., social impact, social, impact, need, charity'
+  title: 'Page Title',
+  description: `Site Description`,
+  keywords: 'keyword 1, keyword 2'
 };
 
 export default Seo;
