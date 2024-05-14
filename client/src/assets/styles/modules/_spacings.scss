@@ -197,28 +197,30 @@
     margin: 0;
   }
 
-  &XS {
-    margin: $spacingXs;
-  }
+  &All {
+    &XS {
+      margin: $spacingXs;
+    }
 
-  &Sm {
-    margin: $spacingSm;
-  }
+    &Sm {
+      margin: $spacingSm;
+    }
 
-  &Md {
-    margin: $spacingMd;
-  }
+    &Md {
+      margin: $spacingMd;
+    }
 
-  &Lr {
-    margin: $spacingLr;
-  }
+    &Lr {
+      margin: $spacingLr;
+    }
 
-  &XL {
-    margin: $spacingXL;
-  }
+    &XL {
+      margin: $spacingXL;
+    }
 
-  &XXL {
-    margin: $spacing2XL;
+    &XXL {
+      margin: $spacing2XL;
+    }
   }
 }
 
@@ -426,27 +428,93 @@
     padding: 0;
   }
 
-  &XS {
-    padding: $spacingXs;
+  &All {
+    &XS {
+      padding: $spacingXs;
+    }
+
+    &Sm {
+      padding: $spacingSm;
+    }
+
+    &Md {
+      padding: $spacingMd;
+    }
+
+    &Lr {
+      padding: $spacingLr;
+    }
+
+    &XL {
+      padding: $spacingXL;
+    }
+
+    &XXL {
+      padding: $spacing2XL;
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  .mAll#{$space} {
+    margin: $space * 4px;
   }
 
-  &Sm {
-    padding: $spacingSm;
+  .mT#{$space} {
+    margin-top: $space * 4px;
   }
 
-  &Md {
-    padding: $spacingMd;
+  .mB#{$space} {
+    margin-bottom: $space * 4px;
   }
 
-  &Lr {
-    padding: $spacingLr;
+  .mR#{$space} {
+    margin-right: $space * 4px;
   }
 
-  &XL {
-    padding: $spacingXL;
+  .mL#{$space} {
+    margin-left: $space * 4px;
   }
 
-  &XXL {
-    padding: $spacing2XL;
+  .mY#{$space} {
+    margin-top: $space * 4px;
+    margin-bottom: $space * 4px;
+  }
+
+  .mX#{$space} {
+    margin-left: $space * 4px;
+    margin-right: $space * 4px;
+  }
+
+  //
+
+  .pAll#{$space} {
+    padding: $space * 4px;
+  }
+
+  .pT#{$space} {
+    padding-top: $space * 4px;
+  }
+
+  .pB#{$space} {
+    padding-bottom: $space * 4px;
+  }
+
+  .pR#{$space} {
+    padding-right: $space * 4px;
+  }
+
+  .pL#{$space} {
+    padding-left: $space * 4px;
+  }
+
+  .pY#{$space} {
+    padding-top: $space * 4px;
+    padding-bottom: $space * 4px;
+  }
+
+  .pX#{$space} {
+    padding-left: $space * 4px;
+    padding-right: $space * 4px;
   }
 }

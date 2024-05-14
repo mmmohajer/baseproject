@@ -51,7 +51,7 @@ const Surface = ({
     }
 
     if (margins?.all) {
-      localMargins += `m${margins?.all} `;
+      localMargins += `mAll${margins?.all} `;
     }
 
     if (margins?.x) {
@@ -83,7 +83,7 @@ const Surface = ({
     }
 
     if (paddings?.all) {
-      localPaddings += `p${paddings?.all} `;
+      localPaddings += `pAll${paddings?.all} `;
     }
 
     if (paddings?.x) {
