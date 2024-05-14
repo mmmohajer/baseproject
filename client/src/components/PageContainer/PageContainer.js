@@ -7,6 +7,7 @@ import { setActiveMenu } from '@/reducers/general/activeMenu';
 import { setActiveSubMenu } from '@/reducers/general/activeSubMenu';
 import { setElementsHeightStore } from '@/reducers/general/elementsHeightStore';
 
+import Surface from '@/baseComponents/Surface';
 import Header from '@/baseComponents/Header';
 import Footer from '@/baseComponents/Footer';
 import DivMinFullHeight from '@/baseComponents/DivMinFullHeight';
@@ -56,7 +57,7 @@ const PageContainer = ({
 
   return (
     <>
-      <Div className={cx('')}>
+      <Surface className={cx('')}>
         {hasHeader ? (
           <Div ref={(el) => (headerRef.current = el)}>
             <Header />
@@ -66,7 +67,7 @@ const PageContainer = ({
         )}
         <DivMinFullHeight className="flex flex--dir--col">{children}</DivMinFullHeight>
         <Div ref={(el) => (footerRef.current = el)}>{hasFooter && <Footer />}</Div>
-      </Div>
+      </Surface>
     </>
   );
 };

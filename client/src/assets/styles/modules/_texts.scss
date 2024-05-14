@@ -3,7 +3,7 @@
 }
 
 .text {
-  &Paragraph {
+  &Regular {
     @extend %paragraphText;
 
     font-size: 14px;
@@ -21,7 +21,7 @@
     }
   }
 
-  &paragraph2 {
+  &Small {
     @extend %paragraphText;
 
     font-size: 12px;
@@ -39,7 +39,7 @@
     }
   }
 
-  &small {
+  &XXSmall {
     @extend %paragraphText;
 
     font-size: 8px;
@@ -56,6 +56,132 @@
       font-size: 10px;
     }
   }
+
+  &XXXLarge {
+    @extend %headingText;
+
+    font-size: 38px;
+
+    @include atSmall {
+      font-size: 38px;
+    }
+
+    @include atMedium {
+      font-size: 48px;
+    }
+
+    @include atLarge {
+      font-size: $xxxLarge;
+    }
+  }
+
+  &XXLarge {
+    @extend %headingText;
+
+    font-size: 32px;
+
+    @include atSmall {
+      font-size: 32px;
+    }
+
+    @include atMedium {
+      font-size: 40px;
+    }
+
+    @include atLarge {
+      font-size: $xxLarge;
+    }
+  }
+
+  &XLarge {
+    @extend %headingText;
+
+    font-size: 26px;
+
+    @include atSmall {
+      font-size: 26px;
+    }
+
+    @include atMedium {
+      font-size: 32px;
+    }
+
+    @include atLarge {
+      font-size: $xLarge;
+    }
+  }
+
+  &Large {
+    @extend %headingText;
+
+    font-size: 18px;
+
+    @include atSmall {
+      font-size: 18px;
+    }
+
+    @include atMedium {
+      font-size: 26px;
+    }
+
+    @include atLarge {
+      font-size: $large;
+    }
+  }
+
+  &Medium {
+    @extend %headingText;
+
+    font-size: 18px;
+
+    @include atSmall {
+      font-size: 18px;
+    }
+
+    @include atMedium {
+      font-size: 20px;
+    }
+
+    @include atLarge {
+      font-size: $medium;
+    }
+  }
+
+  &Base {
+    @extend %headingText;
+
+    font-size: 16px;
+
+    @include atSmall {
+      font-size: 16px;
+    }
+
+    @include atMedium {
+      font-size: 18px;
+    }
+
+    @include atLarge {
+      font-size: $base;
+    }
+  }
+
+  // ------------------------------
+  // ------------------------------
+  // ------------------------------
+  // ------------------------------
+
+  &FontTitle {
+    font-family: $fontFamilyTitle;
+  }
+
+  &FontRegular {
+    font-family: $fontFamilyRegular;
+  }
+
+  // ------------------------------
+  // ------------------------------
+  // ------------------------------
+  // ------------------------------
 
   &Primary {
     color: $textPrimary;
