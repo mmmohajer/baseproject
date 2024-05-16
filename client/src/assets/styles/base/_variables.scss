@@ -1,67 +1,67 @@
-// Text Colours
-$textPrimary: #28282b;
-$textSecondary: #faf9f6;
-$textTertiary: #6a6a6a;
-$textBrand: #16c5fe;
-$textSecondaryBrand: #0392dd;
-
-// Bg Colours
-$bgTertiary: #f1f1f1;
-$bgSuccess2: #effcf5;
-$bgWarning: #fcfcf2;
-$bgPrimary: #ffffff;
-$bgSecondary: #e2ecf6;
-$bgBrand: #16c5fe;
-$bgBrandSecondary: #0392dd;
-
-// Border Colours
-$borderLightGray: #f1f1f1;
-$borderSuccess2: #74c59f;
-$borderWarning: #e56964;
-$borderGray: #6a6a6a;
-$borderOffBlack: #28282b;
-$borderBrand: #16c5fe;
-$borderSecondaryBrand: #0392dd;
-
-// Spacings:
-$spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
-$spacingNone: 0;
-$spacingXs: 4px;
-$spacingSm: 8px;
-$spacingMd: 16px;
-$spacingLr: 20px;
-$spacingXL: 28px;
-$spacing2XL: 56px;
-
-// Border Radius:
-$radiusMinimal: 4px;
-$radiusRounded: 8px;
-$radiusFull: 24px;
-
-// fontSizes:
-$xxxLarge: 52px;
-$xxLarge: 42px;
-$xLarge: 34px;
-$large: 28px;
-$medium: 22px;
-$base: 18px;
-$regular: 16px;
-$small: 14px;
-$xxsmall: 10px;
+// Colors
+$primaryColor: #0a2647;
+$fadedColor: #f3f3f3;
+$infoColor: #5bc0de;
+$inverseColor: #292b2c;
+$warningColor: #f0ad4e;
+$successColor: #5cb85c;
+$dangerColor: #f14c4c;
 
 // Fonts
-$fontFamilyTitle: 'Poppins', sans-serif;
-$fontFamilyRegular: 'Manrope', sans-serif;
+$fontFamily: 'Poppins', sans-serif;
+$fontSize: 16px;
+$fontSmallSize: 16px;
+$fontMediumSize: 16px;
+$fontLargeSize: 18px;
+$fontColor: black;
 
-// Device Sizes
+// Headings
+$fontHeadingWeight: bold;
+
+$fontH1Size: 32px;
+$fontH1SmallSize: 32px;
+$fontH1MediumSize: 40px;
+$fontH1LargeSize: 50px;
+
+$fontH2Size: 28px;
+$fontH2SmallSize: 28px;
+$fontH2MediumSize: 28px;
+$fontH2LargeSize: 28px;
+
+$fontH3Size: 30px;
+$fontH3SmallSize: 30px;
+$fontH3MediumSize: 40px;
+$fontH3LargeSize: 40px;
+
+// Sizes
 $atSmall: 400px;
-$atMedium: 800px;
-$atLarge: 1200px;
+$atMedium: 1100px;
+$atLarge: 1400px;
 $maxContainerWidth: 1500px;
+$maxContainerWidthForApp: 2000px;
+
+// Box Shadows
+$boxShadow1: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+$boxShadow2: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+
+// Theme Colors
+$appGrayBrightColor: #9a9a9a;
+$appGrayDarkColor: #5c5c5c;
+$appBrightOrangeColor: rgb(255, 246, 228);
+$themeOne: #666dff;
+$themeTwo: #f5891f;
+$themeThree: #00ff7f;
+$themeFour: #26335d;
+$themeFive: #ffe5d0;
+$themeSix: #feba13;
 
 // Heights
 $HeaderHeight: 60px;
+$appHeaderHeight: 60px;
 
-// Header
+// Generals
+$transition1: all 0.3s ease-in-out;
+
+//
 $sideBarClosedWidth: 60px;
 $sideBarOpenedWidth: 180px;

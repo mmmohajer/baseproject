@@ -1,71 +1,59 @@
-.br {
-  &LightGray {
-    border-color: $borderLightGray;
+.br-color-primary {
+  border-color: $primaryColor;
+}
 
-    &OnHover:hover {
-      border-color: $borderLightGray;
-    }
-  }
+.br-color-faded {
+  border-color: $fadedColor;
+}
 
-  &Success2 {
-    border-color: $borderSuccess2;
+.br-color-info {
+  border-color: $infoColor;
+}
 
-    &OnHover:hover {
-      border-color: $borderSuccess2;
-    }
-  }
+.br-color-inverse {
+  border-color: $inverseColor;
+}
 
-  &Warning {
-    border-color: $borderWarning;
+.br-color-success {
+  border-color: $successColor;
+}
 
-    &OnHover:hover {
-      border-color: $borderWarning;
-    }
-  }
+.br-color-warning {
+  border-color: $warningColor;
+}
 
-  &Gray {
-    border-color: $borderGray;
+.br-color-danger {
+  border-color: $dangerColor;
+}
 
-    &OnHover:hover {
-      border-color: $borderGray;
-    }
-  }
+.br-color-themeOne {
+  border-color: $themeOne;
+}
 
-  &OffBlack {
-    border-color: $borderOffBlack;
+.br-color-themeTwo {
+  border-color: $themeTwo;
+}
 
-    &OnHover:hover {
-      border-color: $borderOffBlack;
-    }
-  }
+.br-color-themeThree {
+  border-color: $themeThree;
+}
 
-  &Brand {
-    border-color: $borderBrand;
+.br-color-themeFour {
+  border-color: $themeFour;
+}
 
-    &OnHover:hover {
-      border-color: $borderBrand;
-    }
-  }
+.br-color-themeFive {
+  border-color: $themeFive;
+}
 
-  &SecondaryBrand {
-    border-color: $borderSecondaryBrand;
+.br-color-themeSix {
+  border-color: $themeSix;
+}
 
-    &OnHover:hover {
-      border-color: $borderSecondaryBrand;
-    }
-  }
+.br-color-grayDark {
+  border-color: $appGrayDarkColor;
+}
 
-  &Radius {
-    &Minimal {
-      border-radius: $radiusMinimal;
-    }
-
-    &Rounded {
-      border-radius: $radiusRounded;
-    }
-
-    &Full {
-      border-radius: $radiusFull;
-    }
-  }
+.br-color-grayBright {
+  border-color: $appGrayBrightColor;
 }

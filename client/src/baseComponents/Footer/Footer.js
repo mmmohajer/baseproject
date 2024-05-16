@@ -1,13 +1,11 @@
-import React from "react";
-import cx from "classnames";
-import { Div } from "basedesign-iswad";
-
-import styles from "./Footer.module.scss";
+import React from 'react';
+import cx from 'classnames';
+import { Div } from 'basedesign-iswad';
 
 const Footer = () => {
   return (
     <>
-      <Div>Footer</Div>
+      <Div className="bgGreen p2">Footer</Div>
     </>
   );
 };

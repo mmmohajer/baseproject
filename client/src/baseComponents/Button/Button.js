@@ -1,26 +1,46 @@
-import React from "react";
-import cx from "classnames";
-import { Div } from "basedesign-iswad";
+import React from 'react';
+import cx from 'classnames';
+import { Div, Button as BaseButton } from 'basedesign-iswad';
 
-import Surface from '@/baseComponents/Surface';
+import Icon from '@/baseComponents/Icon';
 
-import {
-  SURFACE_COLOR_TYPES,
-  BORDER_COLOR_TYPES,
-  BORDER_RADIUS_TYPES,
-  TEXT_COLOR_TYPES,
-  TEXT_SIZE_TYPES,
-  TEXT_FONT_TYPES,
-  SPACINGS
-} from '@/constants/devDesignVars';
+import styles from './Button.module.scss';
 
-
-import styles from "./Button.module.scss";
-
-const Button = () => {
+const Button = ({
+  btnType = 1,
+  iconType,
+  iconColor,
+  iconScale,
+  isDisabled,
+  className,
+  children,
+  ...props
+}) => {
   return (
     <>
-      <Surface>Button</Surface>
+      <BaseButton
+        className={cx(
+          isDisabled && styles.disableBtn,
+          btnType === 1 && !isDisabled ? styles.btn1 : '',
+          btnType === 2 && !isDisabled ? styles.btn2 : '',
+          btnType === 3 && !isDisabled ? styles.btn3 : '',
+          btnType === 4 && !isDisabled ? styles.btn4 : '',
+          btnType === 5 && !isDisabled ? styles.btn5 : '',
+          btnType === 6 && !isDisabled ? styles.btn6 : '',
+          btnType === 7 && !isDisabled ? styles.btn7 : '',
+          className
+        )}
+        {...props}
+        disabled={isDisabled}>
+        <Div type="flex" hAlign="center">
+          {iconType && (
+            <Div type="flex" hAlign="center" vAlign="center" className="mr1">
+              <Icon type={iconType} color={iconColor} scale={iconScale} />
+            </Div>
+          )}
+          <Div>{children}</Div>
+        </Div>
+      </BaseButton>
     </>
   );
 };

@@ -1,3 +1,9 @@
+%fontclass {
+  font-family: $fontFamily;
+  color: black;
+  font-size: $fontSize;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,22 +21,21 @@ html {
 }
 
 body {
-  background-color: #ccc;
+  background-color: $appGrayBrightColor;
 
-  font-family: $fontFamilyRegular;
-
-  font-size: 14px;
+  @extend %fontclass;
+  overflow-x: hidden;
 
   @include atSmall {
-    font-size: 14px;
+    font-size: $fontSmallSize;
   }
 
   @include atMedium {
-    font-size: 16px;
+    font-size: $fontMediumSize;
   }
 
   @include atLarge {
-    font-size: $regular;
+    font-size: $fontLargeSize;
   }
 }
 
@@ -69,12 +74,30 @@ ul {
   margin-right: auto;
 }
 
+.maxContainerWidthForApp {
+  width: 100%;
+  max-width: $maxContainerWidthForApp;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .captcha {
   font-family: 'Rubik Maze', cursive;
   letter-spacing: 0.5rem;
   font-size: 2rem;
   font-weight: bold;
   user-select: none;
+}
+
+.tranistion1 {
+  transition: $transition1;
+}
+
+.noTransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 
 .underline {
@@ -84,37 +107,40 @@ ul {
 textarea,
 .inputText,
 button {
-  font-family: $fontFamilyRegular;
+  @extend %fontclass;
+}
 
-  font-size: 14px;
+textarea,
+.inputText {
+  font-size: 12px;
+}
 
-  @include atSmall {
-    font-size: 14px;
-  }
-
-  @include atMedium {
-    font-size: 16px;
-  }
-
-  @include atLarge {
-    font-size: $regular;
-  }
+.inputwithLessPadding {
+  padding: 0 4px !important;
 }
 
 .height-per-100 {
   height: 100%;
 }
 
-.textUpperCase {
+.text-upperCase {
   text-transform: uppercase;
 }
 
-.textTitle {
+.text-title {
   text-transform: capitalize;
 }
 
 .hasHeaderHeight {
   height: $HeaderHeight;
+}
+
+.hasAppHeaderHeight {
+  height: $appHeaderHeight;
+}
+
+.height-px-5 {
+  height: 5px;
 }
 
 .rotate {
@@ -129,6 +155,10 @@ button {
   &270 {
     transform: rotate(270deg);
   }
+}
+
+.font-type2 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .flex--1 {
@@ -155,6 +185,13 @@ button {
 
 .w-per-one-third {
   width: 33.33%;
+}
+
+.hasMarginRightOnlyInDesktop {
+  margin-right: 0;
+  @include atMedium {
+    margin-right: 1rem;
+  }
 }
 
 .customDatePickerWidth,
