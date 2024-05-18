@@ -135,7 +135,7 @@ const PageContainer = ({
           )}
           <DivMinFullHeight
             className={cx(
-              'flex flex--dir--col min-height-vh-full flex--jc--between w-per-100',
+              'flex flex--dir--col min-height-vh-full flex--jc--between width-per-100',
               hasSideBarDashboard && styles.headerAndBodyContianer
             )}>
             <Div className="flex--gr--1">

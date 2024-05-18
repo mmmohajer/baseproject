@@ -1,7 +1,19 @@
 %fontclass {
-  font-family: $fontFamily;
+  font-family: map-get($fontTypes, 'regular');
   color: black;
-  font-size: $fontSize;
+  font-size: map-get($fontSizes, 'regular-xs');
+
+  @include atSmall {
+    font-size: map-get($fontSizes, 'regular-sm');
+  }
+
+  @include atMedium {
+    font-size: map-get($fontSizes, 'regular-md');
+  }
+
+  @include atLarge {
+    font-size: map-get($fontSizes, 'regular-lg');
+  }
 }
 
 html {
@@ -21,22 +33,10 @@ html {
 }
 
 body {
-  background-color: $appGrayBrightColor;
-
   @extend %fontclass;
+
+  background-color: white;
   overflow-x: hidden;
-
-  @include atSmall {
-    font-size: $fontSmallSize;
-  }
-
-  @include atMedium {
-    font-size: $fontMediumSize;
-  }
-
-  @include atLarge {
-    font-size: $fontLargeSize;
-  }
 }
 
 img {
@@ -89,61 +89,21 @@ ul {
   user-select: none;
 }
 
-.tranistion1 {
-  transition: $transition1;
-}
-
-.noTransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
 textarea,
 .inputText,
 button {
   @extend %fontclass;
 }
 
-textarea,
-.inputText {
-  font-size: 12px;
-}
-
-.inputwithLessPadding {
-  padding: 0 4px !important;
-}
-
-.height-per-100 {
-  height: 100%;
-}
-
-.text-upperCase {
-  text-transform: uppercase;
-}
-
-.text-title {
-  text-transform: capitalize;
-}
-
-.hasHeaderHeight {
+.has-header-height {
   height: $HeaderHeight;
 }
 
-.hasAppHeaderHeight {
+.has-app-header-height {
   height: $appHeaderHeight;
 }
 
-.height-px-5 {
-  height: 5px;
-}
-
-.rotate {
+.rotate- {
   &90 {
     transform: rotate(90deg);
   }
@@ -157,19 +117,11 @@ textarea,
   }
 }
 
-.font-type2 {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.flex--1 {
-  flex: 1;
-}
-
 .go-under {
   z-index: -1;
 }
 
-.centralizedInSmDesign {
+.centralized-in-sm-design {
   justify-content: center;
   text-align: center;
   margin-left: auto;
@@ -180,17 +132,6 @@ textarea,
     justify-content: start;
     margin-left: 0;
     margin-right: 0;
-  }
-}
-
-.w-per-one-third {
-  width: 33.33%;
-}
-
-.hasMarginRightOnlyInDesktop {
-  margin-right: 0;
-  @include atMedium {
-    margin-right: 1rem;
   }
 }
 

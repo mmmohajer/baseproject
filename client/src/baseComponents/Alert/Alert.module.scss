@@ -1,39 +1,39 @@
-@import '@/styles/base/_variables';
+// @import '@/styles/base/_variables';
 
-%alertItem {
-  border: solid 3px;
-  background-color: white;
-}
+// %alertItem {
+//   border: solid 3px;
+//   background-color: white;
+// }
 
-.container {
-  position: fixed;
-  width: 100%;
-  max-width: 600px;
-  right: 0;
-  top: 0;
-  z-index: 100000000000000;
-}
+// .container {
+//   position: fixed;
+//   width: 100%;
+//   max-width: 600px;
+//   right: 0;
+//   top: 0;
+//   z-index: 100000000000000;
+// }
 
-.item {
-  transition: all 0.5s ease-in-out;
-  transform: translateX(200%);
+// .item {
+//   transition: all 0.5s ease-in-out;
+//   transform: translateX(200%);
 
-  &IsActive {
-    transform: translateX(0);
-  }
-}
+//   &IsActive {
+//     transform: translateX(0);
+//   }
+// }
 
-.success {
-  @extend %alertItem;
-  border-color: $successColor;
-}
+// .success {
+//   @extend %alertItem;
+//   border-color: $successColor;
+// }
 
-.error {
-  @extend %alertItem;
-  border-color: $dangerColor;
-}
+// .error {
+//   @extend %alertItem;
+//   border-color: $dangerColor;
+// }
 
-.warning {
-  @extend %alertItem;
-  border-color: $warningColor;
-}
+// .warning {
+//   @extend %alertItem;
+//   border-color: $warningColor;
+// }

@@ -48,7 +48,7 @@
   }
 
   &:nth-child(even) {
-    background-color: $appBrightOrangeColor;
+    background-color: orange;
   }
 
   &:last-child {
@@ -64,7 +64,7 @@
   display: flex;
   align-items: center;
   padding: 8px;
-  border-bottom: solid 0.2px $inverseColor;
+  border-bottom: solid 0.2px red;
 
   &:last-child {
     border-right: none;

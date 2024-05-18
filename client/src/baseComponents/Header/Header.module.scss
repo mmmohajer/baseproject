@@ -104,7 +104,7 @@ $BORDER_BTM_THICKNESS: 2px;
     position: fixed;
     top: calc($HeaderHeight + 2px);
     left: 0.5rem;
-    transition: $transition1;
+    transition: all 0.3s ease-in-out;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 10px;
     transform: translateX(-150%);

@@ -5,7 +5,7 @@
   width: 100px;
   height: 100px;
   padding: 0.5rem;
-  border: dashed 1px $appGrayDarkColor;
+  border: dashed 1px #ccc;
   border-radius: 10px;
 }
 
@@ -17,7 +17,7 @@
   width: 100px;
   height: 100px;
   padding: 0.5rem;
-  border: dashed 1px $appGrayDarkColor;
+  border: dashed 1px #ccc;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -35,12 +35,12 @@
 }
 
 .previewContainer {
-  border: solid 1px $themeOne;
+  border: solid 1px blue;
   border-radius: 5px;
 }
 
 .cropperContainer {
-  box-shadow: $boxShadow1;
+  // box-shadow: map-get($boxShadows, 'type1');
   @extend %cropper;
 }
 

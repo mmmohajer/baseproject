@@ -23,7 +23,7 @@
 }
 
 .container {
-  transition: $transition1;
+  transition: all 0.3s ease-in-out;
   @include atMedium {
     margin-left: $sideBarClosedWidth;
   }

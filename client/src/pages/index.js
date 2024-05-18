@@ -26,7 +26,9 @@ const Index = () => {
           hasStickyFooter={false}
           // hasSideBarDashboard={true}
           changesThePage={false}>
-          <Div className="maxContainerWidth">HomePage</Div>
+          <Div className="bg-theme-two bg-theme-one-on-hover width-per-100 mouse-hand m-t-60">
+            HomePage
+          </Div>
         </PageContainer>
       </Seo>
     </RoleBasedRoute>

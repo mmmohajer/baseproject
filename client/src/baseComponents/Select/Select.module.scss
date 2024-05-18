@@ -15,7 +15,7 @@
 
 .optionsContainer {
   // box-shadow: $boxShadow1;
-  border: solid 1px $themeOne;
+  border: solid 1px blue;
   border-radius: 5px;
   width: 100%;
   // padding: 1rem;
@@ -30,22 +30,22 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $themeFive;
+    background-color: red;
     border-radius: 5px;
   }
 }
 
 .searchInput {
   outline: none;
-  box-shadow: $boxShadow1;
-  border: solid 1px $themeOne !important;
+  // box-shadow: $boxShadow1;
+  border: solid 1px blue !important;
   padding: 0.65rem;
   z-index: 100;
 }
 
 .placeHolder {
   font-size: 14px;
-  color: $appGrayDarkColor;
+  color: #ccc;
 }
 
 .options {

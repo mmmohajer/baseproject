@@ -1,66 +1,147 @@
-// Colors
-$primaryColor: #0a2647;
-$fadedColor: #f3f3f3;
-$infoColor: #5bc0de;
-$inverseColor: #292b2c;
-$warningColor: #f0ad4e;
-$successColor: #5cb85c;
-$dangerColor: #f14c4c;
+// Functions
 
-// Fonts
-$fontFamily: 'Poppins', sans-serif;
-$fontSize: 16px;
-$fontSmallSize: 16px;
-$fontMediumSize: 16px;
-$fontLargeSize: 18px;
-$fontColor: black;
+@function capitalize($string) {
+  @if type-of($string) != 'string' {
+    @return $string;
+  }
+  $first-letter: str-slice($string, 1, 1);
+  $rest: str-slice($string, 2);
+  @return to-upper-case($first-letter) + $rest;
+}
+
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+
+// Colors
+$colors: (
+  'primary': #0a2647,
+  'faded': #f3f3f3,
+  'info': #5bc0de,
+  'inverse': #292b2c,
+  'warning': #f0ad4e,
+  'success': #5cb85c,
+  'danger': #f14c4c,
+  'theme-one': #666dff,
+  'theme-two': #f5891f,
+  'theme-three': #00ff7f,
+  'theme-four': #26335d,
+  'theme-five': #ffe6d1,
+  'theme-six': #feba13,
+  'gray-bright': #9a9a9a,
+  'gray-dark': #5c5c5c
+);
+
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+
+// Box Shadows
+$boxShadows: (
+  'type1': (
+    'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px',
+    'rgba(0, 0, 0, 0.3) 0px 1px 3px -1px'
+  ),
+  'type2': 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px'
+);
+
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+
+// Font Types
+$fontTypes: (
+  'regular': 'Poppins, sans-serif'
+);
+
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+
+// Font Sizes
+$fontSizes: (
+  'small-xs': 12px,
+  'small-sm': 14px,
+  'small-md': 16px,
+  'small-lg': 18px,
+  'regular-xs': 14px,
+  'regular-sm': 16px,
+  'regular-md': 18px,
+  'regular-lg': 20px,
+  'large-xs': 16px,
+  'large-sm': 18px,
+  'large-md': 20px,
+  'large-lg': 22px
+);
+
+$fontCategories: (
+  'small': 'small',
+  'regular': 'regular',
+  'large': 'large'
+);
+
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
 
 // Headings
 $fontHeadingWeight: bold;
+$headingFontSizes: (
+  'h1-xs': 24px,
+  'h1-sm': 28px,
+  'h1-md': 32px,
+  'h1-lg': 36px,
+  'h2-xs': 22px,
+  'h2-sm': 26px,
+  'h2-md': 30px,
+  'h2-lg': 34px,
+  'h3-xs': 20px,
+  'h3-sm': 24px,
+  'h3-md': 28px,
+  'h3-lg': 32px,
+  'h4-xs': 18px,
+  'h4-sm': 22px,
+  'h4-md': 26px,
+  'h4-lg': 30px,
+  'h5-xs': 16px,
+  'h5-sm': 20px,
+  'h5-md': 24px,
+  'h5-lg': 28px,
+  'h6-xs': 14px,
+  'h6-sm': 18px,
+  'h6-md': 22px,
+  'h6-lg': 26px
+);
 
-$fontH1Size: 32px;
-$fontH1SmallSize: 32px;
-$fontH1MediumSize: 40px;
-$fontH1LargeSize: 50px;
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
 
-$fontH2Size: 28px;
-$fontH2SmallSize: 28px;
-$fontH2MediumSize: 28px;
-$fontH2LargeSize: 28px;
-
-$fontH3Size: 30px;
-$fontH3SmallSize: 30px;
-$fontH3MediumSize: 40px;
-$fontH3LargeSize: 40px;
-
-// Sizes
+// Device Sizes
 $atSmall: 400px;
 $atMedium: 1100px;
 $atLarge: 1400px;
 $maxContainerWidth: 1500px;
 $maxContainerWidthForApp: 2000px;
 
-// Box Shadows
-$boxShadow1: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-$boxShadow2: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+$transitions: (
+  'type-1': 'all 0.3s ease-in-out'
+);
 
-// Theme Colors
-$appGrayBrightColor: #9a9a9a;
-$appGrayDarkColor: #5c5c5c;
-$appBrightOrangeColor: rgb(255, 246, 228);
-$themeOne: #666dff;
-$themeTwo: #f5891f;
-$themeThree: #00ff7f;
-$themeFour: #26335d;
-$themeFive: #ffe5d0;
-$themeSix: #feba13;
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
+// ----------------------------------------------
 
 // Heights
 $HeaderHeight: 60px;
 $appHeaderHeight: 60px;
-
-// Generals
-$transition1: all 0.3s ease-in-out;
 
 //
 $sideBarClosedWidth: 60px;

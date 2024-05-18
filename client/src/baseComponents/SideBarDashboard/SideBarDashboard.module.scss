@@ -2,7 +2,7 @@
 @import '@/styles/base/_mixins';
 
 .dashboard {
-  transition: $transition1;
+  transition: all 0.3s ease-in-out;
   width: $sideBarClosedWidth;
   height: calc(100vh - $HeaderHeight);
 
@@ -18,7 +18,7 @@
 
 .menuItems {
   &:hover {
-    color: $themeTwo;
+    color: blue;
   }
 }
 

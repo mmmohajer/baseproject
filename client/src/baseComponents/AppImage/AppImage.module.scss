@@ -14,8 +14,8 @@
 
   &::after {
     content: '';
-    border: solid $themeFour;
-    border-top-color: $themeOne;
+    border: solid black;
+    border-top-color: black;
     border-radius: 50%;
     animation: loading 1s ease infinite;
   }

@@ -9,7 +9,7 @@
 }
 
 %label {
-  color: $appGrayDarkColor;
+  color: #ccc;
   font-size: 14px;
 
   &Container {
@@ -23,13 +23,13 @@
   &Container {
     margin-bottom: 4px;
     font-size: 12px;
-    color: $appGrayDarkColor;
+    color: #ccc;
   }
 }
 
 .labelForCheckBoxField {
   @extend %label;
-  color: $appGrayDarkColor;
+  color: #ccc;
   font-size: 12px;
   // &Container {
   //   margin-bottom: 16px;
@@ -62,7 +62,7 @@
   border: solid 1px #ccc;
 
   &:focus {
-    border: solid 1px $themeOne !important;
+    border: solid 1px black !important;
     // background-color: $focusBgColor;
   }
 

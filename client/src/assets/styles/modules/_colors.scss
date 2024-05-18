@@ -1,123 +1,29 @@
-.text {
-  &Primary {
-    color: $primaryColor;
+@each $name, $color in $colors {
+  $className: 'text-' + $name;
+  .#{$className} {
+    color: $color;
   }
 
-  &Faded {
-    color: $fadedColor;
-  }
-
-  &Info {
-    color: $infoColor;
-  }
-
-  &Inverse {
-    color: $inverseColor;
-  }
-
-  &Success {
-    color: $successColor;
-  }
-
-  &Warning {
-    color: $warningColor;
-  }
-
-  &Danger {
-    color: $dangerColor;
-  }
-
-  &ThemeOne {
-    color: $themeOne;
-  }
-
-  &ThemeTwo {
-    color: $themeTwo;
-  }
-
-  &ThemeThree {
-    color: $themeThree;
-  }
-
-  &ThemeFour {
-    color: $themeFour;
-  }
-
-  &ThemeFive {
-    color: $themeFive;
-  }
-
-  &ThemeSix {
-    color: $themeSix;
-  }
-
-  &GrayBright {
-    color: $appGrayBrightColor;
-  }
-
-  &GrayDark {
-    color: $appGrayDarkColor;
+  .#{$className}-on-hover:hover {
+    color: $color;
   }
 }
 
-.bg {
-  &Primary {
-    background-color: $primaryColor;
+@each $name, $color in $colors {
+  $className: 'bg-' + $name;
+  .#{$className} {
+    background-color: $color;
   }
 
-  &Faded {
-    background-color: $fadedColor;
+  .#{$className}-on-hover:hover {
+    background-color: $color;
   }
+}
 
-  &Info {
-    background-color: $infoColor;
-  }
+.bg-transparent {
+  background-color: transparent;
 
-  &Inverse {
-    background-color: $inverseColor;
-  }
-
-  &Success {
-    background-color: $successColor;
-  }
-
-  &Warning {
-    background-color: $warningColor;
-  }
-
-  &Danger {
-    background-color: $dangerColor;
-  }
-
-  &ThemeOne {
-    background-color: $themeOne;
-  }
-
-  &ThemeTwo {
-    background-color: $themeTwo;
-  }
-
-  &ThemeThree {
-    background-color: $themeThree;
-  }
-
-  &ThemeFour {
-    background-color: $themeFour;
-  }
-
-  &ThemeFive {
-    background-color: $themeFive;
-  }
-
-  &ThemeSix {
-    background-color: $themeSix;
-  }
-
-  &GrayBright {
-    background-color: $appGrayBrightColor;
-  }
-
-  &GrayDark {
-    background-color: $appGrayDarkColor;
+  &-on-hover:hover {
+    background-color: transparent;
   }
 }
