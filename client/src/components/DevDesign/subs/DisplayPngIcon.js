@@ -17,8 +17,14 @@ function DisplayPngIcon() {
         vAlign="center"
         hAlign="center"
         className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
-        {PNG_ICON_TYPES.map((item, idx) => (
-          <PngIcon type={item} key={idx} width={20} height={20} className="m-r-16" />
+        {Object.keys(PNG_ICON_TYPES)?.map((item, idx) => (
+          <PngIcon
+            type={PNG_ICON_TYPES[item]}
+            key={idx}
+            width={20}
+            height={20}
+            className="m-r-16"
+          />
         ))}
       </Div>
     </>

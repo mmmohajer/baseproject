@@ -16,8 +16,8 @@ const DisplayModals = () => {
         hAlign="center"
         vAlign="center"
         className={cx('p-all-1 width-per-90 flex--wrap', styles.card)}>
-        {MODAL_TYPES.map((item, idx) => {
-          if (item === 'data-submitted-successfully') {
+        {Object.keys(MODAL_TYPES)?.map((item, idx) => {
+          if (item === 'dataSubmittedSuccessfully') {
             return (
               <Div key={idx}>
                 <DataSubmittedSuccessfully />

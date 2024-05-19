@@ -16,8 +16,8 @@ function DisplayCards() {
         hAlign="center"
         vAlign="center"
         className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
-        {CARD_TYPES.map((item, idx) => {
-          if (item === 'service') {
+        {Object.keys(CARD_TYPES)?.map((item, idx) => {
+          if (item === 'serviceTest') {
             return <ServiceCard key={idx} />;
           }
         })}

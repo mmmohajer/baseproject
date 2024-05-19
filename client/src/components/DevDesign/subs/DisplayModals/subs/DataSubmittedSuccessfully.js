@@ -5,6 +5,7 @@ import { Div } from 'basedesign-iswad';
 
 import Button from '@/baseComponents/Button';
 
+import { MODAL_TYPES } from '@/constants/devDesignVars';
 import { setModalType } from '@/reducers/general/modalType';
 
 import styles from '../../../DevDesign.module.scss';
@@ -16,8 +17,8 @@ const DataSubmittedSuccessfully = () => {
     <>
       <Button
         className={'width-px-300 m-l-auto m-r-auto m-b-8'}
-        onClick={() => dispatch(setModalType('data-submitted-successfully'))}>
-        Show moal of type data-submitted-successfully
+        onClick={() => dispatch(setModalType(MODAL_TYPES.dataSubmittedSuccessfully))}>
+        Show moal of type {MODAL_TYPES.dataSubmittedSuccessfully}
       </Button>
     </>
   );

@@ -17,7 +17,7 @@ function DisplayEmailTemplates() {
         hAlign="center"
         vAlign="center"
         className={cx('p1 width-per-90 flex--wrap', styles.card)}>
-        {EMAIL_TEMPLATES.map((item, idx) => {
+        {Object.keys(EMAIL_TEMPLATES)?.map((item, idx) => {
           if (item === 'contact_form_sent') {
             return (
               <Div
@@ -27,8 +27,8 @@ function DisplayEmailTemplates() {
                 hAlign="start"
                 vAlign="center"
                 className="mb4 width-per-100">
-                <Div className="mb1">Type: {item}</Div>
-                <EmailTemplatesHtmlCode type={item} name="Mohammad Mohajer" />
+                <Div className="mb1">Type: {EMAIL_TEMPLATES[item]}</Div>
+                <EmailTemplatesHtmlCode type={EMAIL_TEMPLATES[item]} name="Mohammad Mohajer" />
               </Div>
             );
           } else if (item === 'contact_form_received') {

@@ -18,23 +18,23 @@ function DisplayAnchor() {
         className={cx('p-all-1 width-per-90 flex--wrap', styles.card)}>
         <Div>
           <Div>
-            {ANCHOR_TYPES.map((num, idx) => (
-              <Anchor anchorType={num} key={idx} className="m-x-16" to="/">
-                Internal Anchor Type {num}
+            {Object.keys(ANCHOR_TYPES)?.map((item, idx) => (
+              <Anchor anchorType={ANCHOR_TYPES[item]} key={idx} className="m-x-16" to="/">
+                Internal Anchor Type {ANCHOR_TYPES[item]}
               </Anchor>
             ))}
           </Div>
         </Div>
         <Div>
           <Div className="m-all-32">
-            {ANCHOR_TYPES.map((num, idx) => (
+            {Object.keys(ANCHOR_TYPES)?.map((item, idx) => (
               <Anchor
-                anchorType={num}
+                anchorType={ANCHOR_TYPES[item]}
                 key={idx}
                 className="m-x-16"
                 to="https://www.google.com"
                 internal={false}>
-                External Anchor Type {num}
+                External Anchor Type {ANCHOR_TYPES[item]}
               </Anchor>
             ))}
           </Div>

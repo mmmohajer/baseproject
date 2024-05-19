@@ -21,7 +21,7 @@ function DisplayColors() {
         hAlign="center"
         vAlign="center"
         className={cx('p-all-1 width-per-90 flex--wrap', styles.card)}>
-        {ALERT_TYPES.map((item, idx) => (
+        {Object.keys(ALERT_TYPES)?.map((item, idx) => (
           <Button
             key={idx}
             className={'m-l-auto m-r-auto m-b-8 max-width-px-300'}
@@ -29,10 +29,10 @@ function DisplayColors() {
               addAlertItem(
                 dispatch,
                 `This is a sample of ${item} alert, hope it looks good to you!`,
-                item
+                ALERT_TYPES[item]
               )
             }>
-            Show {item} alert
+            Show {ALERT_TYPES[item]} alert
           </Button>
         ))}
       </Div>
