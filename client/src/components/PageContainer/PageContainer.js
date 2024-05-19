@@ -185,7 +185,7 @@ const PageContainer = ({
                   <Div
                     className={cx(
                       hasSideBarDashboard && styles.bodyContainer,
-                      hasSideBarDashboard && 'of-x-hidden'
+                      hasSideBarDashboard && 'p-all-16 of-x-hidden'
                     )}>
                     {children}
                   </Div>
