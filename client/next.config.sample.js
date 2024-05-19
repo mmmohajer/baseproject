@@ -9,7 +9,7 @@ module.exports = {
   },
 
   env: {
-    APP_DOMAIN: 'localhost',
+    APP_DOMAIN: 'cicd.iswad.tech',
     STRIPE_PUBLISHABLE_API_KEY_DEVELOPMENT: 'STRIPE_PUBLISHABLE_API_KEY_DEVELOPMENT',
     STRIPE_PUBLISHABLE_API_KEY_PRODUCTION: 'STRIPE_PUBLISHABLE_API_KEY_PRODUCTION',
     GOOGLE_AUTH_CLIENT_ID_DEVELOPMENT: 'GOOGLE_AUTH_CLIENT_ID_DEVELOPMENT',
@@ -45,6 +45,6 @@ module.exports = {
   },
 
   images: {
-    domains: ['localhost', 'makeclient.ngrok.io', 'picsum.photos', 'img.icons8.com']
+    domains: ['cicd.iswad.tech', 'makeclient.ngrok.io', 'picsum.photos', 'img.icons8.com']
   }
 };
