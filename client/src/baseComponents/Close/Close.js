@@ -26,7 +26,7 @@ const Close = ({
         <Div
           type="flex"
           vAlign="center"
-          className={cx('pos-rel w-per-100')}
+          className={cx('pos-rel width-per-100')}
           style={{ backgroundColor: barColor, height: barHeight }}
           distributedBetween>
           <Div className="textWhite f-b ml2">{headerText}</Div>

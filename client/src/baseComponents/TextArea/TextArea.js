@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import cx from 'classnames';
-import { Div, TextArea as BaseTextArea, Label } from 'basedesign-iswad';
+import { Div, TextArea as BaseTextArea } from 'basedesign-iswad';
+
+import Label from '@/baseComponents/Label';
 
 import styles from './TextArea.module.scss';
 
@@ -13,20 +15,19 @@ const TextArea = ({
   errorMessage,
   onChange,
   className,
+  hasMarginBottom = true,
   ...props
 }) => {
   return (
     <>
-      <Div className={cx('mainInputContainer', className)}>
-        {labelText && (
-          <Div className={cx('labelForInputContainer')}>
-            <Label className={cx(isRequired && 'required', 'labelForInput')}>{labelText}</Label>
-          </Div>
-        )}
+      <Div className={cx('pos-rel', hasMarginBottom && 'm-b-32', className)}>
+        {labelText && <Label labelText={labelText} isRequired={isRequired} />}
 
-        <Div className={cx('inputFieldContainer')}>
+        <Div className={cx('')}>
           <BaseTextArea
-            className={cx('textAreaField')}
+            className={cx(
+              'width-per-100 min-width-per-100 max-width-per-100 min-height-px-40 max-height-px-150 height-px-100 bg-white box-shadow-type-one global-outline-none br-all-solid-1 br-black'
+            )}
             value={val}
             onChange={(e) => {
               setVal(e.target.value);
@@ -39,7 +40,11 @@ const TextArea = ({
           />
 
           {errorMessage && (
-            <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>
+            <Div
+              className={cx(
+                'global-error-message',
+                errorMessage && 'global-error-message-is-active'
+              )}>
               {errorMessage}
             </Div>
           )}

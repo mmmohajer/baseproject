@@ -48,15 +48,15 @@ export const COLORS = {
   inverse: '#292b2c',
   warning: '#f0ad4e',
   success: '#5cb85c',
-  danger: '#d9534f',
-  grayBright: '#737373',
-  grayDark: '#5c5c5c',
-  themeOne: '#666dff',
-  themeTwo: '#f5891f',
-  themeThree: '#00ff7f',
-  themeFour: '#26335d',
-  themeFive: '#ffe5d0',
-  themeSix: '#FEBA13'
+  danger: '#f14c4c',
+  'theme-one': '#666dff',
+  'theme-two': '#f5891f',
+  'theme-three': '#00ff7f',
+  'theme-four': '#26335d',
+  'theme-five': '#ffe6d1',
+  'theme-six': '#feba13',
+  'gray-bright': '#9a9a9a',
+  'gray-dark': '#5c5c5c'
 };
 
 export const PAGE_ROUTES = {

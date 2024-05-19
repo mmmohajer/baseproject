@@ -36,9 +36,9 @@ const ContactForm = () => {
 
   return (
     <>
-      <Div className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+      <Div className={cx('p1 width-per-90 flex--wrap', styles.card)}>
         <Form
-          className={cx('w-per-100 bgWhite ml-auto mr-auto br-all-solid-1 p2 br-rad-px-10')}
+          className={cx('width-per-100 bgWhite ml-auto mr-auto br-all-solid-1 p2 br-rad-px-10')}
           onSubmit={submitHandler}
           toBeValidatedFields={toBeValidatedFields}
           id="testForm">

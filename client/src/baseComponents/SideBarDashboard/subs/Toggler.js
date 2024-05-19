@@ -20,15 +20,15 @@ const Toggler = () => {
         hAlign="center"
         vAlign="center"
         className={cx(
-          'pos-abs height-px-30 w-px-30 bgWhite br-rad-px-5 boxShadowType1',
+          'pos-abs height-px-30 width-px-30 bg-white br-rad-px-5 box-shadow-type-one',
           styles.toggler,
-          !sideBarDashboardIsActive && 'rotate180',
+          !sideBarDashboardIsActive && 'rotate-180',
           sideBarDashboardIsActive ? styles.togglerDashboardIsOpen : styles.togglerDashboardIsClose
         )}>
         <Div
-          className={cx('mouse-hand textSilver')}
+          className={cx('mouse-hand text-silver')}
           onClick={() => dispatch(toggleSideBarDashboard())}>
-          <Icon type="angles-left" color={COLORS.grayBright} />
+          <Icon type="dashboard" color={COLORS['gray-bright']} />
         </Div>
       </Div>
     </>

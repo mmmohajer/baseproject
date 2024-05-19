@@ -109,9 +109,11 @@ const DisplayForm = () => {
 
   return (
     <>
-      <Div className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+      <Div className={cx('width-per-90 flex--wrap', styles.card)}>
         <Form
-          className={cx('w-per-100 bgWhite ml-auto mr-auto br-all-solid-1 p2 br-rad-px-10')}
+          className={cx(
+            'width-per-100 bg-white m-l-auto m-r-auto br-all-solid-1 p-all-16 br-rad-px-10'
+          )}
           onSubmit={submitHandler}
           toBeValidatedFields={toBeValidatedFields}
           id="testForm">
@@ -207,7 +209,7 @@ const DisplayForm = () => {
           </Button>
         </Form>
         <DivConvertTextToHtml
-          className="w-per-100 height-px-400 of-auto bgWhite"
+          className="width-per-100 height-px-400 of-auto bg-white p-all-16"
           text={richText || 'Preview of Rich Text'}
         />
       </Div>

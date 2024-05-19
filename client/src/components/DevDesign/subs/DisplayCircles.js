@@ -14,7 +14,7 @@ function DisplayCircles() {
         direction="vertical"
         vAlign="center"
         hAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p1 width-per-90 flex--wrap', styles.card)}>
         <Circles width={200} type={1} />
       </Div>
     </>

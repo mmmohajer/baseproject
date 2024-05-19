@@ -19,7 +19,7 @@ const Header = ({ hasStickyHeader, changesThePage = true, headerColorType, isApp
           type="flex"
           distributedBetween
           vAlign="center"
-          className={cx('w-per-100 pos-fix pos-fix--lt headerBgZIndex hasHeaderHeight')}
+          className={cx('width-per-100 pos-fix pos-fix--lt headerBgZIndex height-header')}
         />
       ) : (
         ''
@@ -29,7 +29,7 @@ const Header = ({ hasStickyHeader, changesThePage = true, headerColorType, isApp
         distributedBetween
         vAlign="center"
         className={cx(
-          'w-per-100 hasHeaderHeight',
+          'width-per-100 height-header',
           styles.headerContainer,
           hasStickyHeader && 'pos-fix pos-fix--lt headerZIndex'
         )}>
@@ -38,7 +38,7 @@ const Header = ({ hasStickyHeader, changesThePage = true, headerColorType, isApp
           vAlign="center"
           distributedBetween
           showIn={smDesignSize}
-          className="w-per-100">
+          className="width-per-100">
           <MobileHeader changesThePage={changesThePage} isAppPage={isAppPage} />
         </Div>
 
@@ -48,8 +48,8 @@ const Header = ({ hasStickyHeader, changesThePage = true, headerColorType, isApp
           distributedBetween
           showIn={lgDesignSize}
           className={cx(
-            'w-per-100 ml-auto mr-auto',
-            isAppPage ? 'maxContainerWidthForApp' : 'maxContainerWidth'
+            'width-per-100 m-l-auto m-r-auto',
+            isAppPage ? 'global-app-container' : 'global-container'
           )}>
           <DesktopHeader changesThePage={changesThePage} isAppPage={isAppPage} />
         </Div>

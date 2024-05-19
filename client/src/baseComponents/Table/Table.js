@@ -53,7 +53,7 @@ const Table = ({ className, headLines, data, isFullWidth, ...props }) => {
   }, [data]);
 
   const paginationComponent = (props) => (
-    <Div className="mt4">
+    <Div className="m-t-32">
       <Pagination {...props} />
     </Div>
   );
@@ -64,7 +64,7 @@ const Table = ({ className, headLines, data, isFullWidth, ...props }) => {
     <>
       <DivWidthDynamic
         setContainerWidth={setContainerWidth}
-        className="w-per-100 of-x-auto scrollType1">
+        className="width-per-100 of-x-auto scroll-type-one">
         {showTable ? (
           <BaseTable
             tableClassName={cx(styles.container)}
@@ -73,7 +73,7 @@ const Table = ({ className, headLines, data, isFullWidth, ...props }) => {
             thClassName={styles.th}
             trClassName={styles.tr}
             tdClassName={styles.td}
-            className={cx('scrollType1', className)}
+            className={cx('scroll-type-one', className)}
             showDefaultPagination={false}
             paginationComponent={paginationComponent}
             showDefaultSortIcon={false}

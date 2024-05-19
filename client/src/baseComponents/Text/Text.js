@@ -15,7 +15,7 @@ const Text = ({
   countJump = 1,
   initialTextContainerHeight = '100px',
   showViewAll = true,
-  iconColor = COLORS.themeTwo,
+  iconColor = COLORS['theme-two'],
   className,
   ...props
 }) => {
@@ -78,7 +78,7 @@ const Text = ({
       <Div
         ref={(el) => (textRef.current = el)}
         style={{ height: textContainerHeight }}
-        className={cx('pos-rel w-per-100 pos-rel', styles.textContainer, className)}
+        className={cx('pos-rel width-per-100 pos-rel', styles.textContainer, className)}
         {...props}>
         <Div style={{ display: 'inline' }}>{shownText}</Div>
         {mustBeTruncated && isTruncated && !showViewAll ? <>...</> : ''}
@@ -86,12 +86,12 @@ const Text = ({
           <>
             ...{' '}
             <span
-              className="mouse-hand w-px-20 height-px-20 ml1 mr1"
+              className="mouse-hand width-px-20 height-px-20 m-x-8"
               onClick={() => {
                 setIsTruncated(false);
                 setShownText(arrayOfVocabs.join(' '));
               }}>
-              <Icon isBlock={false} type="plus-circle" color={iconColor} scale={1.2} />
+              <Icon isBlock={false} type="dashboard" color={iconColor} scale={1.2} />
             </span>
           </>
         ) : (
@@ -101,14 +101,14 @@ const Text = ({
         {mustBeTruncated && !isTruncated && showViewAll ? (
           <>
             <span
-              className="mouse-hand ml1"
+              className="mouse-hand m-l-8"
               onClick={() => {
                 setIsTruncated(true);
                 setTimeout(() => {
                   setShownText(arrayOfVocabs.slice(0, count - 5 * countJump).join(' '));
                 }, 300);
               }}>
-              <Icon isBlock={false} type="minus-circle" color={iconColor} scale={1.2} />
+              <Icon isBlock={false} type="dashboard" color={iconColor} scale={1.2} />
             </span>
           </>
         ) : (

@@ -14,7 +14,7 @@ function DisplayAnimationOnScroll() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p1 width-per-90 flex--wrap', styles.card)}>
         <AnimatedDivOnScroll
           className={cx(styles.animatedOnScroll)}
           activeClassName={cx(styles.animatedOnScrollIsActive)}>

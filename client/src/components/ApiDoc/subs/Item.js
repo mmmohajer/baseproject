@@ -25,7 +25,7 @@ const Item = ({ category, endpoints, info, setInfoModalContext }) => {
 
   return (
     <>
-      <Div className={cx('w-per-100 textBlack', styles.itemContainer)}>
+      <Div className={cx('width-per-100 textBlack', styles.itemContainer)}>
         <Div
           type="flex"
           distributedBetween
@@ -38,7 +38,7 @@ const Item = ({ category, endpoints, info, setInfoModalContext }) => {
               type="flex"
               hAlign="center"
               vAlign="center"
-              className={'mouse-hand z-10 w-px-30 height-px-30'}
+              className={'mouse-hand z-10 width-px-30 height-px-30'}
               onClick={() => setInfoModalContext(info)}>
               <Icon type="question-circle" color="white" scale={1.5} />
             </Div>

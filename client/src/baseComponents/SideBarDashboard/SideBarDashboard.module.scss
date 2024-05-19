@@ -3,11 +3,11 @@
 
 .dashboard {
   transition: all 0.3s ease-in-out;
-  width: $sideBarClosedWidth;
-  height: calc(100vh - $HeaderHeight);
+  width: map-get($widths, 'side-bar-closed');
+  height: calc(100vh - map-get($heights, 'app-header'));
 
   &IsActive {
-    width: $sideBarOpenedWidth;
+    width: 180px;
   }
 
   &Breaker {
@@ -26,10 +26,10 @@
   transition: all 0.3s ease-in-out;
 
   &DashboardIsClose {
-    left: calc($sideBarClosedWidth - 20px);
+    left: calc(map-get($widths, 'side-bar-closed') - 20px);
   }
 
   &DashboardIsOpen {
-    left: calc($sideBarOpenedWidth - 25px);
+    left: calc(map-get($widths, 'side-bar-opened') - 25px);
   }
 }

@@ -16,7 +16,7 @@ function DisplayUserEvent() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p1 width-per-90 flex--wrap', styles.card)}>
         <UserEvent
           sendCreateEventReq={sendCreateEventReq}
           setSendCreateEventReq={setSendCreateEventReq}
@@ -26,7 +26,7 @@ function DisplayUserEvent() {
             hAlign="center"
             vAlign="center"
             onClick={() => setSendCreateEventReq(true)}
-            className="w-px-300 height-px-40 bgBlue textWhite mouse-hand">
+            className="width-px-300 height-px-40 bgBlue textWhite mouse-hand">
             Create Event
           </Div>
         </UserEvent>

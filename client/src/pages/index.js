@@ -24,9 +24,9 @@ const Index = () => {
           hasFooter={true}
           hasStickyHeader={false}
           hasStickyFooter={false}
-          // hasSideBarDashboard={true}
+          hasSideBarDashboard={false}
           changesThePage={false}>
-          <Div className="bg-theme-two bg-theme-one-on-hover width-per-100 mouse-hand m-t-60">
+          <Div className="bg-theme-two bg-theme-one-on-hover width-per-100 mouse-hand">
             HomePage
           </Div>
         </PageContainer>

@@ -27,7 +27,7 @@ const ImagePicker = ({
   initialSrcComesFromOurServer = false,
   previewer = 'default',
   className,
-  hasDefaultClass,
+  hasMarginBottom,
   fileType = 'image'
 }) => {
   const inputFileField = useRef();
@@ -103,7 +103,7 @@ const ImagePicker = ({
           className={cx(className)}
           setInitialSrc={setInitialSrc}
           previewer={previewer}
-          hasDefaultClass={hasDefaultClass}
+          hasMarginBottom={hasMarginBottom}
         />
       ) : (
         ''
@@ -124,7 +124,7 @@ const ImagePicker = ({
           className={cx(className)}
           setInitialSrc={setInitialSrc}
           previewer={previewer}
-          hasDefaultClass={hasDefaultClass}
+          hasMarginBottom={hasMarginBottom}
         />
       ) : (
         ''

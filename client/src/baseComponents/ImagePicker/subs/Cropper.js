@@ -82,7 +82,7 @@ const Cropper = ({ src, setSrc, setFile, fileName, setShowCropper, cropInfo, mai
           styles.cropperContainer
         )}
         id={CROPPER_ID}>
-        <Div className="w-per-100">
+        <Div className="width-per-100">
           <Close
             barHeight="40px"
             onClick={() => setShowCropper(false)}
@@ -125,7 +125,7 @@ const Cropper = ({ src, setSrc, setFile, fileName, setShowCropper, cropInfo, mai
             />
           </Div>
         )}
-        <Div type="flex" hAlign="center" vAlign="center" className="w-per-100 mt2">
+        <Div type="flex" hAlign="center" vAlign="center" className="width-per-100 mt2">
           {!showSubmit && (
             <Button
               btnType={2}

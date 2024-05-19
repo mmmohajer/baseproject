@@ -15,7 +15,7 @@ function DisplayList() {
         direction="vertical"
         vAlign="center"
         hAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
         <Type1 />
       </Div>
     </>

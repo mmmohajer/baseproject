@@ -66,7 +66,7 @@ const MapBox = ({ address }) => {
 
   return (
     <>
-      <Div ref={mapContainerRef} className="w-per-100 height-px-300" />
+      <Div ref={mapContainerRef} className="width-per-100 height-px-300" />
     </>
   );
 };

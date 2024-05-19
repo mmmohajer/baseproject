@@ -15,7 +15,7 @@ function DisplayCards() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
         {CARD_TYPES.map((item, idx) => {
           if (item === 'service') {
             return <ServiceCard key={idx} />;

@@ -42,7 +42,7 @@ const AppImage = ({
           type="flex"
           hAlign="center"
           vAlign="center"
-          className={cx('pos-abs pos-abs--center w-per-100 height-per-100', styles.spinner)}>
+          className={cx('pos-abs pos-abs--center width-per-100 height-per-100', styles.spinner)}>
           <ImageLoader type={type} />
         </Div>
       )}

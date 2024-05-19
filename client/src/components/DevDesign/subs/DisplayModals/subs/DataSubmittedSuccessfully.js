@@ -15,7 +15,7 @@ const DataSubmittedSuccessfully = () => {
   return (
     <>
       <Button
-        className={'w-px-200 ml-auto mr-auto mb1'}
+        className={'width-px-300 m-l-auto m-r-auto m-b-8'}
         onClick={() => dispatch(setModalType('data-submitted-successfully'))}>
         Show moal of type data-submitted-successfully
       </Button>

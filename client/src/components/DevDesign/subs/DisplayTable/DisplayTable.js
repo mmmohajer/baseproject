@@ -72,7 +72,7 @@ function DisplayTable() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('w-per-90 flex--wrap', styles.card)}>
+        className={cx('width-per-90 flex--wrap', styles.card)}>
         <Table
           headLines={headLines(Div, Search, setTableData, data, setCurrentPage)}
           data={tableData}
@@ -88,7 +88,11 @@ function DisplayTable() {
           numberOfShownPages={5}
           isFullWidth={true}
         />
-        <Button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</Button>
+        <Button
+          onClick={() => setCurrentPage(currentPage + 1)}
+          className={'width-px-300 m-t-16 m-l-auto m-r-auto'}>
+          Next Page
+        </Button>
       </Div>
     </>
   );

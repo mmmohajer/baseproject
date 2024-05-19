@@ -99,7 +99,7 @@ const LimitedSwipeableSlider = ({
           }
         } else {
           if (makeUnlimited) {
-            setTransitionClassName('noTransition');
+            setTransitionClassName('no-transition');
             setTranslateX(0);
             if (setCurrentActiveIdx) {
               setCurrentActiveIdx(0);
@@ -138,7 +138,7 @@ const LimitedSwipeableSlider = ({
         ref={(el) => (parentRef.current = el)}
         type="flex"
         hAlign={!mustShowSlider && isCenteralized ? 'center' : 'start'}
-        className={cx('w-per-100', transitionClassName, className)}
+        className={cx('width-per-100', transitionClassName, className)}
         style={{ transform: `translateX(${translateX}px)` }}
         {...props}>
         {children}

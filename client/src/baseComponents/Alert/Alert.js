@@ -16,20 +16,20 @@ const Alert = () => {
 
   return (
     <>
-      <BaseAlert className={cx('AlertContainerZIndex', styles.container)}>
+      <BaseAlert className={cx('AlertContainerZIndex pos-fix pos-fix--rt')}>
         {notifications.map((notif) => (
           <AlertItem
             key={notif.key}
             isActive={notif.isActive}
             className={cx(
-              'm1 boxShadowType1 br-rad-px-5',
-              notif?.type === 'success' && styles.success,
-              notif?.type === 'error' && styles.error,
-              notif?.type === 'warning' && styles.warning,
+              'm-ll-1 box-shadow-type-one br-rad-px-5 transition-type-1 bg-white m-b-8',
+              notif?.type === 'success' && 'br-all-solid-3 br-success',
+              notif?.type === 'error' && 'br-all-solid-3 br-red',
+              notif?.type === 'warning' && 'br-all-solid-3 br-warning',
               styles.item
             )}
             activeClassName={cx(styles.itemIsActive)}>
-            <Div className="w-per-100" direction="vertical" type="flex">
+            <Div className="width-per-100" direction="vertical" type="flex">
               <Close
                 barHeight="30px"
                 barColor=""
@@ -37,7 +37,7 @@ const Alert = () => {
                 iconScale={0.8}
                 onClick={() => removeAlertItem(dispatch, notif.key)}
               />
-              <Paragraph className="pb2 pl2 pr2">{notif.message}</Paragraph>
+              <Paragraph className="p-all-8">{notif.message}</Paragraph>
             </Div>
           </AlertItem>
         ))}

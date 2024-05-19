@@ -98,9 +98,14 @@ const StripeCustomerActivePayments = ({
 
   return (
     <>
-      <Div type="flex" direction="vertical" hAlign="center" vAlign="center" className="w-per-100">
+      <Div
+        type="flex"
+        direction="vertical"
+        hAlign="center"
+        vAlign="center"
+        className="width-per-100">
         {showTitle && (
-          <Div className={cx('w-per-100 mb2', isCenteralized && 'text-center')}>
+          <Div className={cx('width-per-100 mb2', isCenteralized && 'text-center')}>
             Active Payments
           </Div>
         )}
@@ -110,7 +115,7 @@ const StripeCustomerActivePayments = ({
             type="flex"
             vAlign="center"
             hAlign={isCenteralized ? 'center' : 'start'}
-            className={cx('w-per-100 br-rad-px-5 mb2 mouse-hand')}>
+            className={cx('width-per-100 br-rad-px-5 mb2 mouse-hand')}>
             <Div type="flex" vAlign="center" className="mr1">
               <RadioButton
                 selected={defaultSource === item.id}
@@ -128,7 +133,7 @@ const StripeCustomerActivePayments = ({
             <Div
               type="flex"
               distributedBetween
-              className={cx('w-px-200 bgRed p1 bgWhite boxShadowType1')}>
+              className={cx('width-px-200 bgRed p1 bgWhite boxShadowType1')}>
               <Div>{item.brand}</Div>
               <Div>
                 {item.exp_month}-{item.exp_year}
@@ -140,7 +145,7 @@ const StripeCustomerActivePayments = ({
               type="flex"
               hAlign="center"
               vAlign="center"
-              className="w-px-30 height-px-30 ml1 mouse-hand"
+              className="width-px-30 height-px-30 ml1 mouse-hand"
               onClick={() => setDeletedSourceId(item.id)}>
               <Icon type="trash" color={'red'} scale={1.2} />
             </Div>

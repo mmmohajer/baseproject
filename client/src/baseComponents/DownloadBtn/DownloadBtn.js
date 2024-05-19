@@ -34,7 +34,7 @@ const DownloadBtn = ({ btnTitle = '', imgSrc, imgName = '' }) => {
   return (
     <>
       <Div>
-        <Button className={'w-px-200'} btnType={2} onClick={handleDownload}>
+        <Button className={'width-px-200'} btnType={2} onClick={handleDownload}>
           {btnTitle}
         </Button>
       </Div>

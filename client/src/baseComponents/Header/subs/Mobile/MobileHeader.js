@@ -60,7 +60,7 @@ const MobileHeader = ({ changesThePage, headerColorType, isAppPage }) => {
             type="flex"
             hAlign="center"
             vAlign="center"
-            className={cx('pos-rel hasHeaderHeight', styles.mobileHeaderLogoContainer)}>
+            className={cx('pos-rel height-header m-l-16', styles.mobileHeaderLogoContainer)}>
             <AppImage src={Logo} />
           </Div>
         </Div>

@@ -14,7 +14,11 @@ const Slider = ({ sliderVal, setSliderVal, multiplier = 1 }) => {
   return (
     <>
       <Div type="flex" hAlign="center" direction="vertical" className="">
-        <Div className={cx('w-px-10 bgGrayDark height-px-100 pos-rel', styles.verticalContainer)}>
+        <Div
+          className={cx(
+            'width-px-10 bg-gray-dark height-px-100 pos-rel',
+            styles.verticalContainer
+          )}>
           <Draggable
             axis="y"
             handle="#draggable"
@@ -26,16 +30,16 @@ const Slider = ({ sliderVal, setSliderVal, multiplier = 1 }) => {
             bounds={{ top: 0, bottom: 110 - 10 }}>
             <Div
               id="draggable"
-              className={cx('w-px-50 height-px-10 bgBlack br-rad-px-5 mouse-hand')}
+              className={cx('width-px-50 height-px-10 bg-black br-rad-px-5 mouse-hand')}
             />
           </Draggable>
         </Div>
-        <Div className="w-px-50 bgGrayDark height-px-10" />
+        <Div className="width-px-50 bg-gray-dark height-px-10" />
         <Div
           type="flex"
           hAlign="center"
           vAlign="center"
-          className="w-px-40 height-px-40 fs-px-20 f-b bgGrayDark textWhite mt1">
+          className="width-px-40 height-px-40 f-s-px-20 f-b bg-gray-dark text-white m-t-8">
           {sliderVal * multiplier}
         </Div>
       </Div>

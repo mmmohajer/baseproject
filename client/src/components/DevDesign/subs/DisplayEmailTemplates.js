@@ -16,7 +16,7 @@ function DisplayEmailTemplates() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p1 width-per-90 flex--wrap', styles.card)}>
         {EMAIL_TEMPLATES.map((item, idx) => {
           if (item === 'contact_form_sent') {
             return (
@@ -26,7 +26,7 @@ function DisplayEmailTemplates() {
                 type="flex"
                 hAlign="start"
                 vAlign="center"
-                className="mb4 w-per-100">
+                className="mb4 width-per-100">
                 <Div className="mb1">Type: {item}</Div>
                 <EmailTemplatesHtmlCode type={item} name="Mohammad Mohajer" />
               </Div>

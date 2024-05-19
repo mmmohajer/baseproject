@@ -60,7 +60,7 @@ const StripeCheckout = ({ use_for_future_payment = false }) => {
             hAlign="center"
             vAlign="center"
             className={cx(
-              'boxShadowType1 px4 w-per-100 w-per-100 max-w-px-600 ml-auto mr-auto br-rad-px-10',
+              'boxShadowType1 px4 width-per-100 width-per-100 max-width-px-600 ml-auto mr-auto br-rad-px-10',
               styles.formContainer
             )}>
             <CheckoutForm use_for_future_payment={use_for_future_payment} />

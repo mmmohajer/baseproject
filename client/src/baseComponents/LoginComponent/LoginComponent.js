@@ -72,7 +72,7 @@ const LoginComponent = () => {
     <>
       {isAuthenticated?.isChecked && (
         <Form
-          className="textWhite py1 flex flex--jc--center flex--dir--col ml-auto mr-auto w-per-100"
+          className="textWhite py1 flex flex--jc--center flex--dir--col ml-auto mr-auto width-per-100"
           toBeValidatedFields={toBeValidatedFields}
           onSubmit={() => setSendLoginReq(true)}>
           <TextBox
@@ -105,7 +105,7 @@ const LoginComponent = () => {
             setSelected={setKeepLoggedIn}
           />
           <Div type="flex" hAlign="center">
-            <Button className="w-px-200" type="submit" id="loginButton">
+            <Button className="width-px-200" type="submit" id="loginButton">
               Login
             </Button>
           </Div>

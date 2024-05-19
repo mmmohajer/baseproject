@@ -22,7 +22,7 @@ const SideBarDashboard = () => {
     <>
       <ActivableElement
         className={cx(
-          'of-y-auto bgWhite flex flex--dir--col flex--jc--between py2 boxShadowType1',
+          'of-y-auto bg-white flex flex--dir--col flex--jc--between p-y-16 box-shadow-type-one',
           styles.dashboard
         )}
         activeClassName={cx(styles.dashboardIsActive)}
@@ -33,7 +33,7 @@ const SideBarDashboard = () => {
             {SIDE_BAR_DASHBOARD_ITEMS?.map((item, identifier) => {
               if (item?.allowedGroups?.includes(curUserGroup)) {
                 return (
-                  <Div className="mb1 px2" key={identifier}>
+                  <Div className="m-b-8 p-x-16" key={identifier}>
                     <MenuItem menu={item} />
                   </Div>
                 );

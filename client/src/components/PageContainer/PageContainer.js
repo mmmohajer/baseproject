@@ -123,8 +123,8 @@ const PageContainer = ({
       <Div className={cx(isAppPage ? 'bgCyan' : 'bgWhite')}>
         <Div
           type="flex"
-          className={cx(hasSideBarDashboard && 'maxContainerWidthForApp pos-rel bgFaded')}>
-          {hasSideBarDashboard && profile?.id ? (
+          className={cx(hasSideBarDashboard && 'global-container-for-app pos-rel bgFaded')}>
+          {hasSideBarDashboard ? (
             <Div
               showIn={lgDesignSize}
               className={cx('pos-abs pos-abs--lt', styles.sideBarContainer)}>
@@ -177,15 +177,15 @@ const PageContainer = ({
                 )}
                 <Div
                   className={cx(
-                    hasSideBarDashboard && profile?.id ? styles.container : '',
-                    hasSideBarDashboard && sideBarDashboardIsActive && profile?.id
+                    hasSideBarDashboard ? styles.container : '',
+                    hasSideBarDashboard && sideBarDashboardIsActive
                       ? styles.containerWhenDashboardIsActive
                       : ''
                   )}>
                   <Div
                     className={cx(
                       hasSideBarDashboard && styles.bodyContainer,
-                      hasSideBarDashboard && 'p2 of-x-hidden'
+                      hasSideBarDashboard && 'of-x-hidden'
                     )}>
                     {children}
                   </Div>

@@ -16,9 +16,9 @@ function DisplayPngIcon() {
         type="flex"
         vAlign="center"
         hAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
         {PNG_ICON_TYPES.map((item, idx) => (
-          <PngIcon type={item} key={idx} width={20} height={20} className="mr2" />
+          <PngIcon type={item} key={idx} width={20} height={20} className="m-r-16" />
         ))}
       </Div>
     </>

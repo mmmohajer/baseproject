@@ -1,5 +1,5 @@
 %fontclass {
-  font-family: map-get($fontTypes, 'regular');
+  font-family: map-get($fontTypes, 'regular'), sans-serif;
   color: black;
   font-size: map-get($fontSizes, 'regular-xs');
 
@@ -56,85 +56,6 @@ ul {
   padding: 0;
 }
 
-.appContainer {
-  width: 100%;
-  // max-width: $maxContainerWidth;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  position: relative;
-  background-color: white;
-}
-
-.maxContainerWidth {
-  width: 100%;
-  max-width: $maxContainerWidth;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.maxContainerWidthForApp {
-  width: 100%;
-  max-width: $maxContainerWidthForApp;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.captcha {
-  font-family: 'Rubik Maze', cursive;
-  letter-spacing: 0.5rem;
-  font-size: 2rem;
-  font-weight: bold;
-  user-select: none;
-}
-
-textarea,
-.inputText,
-button {
-  @extend %fontclass;
-}
-
-.has-header-height {
-  height: $HeaderHeight;
-}
-
-.has-app-header-height {
-  height: $appHeaderHeight;
-}
-
-.rotate- {
-  &90 {
-    transform: rotate(90deg);
-  }
-
-  &180 {
-    transform: rotate(180deg);
-  }
-
-  &270 {
-    transform: rotate(270deg);
-  }
-}
-
-.go-under {
-  z-index: -1;
-}
-
-.centralized-in-sm-design {
-  justify-content: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include atMedium {
-    text-align: left;
-    justify-content: start;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 .customDatePickerWidth,
 .customDatePickerWidth > div.react-datepicker-wrapper,
 .customDatePickerWidth
@@ -145,4 +66,99 @@ button {
   > div.react-datepicker__input-container
   input {
   width: 100%;
+}
+
+textarea,
+button {
+  @extend %fontclass;
+}
+
+// -------------------------------------------
+
+.global- {
+  &main-container {
+    width: 100%;
+    // max-width: $maxContainerWidth;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    background-color: white;
+  }
+
+  &container {
+    width: 100%;
+    max-width: $maxContainerWidth;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &container-for-app {
+    width: 100%;
+    max-width: $maxContainerWidthForApp;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &captcha {
+    font-family: 'Rubik Maze', cursive;
+    letter-spacing: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  &rotate- {
+    &90 {
+      transform: rotate(90deg);
+    }
+
+    &180 {
+      transform: rotate(180deg);
+    }
+
+    &270 {
+      transform: rotate(270deg);
+    }
+  }
+
+  &go-under {
+    z-index: -1;
+  }
+
+  &centralized-in-sm-design {
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include atMedium {
+      text-align: left;
+      justify-content: start;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &outline-none {
+    outline: none;
+  }
+
+  &display-none {
+    outline: none;
+  }
+
+  &error-message {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    font-size: 10px;
+    color: red;
+
+    &-is-active {
+      display: block;
+    }
+  }
 }

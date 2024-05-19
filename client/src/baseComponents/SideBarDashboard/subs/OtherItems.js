@@ -19,13 +19,13 @@ const OtherItems = () => {
       {OTHER_ITEMS?.map((item, identifier) => {
         if (item?.allowedGroups?.includes(curUserGroup)) {
           return (
-            <Div className="mb1 px2" key={identifier}>
+            <Div className="m-b-8 p-x-16" key={identifier}>
               <MenuItem menu={item} />
             </Div>
           );
         }
       })}
-      <Logout className="px2">
+      <Logout className="p-x-16">
         <MenuItem
           menu={{
             title: 'Logout',

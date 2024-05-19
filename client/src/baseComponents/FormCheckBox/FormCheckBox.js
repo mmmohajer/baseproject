@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import cx from 'classnames';
-import { Div, Label } from 'basedesign-iswad';
+import { Div } from 'basedesign-iswad';
 
+import Label from '@/baseComponents/Label';
 import CheckBox from '@/baseComponents/CheckBox';
 
 import styles from './FormCheckBox.module.scss';
@@ -14,7 +15,8 @@ const FormCheckBox = ({
   isRequired,
   className,
   errorMessage,
-  errorHandler
+  errorHandler,
+  hasMarginBottom = true
 }) => {
   const boxClickHandler = (item) => {
     let curSelectedOptions = [...selectedOptions];
@@ -35,17 +37,13 @@ const FormCheckBox = ({
 
   return (
     <>
-      <Div className={cx('mainInputContainer pos-rel', className)}>
-        {labelText && (
-          <Div className={cx('labelForCheckBoxContainer')}>
-            <Label className={cx(isRequired && 'required', 'labelForCheckBox')}>{labelText}</Label>
-          </Div>
-        )}
-        <Div className={cx(styles.checkBoxContainer)}>
+      <Div className={cx('pos-rel', hasMarginBottom && 'm-b-32', className)}>
+        {labelText && <Label labelText={labelText} isRequired={isRequired} />}
+        <Div type="flex" vAlign="center" className={cx('width-per-100 flex--wrap')}>
           {options.map((item, idx) => (
             <CheckBox
               checked={selectedOptions.some((curOption) => curOption === item.value)}
-              className={'mr8'}
+              className={'m-r-80'}
               labelText={item.shownText}
               key={idx}
               onBoxClick={() => boxClickHandler(item)}
@@ -53,7 +51,11 @@ const FormCheckBox = ({
           ))}
         </Div>
         {errorMessage && (
-          <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>
+          <Div
+            className={cx(
+              'global-error-message',
+              errorMessage && 'global-error-message-is-active'
+            )}>
             {errorMessage}
           </Div>
         )}

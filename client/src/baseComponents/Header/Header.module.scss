@@ -31,7 +31,7 @@ $BORDER_BTM_THICKNESS: 2px;
 // ------------------------------------------------------
 
 .headerContainer {
-  height: $HeaderHeight;
+  height: map-get($heights, 'header');
   background-color: $HEADER_BG_COLOR;
   padding: $HEADER_CONTAINER_PADDING;
 }
@@ -44,7 +44,7 @@ $BORDER_BTM_THICKNESS: 2px;
 
 .desktopNav {
   &Item {
-    height: $HeaderHeight;
+    height: map-get($heights, 'header');
 
     &Title {
       padding: $BORDER_BTM_SPACE 0;
@@ -60,7 +60,7 @@ $BORDER_BTM_THICKNESS: 2px;
 
     &SubNav {
       &Container {
-        top: calc($HeaderHeight);
+        top: calc(map-get($heights, 'header'));
         left: 0;
         width: 300px;
         cursor: auto;
@@ -102,7 +102,7 @@ $BORDER_BTM_THICKNESS: 2px;
     background-color: $MOB_NAV_CONTAINER_COLOR;
     overflow: hidden;
     position: fixed;
-    top: calc($HeaderHeight + 2px);
+    top: calc(map-get($heights, 'header') + 2px);
     left: 0.5rem;
     transition: all 0.3s ease-in-out;
     border-bottom-left-radius: 10px;

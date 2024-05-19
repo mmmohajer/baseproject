@@ -54,10 +54,10 @@ const DraggableFileUploader = ({
         openFileBrowser={openFileBrowser}
         setOpenFileBrowser={setOpenFileBrowser}
         draggableElement={draggableElement}
-        mainContainerClassName={cx(type === 'default' && 'w-per-100 height-px-100')}
+        mainContainerClassName={cx(type === 'default' && 'width-per-100 height-px-100')}
         whileDraggingElementClassName={cx(
           type === 'default' &&
-            'pos-abs pos-abs--lt w-per-100 br-all-solid-2 br-color-themeOne br-rad-px-10 height-px-100',
+            'pos-abs pos-abs--lt width-per-100 br-all-solid-2 br-color-theme-one br-rad-px-10 height-px-100',
           type === 'default' && styles.dragIsActive
         )}
         inputId={inputId}

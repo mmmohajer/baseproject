@@ -44,7 +44,7 @@ const Resizer = ({ src, setSrc, setFile, fileName, maxWidth, setShowResizer }) =
         type="flex"
         hAlign="center"
         vAlign="center"
-        className="pos-fix pos-fix--lt w-per-100 height-vh-full z-10000 bgBlack op-90 textWhite">
+        className="pos-fix pos-fix--lt width-per-100 height-vh-full z-10000 bgBlack op-90 textWhite">
         Processing your image
       </Div>
       <Div
@@ -68,7 +68,7 @@ const Resizer = ({ src, setSrc, setFile, fileName, maxWidth, setShowResizer }) =
             />
           </Div>
         </Div>
-        <Div type="flex" hAlign="center" vAlign="center" className="w-per-100 mt2">
+        <Div type="flex" hAlign="center" vAlign="center" className="width-per-100 mt2">
           <Div className={cx('ImagePickerCanvasContainerZIndex', styles.canvasContainer)}>
             <canvas id={RESIZE_IMAGE_CANVAS_ID} className=""></canvas>
           </Div>

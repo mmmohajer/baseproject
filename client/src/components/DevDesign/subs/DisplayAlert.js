@@ -20,11 +20,11 @@ function DisplayColors() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-1 width-per-90 flex--wrap', styles.card)}>
         {ALERT_TYPES.map((item, idx) => (
           <Button
             key={idx}
-            className={'w-px-200 ml-auto mr-auto mb1'}
+            className={'m-l-auto m-r-auto m-b-8 max-width-px-300'}
             onClick={() =>
               addAlertItem(
                 dispatch,

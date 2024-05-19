@@ -78,9 +78,12 @@ const CheckoutForm = ({ cardAddedFunc, onCancelClick, isCenteralized }) => {
             <CardElement id="card-element" options={options} />
           </Div>
           {stripe && elements ? (
-            <Div type="flex" hAlign={isCenteralized ? 'center' : 'start'} className="mt2 w-per-100">
+            <Div
+              type="flex"
+              hAlign={isCenteralized ? 'center' : 'start'}
+              className="mt2 width-per-100">
               <Div>
-                <Button btnType={2} className={cx('w-px-200 mr2')}>
+                <Button btnType={2} className={cx('width-px-200 mr2')}>
                   Submit
                 </Button>
               </Div>
@@ -88,7 +91,7 @@ const CheckoutForm = ({ cardAddedFunc, onCancelClick, isCenteralized }) => {
                 <Button
                   type="button"
                   btnType={3}
-                  className={cx('w-px-100')}
+                  className={cx('width-px-100')}
                   onClick={() => {
                     if (onCancelClick) {
                       onCancelClick();

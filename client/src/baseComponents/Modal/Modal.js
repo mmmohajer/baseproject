@@ -27,16 +27,20 @@ const Modal = () => {
           fullHeightclassName={cx(
             'ModalMainClickableZIndex',
             HAS_CCELEBERATION_BG_TYPES.includes(modalType) && styles.celeberationBg,
-            HAS_CCELEBERATION_BG_TYPES.includes(modalType) ? 'bgThemeFive op-90' : 'bgBlack op-50'
+            HAS_CCELEBERATION_BG_TYPES.includes(modalType)
+              ? 'bg-theme-five op-90'
+              : 'bg-black op-50'
           )}
           className={cx(
-            'pos-rel w-per-80 baxShadowType1 bgWhite br-rad-px-10 of-hidden ModalContainerZIndex',
+            'pos-rel width-per-80 bax-shadow-type-one bg-white br-rad-px-10 of-hidden ModalContainerZIndex',
             styles.modalContainer
           )}>
           <Div type="flex" direction="vertical" hAlign="start" className="">
             <Close
               barColor={
-                HAS_CCELEBERATION_BG_TYPES.includes(modalType) ? COLORS.success : COLORS.themeOne
+                HAS_CCELEBERATION_BG_TYPES.includes(modalType)
+                  ? COLORS['success']
+                  : COLORS['theme-one']
               }
               headerText={header}
               onClick={() => clearModal(dispatch)}
@@ -45,7 +49,7 @@ const Modal = () => {
               type="flex"
               direction="vertical"
               hAlign="start"
-              className={cx('of-y-auto scrollType1 p2', styles.mainContentContainer)}>
+              className={cx('of-y-auto scroll-type-one p-all-16', styles.mainContentContainer)}>
               {modalType === 'data-submitted-successfully' && (
                 <DataSubmittedSuccessfully {...modalProps} />
               )}

@@ -1,7 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import { default as BaseDatePicker } from 'react-datepicker';
-import { Div, Label } from 'basedesign-iswad';
+import { Div } from 'basedesign-iswad';
+
+import Label from '@/baseComponents/Label';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -21,21 +23,22 @@ const DatePicker = ({
   errorHandler,
   placeHolder,
   showTimeSelect = false,
-  showTimeSelectOnly = false
+  showTimeSelectOnly = false,
+  hasMarginBottom = true
 }) => {
   return (
     <>
-      <Div className={cx('mainInputContainer pos-rel', className)} onClick={() => errorHandler('')}>
-        {labelText && (
-          <Div className={cx('labelForInputContainer')}>
-            <Label className={cx(isRequired && 'required', 'labelForInput')}>{labelText}</Label>
-          </Div>
-        )}
-        <Div className={cx('inputFieldContainer customDatePickerWidth')}>
+      <Div
+        className={cx('pos-rel', hasMarginBottom && 'm-b-32', className)}
+        onClick={() => errorHandler('')}>
+        {labelText && <Label labelText={labelText} isRequired={isRequired} />}
+        <Div className={cx('customDatePickerWidth')}>
           <BaseDatePicker
             selected={chosenDate}
             onChange={(date) => setChosenDate(date)}
-            className={cx('inputField')}
+            className={cx(
+              'width-per- p-y-8 p-x-8 br-all-solid-1 global-outline-none box-shadow-type-one width-per-100 text-gray'
+            )}
             dateFormat={dateFormat}
             yearDropdownItemNumber={yearDropdownItemNumber}
             scrollableYearDropdown={true}
@@ -49,7 +52,8 @@ const DatePicker = ({
             // timeCaption="Time"
           />
         </Div>
-        <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>
+        <Div
+          className={cx('global-error-message', errorMessage && 'global-error-message-is-active')}>
           {errorMessage}
         </Div>
       </Div>

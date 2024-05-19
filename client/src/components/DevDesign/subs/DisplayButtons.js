@@ -15,9 +15,9 @@ function DisplayColors() {
         type="flex"
         vAlign="center"
         hAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
         {BUTTON_TYPES.map((num, idx) => (
-          <Button btnType={num} key={idx} className="mr2">
+          <Button btnType={num} key={idx} className="m-r-16 max-width-px-200">
             Button type {num}
           </Button>
         ))}

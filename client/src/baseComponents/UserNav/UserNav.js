@@ -17,13 +17,13 @@ const UserNav = () => {
     <>
       {userNavIsActive && (
         <Div
-          className="pos-fix pos-fix--lt bgBlack w-per-100 height-vh-full op-30 z-10 mouse-hand"
+          className="pos-fix pos-fix--lt bg-black width-per-100 height-vh-full op-30 z-10 mouse-hand"
           onClick={() => dispatch(hideUserNav())}
         />
       )}
       <Div
         className={cx(
-          'pos-abs p2 bgThemeOne boxShadowType1 z-100 w-px-100 textWhite',
+          'pos-abs p2 bg-theme-one box-shadow-type-one z-100 width-px-100 text-white',
           styles.container,
           userNavIsActive && styles.containerIsActive
         )}>

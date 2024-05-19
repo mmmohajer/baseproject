@@ -19,9 +19,9 @@ function DisplayLoading() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
         <Button
-          className={'w-px-200 ml-auto mr-auto mb1'}
+          className={'width-px-300 m-l-auto m-r-auto m-b-8'}
           onClick={() => {
             dispatch(isLoading());
             setTimeout(() => {

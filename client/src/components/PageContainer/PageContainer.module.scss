@@ -3,7 +3,7 @@
 
 .sideBar {
   &Container {
-    margin-top: $HeaderHeight;
+    margin-top: map-get($heights, 'app-header');
   }
 }
 
@@ -18,25 +18,25 @@
 .bodyContainer {
   @include atMedium {
     overflow-y: auto;
-    height: calc(100vh - $HeaderHeight);
+    height: calc(100vh - map-get($heights, 'header'));
   }
 }
 
 .container {
   transition: all 0.3s ease-in-out;
   @include atMedium {
-    margin-left: $sideBarClosedWidth;
+    margin-left: map-get($widths, 'side-bar-closed');
   }
 
   &WhenDashboardIsActive {
     @include atMedium {
-      margin-left: $sideBarOpenedWidth;
+      margin-left: map-get($widths, 'side-bar-opened');
     }
   }
 }
 
 .mainContentContainer {
-  padding-top: $HeaderHeight;
+  padding-top: map-get($heights, 'header');
 }
 
 .scrollToTopContainer {

@@ -33,7 +33,10 @@ const MobileNav = ({ changesThePage = true, isAppPage }) => {
       {mobileNavIsActive && <AllPageClickable onClick={() => dispatch(hideMobileNav())} />}
       <MobNav
         type="flex"
-        className={cx('w-px-300 transition1 HeaderMobNavContainerZIndex', styles.mobNavContainer)}
+        className={cx(
+          'width-px-300 transition-one HeaderMobNavContainerZIndex',
+          styles.mobNavContainer
+        )}
         activeClassName={styles.mobNavContainerIsActive}
         isActive={mobileNavIsActive}>
         {MENU_ITEMS?.map((item, idx) => {

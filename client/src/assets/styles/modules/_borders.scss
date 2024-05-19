@@ -8,3 +8,10 @@
     border-color: $color;
   }
 }
+
+@each $name, $val in $borderRads {
+  $className: 'br-rad-' + $name;
+  .#{$className} {
+    border-radius: $val;
+  }
+}

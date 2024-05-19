@@ -24,7 +24,7 @@ const DefaultVideoPreview = ({
         <Div
           type="flex"
           direction="vertical"
-          className={cx('ml1 of-hidden w-px-100 height-px-100', styles.previewContainer)}>
+          className={cx('ml1 of-hidden width-px-100 height-px-100', styles.previewContainer)}>
           <Close
             barColor={COLORS.themeOne}
             barHeight="25px"
@@ -44,7 +44,7 @@ const DefaultVideoPreview = ({
             type="flex"
             hAlign="center"
             vAlign="center"
-            className={cx('pos-rel w-per-100 height-px-70')}>
+            className={cx('pos-rel width-per-100 height-px-70')}>
             <Div
               type="flex"
               hAlign="center"

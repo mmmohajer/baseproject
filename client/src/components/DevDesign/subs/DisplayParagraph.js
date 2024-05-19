@@ -14,8 +14,8 @@ function DisplayParagraph() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
-        <Paragraph className={'max-w-px-500 ml-auto mr-auto mb1'}>
+        className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
+        <Paragraph className={'max-width-px-500 m-l-auto m-r-auto m-b-8'}>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
           been the industry's standard dummy text ever since the 1500s, when an unknown printer took
           a galley of type and scrambled it to make a type specimen book. It has survived not only

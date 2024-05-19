@@ -8,12 +8,14 @@ const Paragraph = ({ type = 1, className, children, ...props }) => {
   return (
     <>
       {type === 1 && (
-        <BaseParagraph className={cx('mt2 mb2', styles.paragraph, className)} {...props}>
+        <BaseParagraph className={cx('m-t-16 m-b-16', styles.paragraph, className)} {...props}>
           {children}
         </BaseParagraph>
       )}
       {type === 2 && (
-        <BaseParagraph className={cx('mt1 mb1 fs-px-12', styles.paragraph2, className)} {...props}>
+        <BaseParagraph
+          className={cx('m-t-8 m-b-8 fs-px-12', styles.paragraph2, className)}
+          {...props}>
           {children}
         </BaseParagraph>
       )}

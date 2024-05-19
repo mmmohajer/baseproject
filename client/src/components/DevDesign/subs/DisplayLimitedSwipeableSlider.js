@@ -16,7 +16,7 @@ const DisplayLimitedSwipeableSlider = () => {
 
   return (
     <>
-      <Div type="flex" className="w-per-80 bgRed p2 ml-auto mr-auto of-x-hidden">
+      <Div type="flex" className="width-per-80 bg-red p-all-16 m-l-auto m-r-auto of-x-hidden">
         <LimitedSwipeableSlider
           mustShowSlider={mustShowSlider}
           setMustShowSlider={setMustShowSlider}
@@ -38,8 +38,8 @@ const DisplayLimitedSwipeableSlider = () => {
                 setMoveRight(true);
               }}
               tolerance={1}>
-              <Div className="w-px-150 bgBlue mr2">
-                <Div className="w-px-150 bgYellow">{item}</Div>
+              <Div className="width-px-150 bg-blue m-r-16">
+                <Div className="width-px-150 bg-yellow">{item}</Div>
               </Div>
             </Swipe>
           ))}

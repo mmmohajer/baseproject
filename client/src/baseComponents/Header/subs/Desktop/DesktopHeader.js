@@ -35,11 +35,11 @@ const DesktopHeader = ({ changesThePage, isAppPage }) => {
           type="flex"
           hAlign="center"
           vAlign="center"
-          className={cx('pos-rel hasHeaderHeight of-hidden', styles.desktopHeaderLogoContainer)}>
+          className={cx('pos-rel height-header of-hidden', styles.desktopHeaderLogoContainer)}>
           <AppImage src={Logo} objectFit="cover" />
         </Div>
       </Div>
-      <Div className="ml4">
+      <Div className="m-l-32">
         <DesktopNav changesThePage={changesThePage} isAppPage={isAppPage} />
       </Div>
     </>

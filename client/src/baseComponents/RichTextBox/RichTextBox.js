@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import cx from 'classnames';
 import { Editor } from '@tinymce/tinymce-react';
-import { Div, Label } from 'basedesign-iswad';
+import { Div } from 'basedesign-iswad';
+
+import Label from '@/baseComponents/Label';
 
 import { TINY_CME_API_KEY } from 'config';
 
@@ -16,19 +18,16 @@ const RichTextBox = ({
   id,
   initialValue,
   placeHolder = '',
+  hasMarginBottom = true,
   className
 }) => {
   const editorRef = useRef();
 
   return (
     <>
-      <Div className={cx('mainInputContainer pos-rel', className)}>
-        {labelText && (
-          <Div className={cx('labelForInputContainer')}>
-            <Label className={cx(isRequired && 'required', 'labelForInput')}>{labelText}</Label>
-          </Div>
-        )}
-        <Div className={cx('inputFieldContainer')}>
+      <Div className={cx('pos-rel', hasMarginBottom && 'm-b-32', className)}>
+        {labelText && <Label labelText={labelText} isRequired={isRequired} />}
+        <Div className={cx('')}>
           <Editor
             id={id}
             onInit={(evt, editor) => (editorRef.current = editor)}
@@ -97,7 +96,11 @@ const RichTextBox = ({
           />
         </Div>
         {errorMessage && (
-          <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>
+          <Div
+            className={cx(
+              'global-error-message',
+              errorMessage && 'global-error-message-is-active'
+            )}>
             {errorMessage}
           </Div>
         )}

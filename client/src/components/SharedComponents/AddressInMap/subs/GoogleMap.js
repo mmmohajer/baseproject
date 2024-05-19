@@ -31,7 +31,7 @@ const GoogleMap = ({ address }) => {
 
   return (
     <>
-      <Div className="w-per-100 height-px-500">
+      <Div className="width-per-100 height-px-500">
         <GoogleMapReact
           bootstrapURLKeys={{ key: GOOGLE_MAP_API_KEY }}
           defaultCenter={{ lat: 37.7749, lng: -122.4194 }}

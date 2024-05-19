@@ -23,7 +23,7 @@ const MenuItem = ({ item, ...props }) => {
         type="flex"
         hAlign="center"
         vAlign="center"
-        className="mouse-hand height-px-30 w-px-30"
+        className="mouse-hand height-px-30 width-px-30"
         {...props}
         onClick={() => {
           router.push(item?.to);

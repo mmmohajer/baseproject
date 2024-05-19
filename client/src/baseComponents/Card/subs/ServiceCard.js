@@ -8,11 +8,14 @@ import styles from '../Card.module.scss';
 const ServiceCard = ({ className, ...props }) => {
   return (
     <>
-      <Card
+      <Div
         {...props}
-        className={cx('boxShadowType1 bgWhite br-rad-px-10 of-y-hidden of-x-hidden', className)}>
+        className={cx(
+          'box-shadow-type-one bg-white br-rad-px-10 of-y-hidden of-x-hidden p-all-16',
+          className
+        )}>
         TestCard
-      </Card>
+      </Div>
     </>
   );
 };

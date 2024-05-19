@@ -13,7 +13,8 @@ const SingleCheckBox = ({
   isRequired,
   className,
   errorMessage,
-  errorHandler
+  errorHandler,
+  hasMarginBottom = true
 }) => {
   useEffect(() => {
     if (selected && errorHandler) {
@@ -23,11 +24,11 @@ const SingleCheckBox = ({
 
   return (
     <>
-      <Div className={cx('mainInputContainer pos-rel', className)}>
+      <Div className={cx('pos-rel', hasMarginBottom && 'm-b-32', className)}>
         <Div className={cx(styles.checkBoxContainer)}>
           <CheckBox
             checked={selected}
-            className={'mr8 flex--dir--row--reverse'}
+            className={'flex--dir--row--reverse'}
             labelText={labelText}
             distributedBetween={false}
             onBoxClick={() => setSelected(!selected)}
@@ -36,7 +37,11 @@ const SingleCheckBox = ({
           />
         </Div>
         {errorMessage && (
-          <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>
+          <Div
+            className={cx(
+              'global-error-message',
+              errorMessage && 'global-error-message-is-active'
+            )}>
             {errorMessage}
           </Div>
         )}

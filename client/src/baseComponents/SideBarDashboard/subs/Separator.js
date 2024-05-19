@@ -7,7 +7,7 @@ import styles from '../SideBarDashboard.module.scss';
 const Separator = () => {
   return (
     <>
-      <Div className={cx('w-per-100 bgGrayBright my2', styles.dashboardBreaker)} />
+      <Div className={cx('width-per-100 bg-gray-bright m-y-16', styles.dashboardBreaker)} />
     </>
   );
 };

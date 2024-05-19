@@ -14,7 +14,7 @@ function DisplayHeadings() {
         direction="vertical"
         vAlign="center"
         hAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
         {[1, 2, 3, 4, 5, 6].map((num, idx) => (
           <Heading key={idx} type={num}>
             Heading {num}

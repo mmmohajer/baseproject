@@ -24,7 +24,7 @@ import DisplayAnimationOnScroll from './subs/DisplayAnimationOnScroll';
 import DisplayResponsiveSwipeableSlider from './subs/DisplayResponsiveSwipeableSlider';
 import DisplayUserEvent from './subs/DisplayUserEvent';
 import DisplayLimitedSwipeableSlider from './subs/DisplayLimitedSwipeableSlider';
-import DisplayPngIcon from './subs/DevPngIcon';
+import DisplayPngIcon from './subs/DisplayPngIcon';
 import DisplaySlider from './subs/DisplaySlider';
 
 import DevSection from './subs/DevSection';

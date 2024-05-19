@@ -43,7 +43,7 @@ const DisplayResponsiveSwipeableSlider = () => {
     <>
       <Div
         ref={(el) => (parentRef.current = el)}
-        className={cx('w-per-100 ml-auto mr-auto dir-ltr', styles.landingContainer)}>
+        className={cx('width-per-100 m-l-auto m-r-auto dir-ltr', styles.landingContainer)}>
         {parentWidth ? (
           <ResponsiveSwipeableSlider
             moveRight={moveRight}
@@ -62,7 +62,7 @@ const DisplayResponsiveSwipeableSlider = () => {
                 type="flex"
                 hAlign="center"
                 vAlign="center"
-                className={cx('bgBlue height-px-40 textWhite')}
+                className={cx('bg-blue height-px-40 text-white')}
                 style={{ width: parentWidth }}>
                 1
               </Div>
@@ -73,7 +73,7 @@ const DisplayResponsiveSwipeableSlider = () => {
                 type="flex"
                 hAlign="center"
                 vAlign="center"
-                className={cx('bgRed height-px-40 textWhite')}
+                className={cx('bg-red height-px-40 text-white')}
                 style={{ width: parentWidth }}>
                 2
               </Div>
@@ -84,7 +84,7 @@ const DisplayResponsiveSwipeableSlider = () => {
                 type="flex"
                 hAlign="center"
                 vAlign="center"
-                className={cx('bgGreen height-px-40 textWhite')}
+                className={cx('bg-green height-px-40 text-white')}
                 style={{ width: parentWidth }}>
                 3
               </Div>

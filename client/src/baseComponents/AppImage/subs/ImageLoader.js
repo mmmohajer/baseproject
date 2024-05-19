@@ -8,12 +8,12 @@ const ImageLoader = ({ type = 1 }) => {
   return (
     <>
       {type === 1 && (
-        <Div className="w-px-150 height-px-150">
+        <Div className="width-px-150 height-px-150">
           <Div className={cx(styles.loading)}></Div>
         </Div>
       )}
       {type === 2 && (
-        <Div className="w-px-30 height-px-30">
+        <Div className="width-px-30 height-px-30">
           <Div className={cx(styles.loading2)}></Div>
         </Div>
       )}

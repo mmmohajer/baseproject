@@ -40,7 +40,7 @@ ChartJS.register(
 const Chart = ({ type = 'line', ...props }) => {
   return (
     <>
-      <Div className="w-per-100">
+      <Div className="width-per-100">
         {type === 'line' && <LineChart {...props} />}
         {type === 'bar' && <BarChart {...props} />}
         {type === 'pie' && <PieChart {...props} />}

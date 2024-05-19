@@ -24,36 +24,38 @@ const DisplayChart = () => {
         type="flex"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
         <Div type="flex" hAlign="center" vAlign="center" direction="vertical">
-          <Button onClick={() => setChartType('singleLabeledLineChart')} className="w-px-300 mb1">
+          <Button
+            onClick={() => setChartType('singleLabeledLineChart')}
+            className="width-px-300 m-b-1">
             Show Labeled Line Chart
           </Button>
-          <Button className="w-px-300 mb1" onClick={() => setChartType('singleLineChart')}>
+          <Button className="width-px-300 m-b-1" onClick={() => setChartType('singleLineChart')}>
             Show Line Chart
           </Button>
-          <Button className="w-px-300 mb1" onClick={() => setChartType('areaChart')}>
+          <Button className="width-px-300 m-b-1" onClick={() => setChartType('areaChart')}>
             Show Area Chart
           </Button>
-          <Button className="w-px-300 mb1" onClick={() => setChartType('multiLineChart')}>
+          <Button className="width-px-300 m-b-1" onClick={() => setChartType('multiLineChart')}>
             Show Multi Dataset Chart
           </Button>
-          <Button className="w-px-300 mb1" onClick={() => setChartType('doubleYAxisChart')}>
+          <Button className="width-px-300 m-b-1" onClick={() => setChartType('doubleYAxisChart')}>
             Show DoubleYAxis Chart
           </Button>
-          <Button className="w-px-300 mb1" onClick={() => setChartType('barChart')}>
+          <Button className="width-px-300 m-b-1" onClick={() => setChartType('barChart')}>
             Show Bar Chart
           </Button>
-          <Button className="w-px-300 mb1" onClick={() => setChartType('stackedBarChart')}>
+          <Button className="width-px-300 m-b-1" onClick={() => setChartType('stackedBarChart')}>
             Show Stacked Bar Chart
           </Button>
-          <Button className="w-px-300 mb1" onClick={() => setChartType('pieChart')}>
+          <Button className="width-px-300 m-b-1" onClick={() => setChartType('pieChart')}>
             Show Pie Chart
           </Button>
-          <Button className="w-px-300 mb1" onClick={() => setChartType('lineAndBarChart')}>
+          <Button className="width-px-300 m-b-1" onClick={() => setChartType('lineAndBarChart')}>
             Show Combination of Line and Bar Chart
           </Button>
-          <Button className="w-px-300 mb1" onClick={() => setChartType('bubbleChart')}>
+          <Button className="width-px-300 m-b-1" onClick={() => setChartType('bubbleChart')}>
             Show Bubble Chart
           </Button>
         </Div>

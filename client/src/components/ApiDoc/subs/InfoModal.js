@@ -15,7 +15,7 @@ const InfoModal = ({ categoryInfo, setInfoModalContext }) => {
       <Modal
         fullHeightclassName={cx('ModalMainClickableZIndex bgBlack op-70')}
         className={cx(
-          'pos-rel w-per-80 baxShadowType1 bgWhite br-rad-px-10 of-hidden ModalContainerZIndex',
+          'pos-rel width-per-80 baxShadowType1 bgWhite br-rad-px-10 of-hidden ModalContainerZIndex',
           styles.modalContainer
         )}>
         <Div type="flex" direction="vertical" hAlign="start" className="">
@@ -37,7 +37,7 @@ const InfoModal = ({ categoryInfo, setInfoModalContext }) => {
             type="flex"
             hAlign="center"
             vAlign="center"
-            className={'bgBlue textWhite p2 w-px-80 mouse-hand hover-bg-green br-rad-px-5'}
+            className={'bgBlue textWhite p2 width-px-80 mouse-hand hover-bg-green br-rad-px-5'}
             onClick={() => setInfoModalContext('')}>
             OK
           </Div>

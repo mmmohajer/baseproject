@@ -11,23 +11,27 @@ import styles from '../List.module.scss';
 const ListItem = ({ item, isIconWhite, ...props }) => {
   return (
     <>
-      <Div type="flex" vAlign="center" className="mb1" {...props}>
+      <Div type="flex" vAlign="center" className="m-b-8" {...props}>
         <Div>
           <Div
             className={cx(
-              'w-px-20 height-px-20 br-rad-per-50 boxShadowType1 pos-rel',
-              isIconWhite ? 'bgThemeOne' : styles.type1CheckContainer
+              'width-px-20 height-px-20 br-rad-per-50 box-shadow-type-1 pos-rel',
+              isIconWhite ? 'bg-theme-one' : styles.type1CheckContainer
             )}>
             <Div
               type="flex"
               hAlign="center"
               vAlign="center"
-              className="w-px-20 height-px-20 pos-abs pos-abs--lt">
-              <Icon type="check-mark" color={isIconWhite ? 'white' : COLORS.themeOne} scale={0.9} />
+              className="width-px-20 height-px-20 pos-abs pos-abs--lt">
+              <Icon
+                type="dashboard"
+                color={isIconWhite ? 'white' : COLORS['theme-one']}
+                scale={0.9}
+              />
             </Div>
           </Div>
         </Div>
-        <Div className="ml1">
+        <Div className="m-l-8">
           <Div className={'fs-px-12'}>{item}</Div>
         </Div>
       </Div>

@@ -29,7 +29,7 @@ const ResponsiveSwipeableSlider = ({
   const [totalWidth, setTotalWidth] = useState(0);
   const [translateX, setTranslateX] = useState(0);
   const [activeIdx, setActiveIdx] = useState(0);
-  const [hasNoTransitionEffect, setHasNoTransitionEffect] = useState(true);
+  const [hasnoTransitionEffect, setHasNoTransitionEffect] = useState(true);
   const [parentWidth, setParentWidth] = useState(0);
   const [xStart, setXStart] = useState(0);
   const [xEnd, setXEnd] = useState(-100000);
@@ -159,7 +159,7 @@ const ResponsiveSwipeableSlider = ({
 
   return (
     <>
-      <Div className={cx('w-per-100 of-x-hidden')} ref={(el) => (parentRef.current = el)}>
+      <Div className={cx('width-per-100 of-x-hidden')} ref={(el) => (parentRef.current = el)}>
         {mustShowSlider ? (
           <Div
             type="flex"
@@ -169,9 +169,9 @@ const ResponsiveSwipeableSlider = ({
               transform: translateX ? `translateX(${-translateX}px)` : `translateX(${0}px)`
             }}
             className={cx(
-              'w-per-100',
+              'width-per-100',
               styles.sliderContainer,
-              hasNoTransitionEffect && 'noTransition'
+              hasnoTransitionEffect && 'no-transition'
             )}>
             {children.map((item, idx) => (
               <Div key={idx}>
@@ -232,7 +232,7 @@ const ResponsiveSwipeableSlider = ({
             ))}
           </Div>
         ) : (
-          <Div type="flex" hAlign="center" className={cx('w-per-100')}>
+          <Div type="flex" hAlign="center" className={cx('width-per-100')}>
             {children.map((item, idx) => (
               <Div key={idx} ref={(el) => childrenRefs.current.push(el)}>
                 {item}

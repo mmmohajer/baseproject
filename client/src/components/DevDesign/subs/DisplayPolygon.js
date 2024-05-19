@@ -16,7 +16,7 @@ function DisplayPolygon() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p1 width-per-90 flex--wrap', styles.card)}>
         {POLYGON_TYPES?.map((item, idx) => (
           <Div key={idx} className="my2">
             <Polygon type={item} width={100} height={60} gradFillType={2} text={'1'} />

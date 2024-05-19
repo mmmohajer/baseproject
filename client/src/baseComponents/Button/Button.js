@@ -19,7 +19,13 @@ const Button = ({
   return (
     <>
       <BaseButton
-        className={cx(isDisabled && styles.disableBtn, btnType === 1, className)}
+        className={cx(
+          isDisabled && '',
+          btnType === 1 && !isDisabled
+            ? 'bg-theme-one p-y-8 p-x-16 br-rad-px-5 bg-theme-two-on-hover width-per-100 br-none'
+            : '',
+          className
+        )}
         {...props}
         disabled={isDisabled}>
         <Div type="flex" hAlign="center">

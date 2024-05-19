@@ -25,12 +25,13 @@ function DisplayDraggableFileUploader() {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-1 width-per-90 flex--wrap', styles.card)}>
         <DraggableFileUploader
           file={file}
           setFile={setFile}
           acceptableFileType=".csv"
           inputId={INPUT_ID}
+          iconType="dashboard"
         />
       </Div>
     </>

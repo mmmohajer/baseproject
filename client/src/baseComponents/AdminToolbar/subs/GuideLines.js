@@ -26,13 +26,13 @@ const GuideLines = ({ verticalGridSpacing, setVerticalGridSpacing }) => {
 
   return (
     <>
-      <Div className="w-per-100 pos-fix pos-fix--lt w-per-100 height-vh-full">
+      <Div className="width-per-100 pos-fix pos-fix--lt width-per-100 height-vh-full">
         <Row>
           {ARRAY_OF_LINES?.map((item, idx) => (
             <Column key={idx} xs={1} sm={1} md={1} lg={1}>
               <Div
                 className={cx(
-                  'w-per-100 br-right-solid-4 height-vh-full',
+                  'width-per-100 br-right-solid-4 height-vh-full',
                   idx === 0 && 'br-left-solid-4',
                   idx === 5 ? 'br-color-red' : 'br-color-black'
                 )}>
@@ -42,7 +42,7 @@ const GuideLines = ({ verticalGridSpacing, setVerticalGridSpacing }) => {
                       <Div
                         key={subIdx}
                         className={cx(
-                          'w-per-100 br-bottom-solid-4 br-color-yellow',
+                          'width-per-100 br-bottom-solid-4 br-color-yellow',
                           subIdx === 0 && 'br-top-solid-4'
                         )}
                         style={{ height: verticalGridSpacing }}
@@ -54,13 +54,13 @@ const GuideLines = ({ verticalGridSpacing, setVerticalGridSpacing }) => {
           ))}
         </Row>
       </Div>
-      <Div className="pos-fix w-px-60 py1 bgWhite" style={{ top: '55px', right: '120px' }}>
+      <Div className="pos-fix width-px-60 py1 bgWhite" style={{ top: '55px', right: '120px' }}>
         <Slider sliderVal={verticalGridSpacing} setSliderVal={setVerticalGridSpacing} />
       </Div>
-      <Div className="pos-fix w-px-60 py1 bgWhite" style={{ top: '55px', right: '190px' }}>
+      <Div className="pos-fix width-px-60 py1 bgWhite" style={{ top: '55px', right: '190px' }}>
         <Slider sliderVal={verticalLinesMargin} setSliderVal={setVerticalLinesMargin} />
       </Div>
-      <Div className="pos-fix w-px-60 py1 bgWhite" style={{ top: '55px', right: '260px' }}>
+      <Div className="pos-fix width-px-60 py1 bgWhite" style={{ top: '55px', right: '260px' }}>
         <Slider
           sliderVal={numberOfVLines}
           setSliderVal={setNumberOfVLines}

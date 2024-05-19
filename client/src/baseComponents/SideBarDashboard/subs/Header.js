@@ -9,9 +9,9 @@ const Header = () => {
   const profile = useSelector((state) => state.profile);
   return (
     <>
-      <Div type="flex" direction="vertical" hAlign="center" className="px2">
+      <Div type="flex" direction="vertical" hAlign="center" className="p-x-16">
         <Div>Logo</Div>
-        <Div className="oneLine mt2 w-per-100">{profile?.user?.email}</Div>
+        <Div className="one-line m-t-16 width-per-100">{profile?.user?.email}</Div>
       </Div>
     </>
   );

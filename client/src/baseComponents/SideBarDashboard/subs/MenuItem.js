@@ -45,8 +45,8 @@ const MenuItems = ({ menu, isLogOut, ...props }) => {
           {sideBarDashboardIsActive && (
             <Div
               className={cx(
-                'ml1 fs-px-14',
-                activeDashboardMenu === menu?.identifier ? 'textThemeTwo' : 'textGrayBright',
+                'm-l-8 f-s-px-14',
+                activeDashboardMenu === menu?.identifier ? 'text-theme-two' : 'text-gray-bright',
                 styles.menuItems
               )}>
               {menu?.title}

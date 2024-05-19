@@ -26,7 +26,7 @@ const DevSection = ({
   return (
     <>
       <Div
-        className="flex flex--jc--center flex--ai--center my1 mouse-hand bgGrayBright p2 textBlack fs-r-2"
+        className="flex flex--jc--center flex--ai--center m-y-8 mouse-hand bg-gray-bright p-all-16 text-black f-s-px-32"
         onClick={headingOnClick}>
         {title}
       </Div>

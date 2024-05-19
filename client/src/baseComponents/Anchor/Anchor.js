@@ -18,16 +18,12 @@ const Anchor = ({
     <>
       {internal && (
         <Link href={to} {...props}>
-          <a className={cx(anchorType === 1 && styles.anchor1, className)}>{children}</a>
+          <a className={cx(anchorType === 1 && 'text-red', className)}>{children}</a>
         </Link>
       )}
       {!internal && (
         <a
-          className={cx(
-            anchorType === 1 && styles.anchor1,
-
-            className
-          )}
+          className={cx(anchorType === 1 && 'text-red', className)}
           href={to}
           target={target}
           {...props}>

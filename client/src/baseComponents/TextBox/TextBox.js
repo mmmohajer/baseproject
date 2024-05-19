@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import { Div, Input as BaseInput, Label } from 'basedesign-iswad';
+import { Div, Input as BaseInput } from 'basedesign-iswad';
 
+import Label from '@/baseComponents/Label';
 import Icon from '@/baseComponents/Icon';
 
 import styles from './TextBox.module.scss';
@@ -19,42 +20,25 @@ const TextBox = ({
   iconType,
   iconColor = 'gray',
   hasMarginBottom = true,
-  hasDefaultClass = true,
-  labelType = 'normal',
   inputFieldClassName = '',
-  hasDefaultPadding = true,
   ...props
 }) => {
   const [curType, setCurType] = useState(type);
 
   return (
     <>
-      <Div
-        className={cx(hasMarginBottom && hasDefaultClass ? 'mainInputContainer' : '', className)}>
-        {labelText && (
-          <Div className={cx('labelForInputContainer')}>
-            <Label
-              className={cx(
-                isRequired && 'required',
-                labelType === 'normal' && 'labelForInputContainer',
-                labelType === 'small' && 'fs-px-10 textGrayDark'
-              )}>
-              {labelText}
-            </Label>
-          </Div>
-        )}
-        <Div className={cx(hasDefaultClass && 'inputFieldContainer')}>
+      <Div className={cx('width-per-100 pos-rel', hasMarginBottom && 'm-b-32', className)}>
+        {labelText && <Label labelText={labelText} isRequired={isRequired} />}
+        <Div className={cx('width-per-100')}>
           <BaseInput
-            containerClassName={cx('pos-rel')}
+            containerClassName={cx('width-per-100 pos-rel')}
             className={cx(
-              '',
-              hasDefaultClass && 'inputField inputText',
-              type === 'password' && 'inputWithIcon',
-              inputFieldClassName,
-              !hasDefaultPadding && 'inputwithLessPadding'
+              'width-per-100 p-y-8 p-x-8',
+              type === 'password' && 'p-x-24',
+              inputFieldClassName
             )}
-            errorContainerClassName={cx('inputErrorMessage')}
-            activeErrorContainerClassName={cx('inputErrorMessageIsActive')}
+            errorContainerClassName={cx('global-error-message')}
+            activeErrorContainerClassName={cx('global-error-message-is-active')}
             type={curType}
             value={val}
             onChange={(e) => {
@@ -80,7 +64,11 @@ const TextBox = ({
           {type === 'password' && (
             <>
               <Div
-                className={cx('mouse-hand', styles.icon)}
+                type="flex"
+                hAlign="center"
+                vAlign="center"
+                className={cx('mouse-hand width-px-20 height-px-30 pos-abs z-1000')}
+                style={{ top: '27px', left: '4px' }}
                 onClick={() => {
                   if (curType === 'password') {
                     setCurType('text');
@@ -88,7 +76,7 @@ const TextBox = ({
                     setCurType('password');
                   }
                 }}>
-                <Icon type="eye" color="black" width={'14'} />
+                <Icon type="dashboard" color="black" width={'14'} />
               </Div>
               {curType !== 'password' && <div className={cx(styles.lineThrough)}></div>}
             </>

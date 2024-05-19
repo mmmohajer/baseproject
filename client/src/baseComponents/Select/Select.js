@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
-import { Div, Select as BaseSelect, Label } from 'basedesign-iswad';
+import { Div, Select as BaseSelect } from 'basedesign-iswad';
+
+import Label from '@/baseComponents/Label';
 
 import styles from './Select.module.scss';
 
@@ -15,7 +17,7 @@ const Select = ({
   labelText,
   errorMessage,
   errorHandler,
-  hasDefaultStyle = true,
+  hasMarginBottom = true,
   className
 }) => {
   const [isOptionsActive, setIsOptionsActive] = useState(false);
@@ -27,14 +29,10 @@ const Select = ({
 
   return (
     <>
-      <Div className={cx('pos-rel', hasDefaultStyle && 'mainInputContainer', className)}>
-        {labelText && (
-          <Div className={cx('labelForInputContainer')}>
-            <Label className={cx(isRequired && 'required', 'labelForInput')}>{labelText}</Label>
-          </Div>
-        )}
+      <Div className={cx('pos-rel', hasMarginBottom && 'm-b-32', className)}>
+        {labelText && <Label labelText={labelText} isRequired={isRequired} />}
         <Div
-          className={cx('inputFieldContainer')}
+          className={cx('')}
           onClick={() => {
             if (errorHandler) {
               errorHandler('');
@@ -44,17 +42,6 @@ const Select = ({
             selectValue={val}
             setSelectValue={setVal}
             options={allOpts}
-            SelectClickableClassName="w-per-100 height-vh-full pos-fix pos-fix--lt mouse-hand"
-            className={cx(styles.select)}
-            defaultViewClassName={cx(
-              'w-per-100 pl2 pr2 mouse-hand br-all-solid-1 br-color-silver fs-px-12 flex flex--ai--center',
-              styles.defaultSelect
-            )}
-            optionClassName={cx(styles.option)}
-            optinsContainerClassName={cx('bgWhite scrollType1', styles.optionsContainer)}
-            searchContainerClassName="w-per-100"
-            inputSearchClassName={cx(styles.searchInput)}
-            placeHolderClassName={cx('fs-px-12', styles.placeHolder)}
             fullWidth
             arrowIconFillColor="gray"
             arrowIconStrokeColor="gray"
@@ -66,6 +53,21 @@ const Select = ({
             setIsOptionsActive={setIsOptionsActive}
             selectIntialShownText={selectIntialShownText}
             placeholder={placeHolder || ''}
+            defaultViewClassName={cx(
+              'width-per-100 p-l-16 p-r-16 mouse-hand br-all-solid-1 br-black br-rad-px-4 box-shadow-type-one height-px-40 f-s-px-12 flex flex--ai--center'
+            )}
+            SelectClickableClassName="width-per-100 height-vh-full pos-fix pos-fix--lt mouse-hand"
+            className={cx('width-per-100 br-none height-px-40')}
+            optionClassName={cx('p-all-7 mouse-hand bg-red-on-hover br-rad-px-5')}
+            optinsContainerClassName={cx(
+              'width-per-100 bg-white scroll-type-one br-all-solid-1 br-blue br-rad-px-5 max-height-px-200 of-y-auto z-1000 no-display pos-abs flex--dir--col',
+              styles.optionsContainer
+            )}
+            searchContainerClassName="width-per-100"
+            inputSearchClassName={cx(
+              'width-per-100 box-shadow-type-one br-all-solid-1 br-blue p-all-10 z-100'
+            )}
+            placeHolderClassName={cx('f-s-px-12 text-gray')}
             iconSearchContainerClassName={cx(styles.iconSearchContainer)}
             optinsContainerToDownClassName={cx(styles.optionsContainerToDown)}
             optinsContainerToUpClassName={cx(styles.optionsContainerToUp)}
@@ -73,7 +75,8 @@ const Select = ({
             arrowContainerClassName={cx(styles.arrowContainer)}
           />
         </Div>
-        <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>
+        <Div
+          className={cx('global-error-message', errorMessage && 'global-error-message-is-active')}>
           {errorMessage}
         </Div>
       </Div>

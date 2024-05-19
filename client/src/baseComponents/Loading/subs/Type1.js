@@ -12,10 +12,10 @@ const Type1 = () => {
         hAlign="center"
         vAlign="center"
         className={cx(
-          'pos-fix pos-fix--lt w-per-100 height-vh-full loadingZIndex',
+          'pos-fix pos-fix--lt width-per-100 height-vh-full loadingZIndex',
           styles.fullHeight
         )}>
-        <Div className="w-px-150 height-px-150">
+        <Div className="width-px-150 height-px-150">
           <Div className={cx(styles.loading)}></Div>
         </Div>
       </Div>

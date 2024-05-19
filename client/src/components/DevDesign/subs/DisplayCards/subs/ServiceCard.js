@@ -14,9 +14,9 @@ const ServiceCard = ({ ...props }) => {
         type="flex"
         hAlign="center"
         vAlign="center"
-        className="mb4"
+        className="m-b-32"
         {...props}>
-        <Div className="mb1">Type: service</Div>
+        <Div className="m-b-8">Type: service</Div>
         <Card type="service" />
       </Div>
     </>

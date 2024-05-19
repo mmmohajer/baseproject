@@ -15,7 +15,7 @@ const DisplayModals = () => {
         direction="vertical"
         hAlign="center"
         vAlign="center"
-        className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+        className={cx('p-all-1 width-per-90 flex--wrap', styles.card)}>
         {MODAL_TYPES.map((item, idx) => {
           if (item === 'data-submitted-successfully') {
             return (

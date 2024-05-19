@@ -41,7 +41,7 @@ const Back = () => {
           onClick={() => {
             setBtnClicked(true);
           }}>
-          <Div type="flex" hAlign="center" vAlign="center" className="w-px-30">
+          <Div type="flex" hAlign="center" vAlign="center" className="width-px-30">
             <Icon type="arrow-left" color={COLORS.themeOne} scale={1} />
           </Div>
           <Div className="textThemeOne">Back</Div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
-import { Div, Label, Input } from 'basedesign-iswad';
+import { Div, Input, Label as BaseLabel } from 'basedesign-iswad';
 
+import Label from '@/baseComponents/Label';
 import Icon from '@/baseComponents/Icon';
 
 import { COLORS } from '@/constants/vars';
@@ -22,25 +23,21 @@ const DefaultPicker = ({
   errorHandler,
   setInitialSrc,
   previewer = 'default',
-  hasDefaultClass = true,
+  hasMarginBottom = true,
   className
 }) => {
   return (
     <>
       <Div
-        className={cx('pos-rel', hasDefaultClass ? 'mainInputContainer' : '', className)}
+        className={cx('pos-rel', hasMarginBottom && 'm-b-32', className)}
         onClick={() => {
           if (errorHandler) {
             errorHandler('');
           }
         }}>
-        {labelText && (
-          <Div className={cx('labelForInputContainer')}>
-            <Label className={cx(isRequired && 'required', 'labelForInput')}>{labelText}</Label>
-          </Div>
-        )}
-        <Div type="flex" hAlign="start" vAlign="center" className={cx('inputFieldContainer')}>
-          <Label>
+        {labelText && <Label labelText={labelText} isRequired={isRequired} />}
+        <Div type="flex" hAlign="start" vAlign="center" className={cx('')}>
+          <BaseLabel>
             <Input
               type="file"
               onChange={fileChangeHandler}
@@ -56,7 +53,7 @@ const DefaultPicker = ({
               color="#ccc">
               <Icon type="upload" color={COLORS.grayDark} scale={4} />
             </Div>
-          </Label>
+          </BaseLabel>
           {previewer === 'default' ? (
             <DefaultImagePreview
               src={src}
@@ -70,7 +67,8 @@ const DefaultPicker = ({
             ''
           )}
         </Div>
-        <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>
+        <Div
+          className={cx('global-error-message', errorMessage && 'global-error-message-is-active')}>
           {errorMessage}
         </Div>
       </Div>

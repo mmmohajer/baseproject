@@ -5,7 +5,7 @@ import { Div } from 'basedesign-iswad';
 const Footer = () => {
   return (
     <>
-      <Div className="bgGreen p2">Footer</Div>
+      <Div className="bg-green p-all-16">Footer</Div>
     </>
   );
 };

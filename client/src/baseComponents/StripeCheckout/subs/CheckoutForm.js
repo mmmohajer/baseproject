@@ -44,7 +44,7 @@ const CheckoutForm = ({ use_for_future_payment }) => {
         <PaymentElement id="payment-element" />
         {stripe && elements ? (
           <Div className={cx('my4')}>
-            <Button className={cx('w-px-200')}>Submit</Button>
+            <Button className={cx('width-px-200')}>Submit</Button>
           </Div>
         ) : (
           ''

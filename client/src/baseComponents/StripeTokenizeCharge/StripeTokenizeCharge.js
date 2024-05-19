@@ -12,7 +12,7 @@ const StripeTokenizeCharge = ({ cardAddedFunc, onCancelClick, isCenteralized = f
   return (
     <>
       <Elements stripe={stripePublishableApiKey}>
-        <Div className={cx('w-per-100', styles.formContainer)}>
+        <Div className={cx('width-per-100', styles.formContainer)}>
           <CheckoutForm
             cardAddedFunc={cardAddedFunc}
             onCancelClick={onCancelClick}

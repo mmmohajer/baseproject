@@ -62,7 +62,7 @@ const Captcha = ({
         type="flex"
         hAlign="center"
         vAlign="center"
-        className="w-per-100 max-w-px-200 bgWhite height-px-80 textBlack ml-auto mr-auto mb1 captcha">
+        className="width-per-100 max-width-px-200 bgWhite height-px-80 textBlack ml-auto mr-auto mb1 captcha">
         <Div>{captchaCode}</Div>
       </Div>
       <Div type="flex" hAlign="center" vAlign="center" className="text-center fs-px-12 textBlack">

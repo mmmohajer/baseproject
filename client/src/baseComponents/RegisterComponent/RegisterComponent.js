@@ -204,16 +204,16 @@ const RegisterComponent = () => {
             setCaptchaUUID={setCaptchaUUID}
           />
           <Div type="flex" hAlign="center">
-            <Button id="registerSubmit" className="w-px-200" type="submit">
+            <Button id="registerSubmit" className="width-px-200" type="submit">
               Register
             </Button>
           </Div>
         </Form>
       )}
       {submitted && (
-        <Div type="flex" hAlign="center" className="w-per-100">
+        <Div type="flex" hAlign="center" className="width-per-100">
           <Button
-            className="w-px-200 flex flex--jc--center flex--ai--center"
+            className="width-px-200 flex flex--jc--center flex--ai--center"
             onClick={() => setSendResendEmailReq(true)}>
             <Div className={cx('ml1', styles.iconContainer)}>
               <Icon type="rotate" color="white" />

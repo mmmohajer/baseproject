@@ -1,6 +1,6 @@
 import React from "react";
 import { render as renderRTL, screen, fireEvent } from "@testing-library/react";
-import CircularProgressBar from "../CircularProgressBar";
+import Label from "../Label";
 import * as reactRedux from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
@@ -12,7 +12,7 @@ jest.mock("react-redux", () => ({
   useDispatch: jest.fn(),
 }));
 
-describe("Test CircularProgressBar Component", () => {
+describe("Test Label Component", () => {
   const useSelectorMock = reactRedux.useSelector;
   const useDispatchMock = reactRedux.useDispatch;
 
@@ -27,8 +27,8 @@ describe("Test CircularProgressBar Component", () => {
   });
 
   test("", () => {
-    render(<CircularProgressBar />);
+    render(<Label />);
 
-    expect(screen.getByText(/CircularProgressBar/i)).toBeInTheDocument();
+    expect(screen.getByText(/Label/i)).toBeInTheDocument();
   });
 });

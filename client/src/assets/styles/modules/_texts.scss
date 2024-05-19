@@ -1,19 +1,19 @@
 @each $name, $val in $fontTypes {
-  $className: 'font' + $name;
+  $className: 'f-' + $name;
   .#{$className} {
     font-family: $val;
   }
 }
 
 @each $name, $val in $fontSizes {
-  $className: 'font-size-' + $name;
+  $className: 'f-s-' + $name;
   .#{$className} {
     font-size: $val;
   }
 }
 
 @each $category, $key in $fontCategories {
-  .font-size-#{$category} {
+  .f-s-#{$category} {
     font-size: map-get($fontSizes, '#{$key}-xs');
 
     @include atSmall {

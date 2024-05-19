@@ -1,8 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
-import { Div, Label } from 'basedesign-iswad';
+import { Div } from 'basedesign-iswad';
 
 import RadioButton from '@/baseComponents/RadioButton';
+import Label from '@/baseComponents/Label';
 
 import styles from './FormRadioButton.module.scss';
 
@@ -20,13 +21,7 @@ const FormRadioButton = ({
     <>
       <>
         <Div className={cx('pos-rel', className)}>
-          {labelText && (
-            <Div className={cx('labelForRadioButtonContainer')}>
-              <Label className={cx(isRequired && 'required', 'labelForCheckBox')}>
-                {labelText}
-              </Label>
-            </Div>
-          )}
+          {labelText && <Label labelText={labelText} isRequired={isRequired} />}
           <Div className={cx(styles.radioButtonContainer)}>
             {options.map((item, idx) => (
               <RadioButton
@@ -45,7 +40,11 @@ const FormRadioButton = ({
             ))}
           </Div>
           {errorMessage && (
-            <Div className={cx('inputErrorMessage', errorMessage && 'inputErrorMessageIsActive')}>
+            <Div
+              className={cx(
+                'global-error-message',
+                errorMessage && 'global-error-message-is-active'
+              )}>
               {errorMessage}
             </Div>
           )}

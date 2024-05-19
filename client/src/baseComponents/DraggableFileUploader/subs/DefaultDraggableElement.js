@@ -22,7 +22,7 @@ const DefaultDraggableElement = ({
         hAlign="center"
         vAlign="center"
         className={cx(
-          'w-per-100 height-px-100 bgWhite boxShadowType1 p2 br-rad-px-10',
+          'width-per-100 height-px-100 bg-white box-shadow-type-one p2 br-rad-px-10',
           styles.draggableElementContainer
         )}>
         {!file?.length ? (
@@ -30,21 +30,21 @@ const DefaultDraggableElement = ({
             <Icon
               type={iconType}
               scale={3}
-              color={COLORS.themeOne}
-              className="w-px-70 height-px-80 mouse-hand"
+              color={COLORS['theme-one']}
+              className="width-px-70 height-px-80 mouse-hand"
               onClick={() => setOpenFileBrowser(true)}
             />
-            <Div className="fs-px-12 textGrayDark">{acceptableFileString}</Div>
+            <Div className="fs-px-12 text-gray-dark">{acceptableFileString}</Div>
           </Div>
         ) : (
-          <Div type="flex" hAlign="center" vAlign="center" className="w-per-100 p2">
-            <Div type="flex" hAlign="center" vAlign="center" className="w-per-100 pos-rel">
-              <Div className="oneLine fs-px-12 w-per-100">{file?.[0]?.name}</Div>
+          <Div type="flex" hAlign="center" vAlign="center" className="width-per-100 p-all-2">
+            <Div type="flex" hAlign="center" vAlign="center" className="width-per-100 pos-rel">
+              <Div className="one-line f-s-px-12 width-per-100">{file?.[0]?.name}</Div>
               <Div
                 type="flex"
                 hAlign="center"
                 vAlign="center"
-                className="w-px-30 height-px-30 mouse-hand"
+                className="width-px-30 height-px-30 mouse-hand"
                 onClick={removeFileClickHandler}>
                 <Icon type="trash" color={COLORS.danger} />
               </Div>

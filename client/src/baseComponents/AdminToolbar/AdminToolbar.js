@@ -23,7 +23,7 @@ const AdminToolbar = () => {
           type="flex"
           hAlign="center"
           vAlign="center"
-          className="w-px-40 height-px-40 br-rad-per-50 mr2 mt2 bgGrayDark mouse-hand"
+          className="width-px-40 height-px-40 br-rad-per-50 mr2 mt2 bgGrayDark mouse-hand"
           onClick={() => setShowToolBar(!showToolBar)}>
           <Icon type="person-fill" scale={1.5} color="white" />
         </Div>
@@ -33,12 +33,12 @@ const AdminToolbar = () => {
             type="flex"
             direction="vertical"
             hAlign="center"
-            className="min-w-px-100 pt1 max-w-px-300 br-rad-px-5 bgWhite boxShadowType1 mr2">
+            className="min-width-px-100 pt1 max-width-px-300 br-rad-px-5 bgWhite boxShadowType1 mr2">
             {ROUTES?.map((item, idx) => (
               <Div
                 key={idx}
                 onClick={() => Router.push(item.url)}
-                className="fs-px-12 mb1 height-px-30 w-px-30 mouse-hand"
+                className="fs-px-12 mb1 height-px-30 width-px-30 mouse-hand"
                 type="flex"
                 hAlign="center"
                 vAlign="center">
@@ -46,7 +46,7 @@ const AdminToolbar = () => {
               </Div>
             ))}
             <Div
-              className="fs-px-12 mb1 height-px-30 w-px-30 mouse-hand"
+              className="fs-px-12 mb1 height-px-30 width-px-30 mouse-hand"
               type="flex"
               hAlign="center"
               vAlign="center"

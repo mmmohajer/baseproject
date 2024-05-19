@@ -9,10 +9,10 @@ import { COLORS } from '@/constants/vars';
 import styles from './Pagination.module.scss';
 
 const Pagination = ({ currentPage, setCurrentPage, numberOfTotalPages, ...props }) => {
-  const firstPageComp = () => <Icon type="angleDoubleLeft" color={COLORS.themeTwo} />;
-  const lastPageComp = () => <Icon type="angleDoubleRight" color={COLORS.themeTwo} />;
-  const prevComp = () => <Icon type="angleLeft" scale={0.9} color={COLORS.themeTwo} />;
-  const nextComp = () => <Icon type="angleRight" scale={0.9} color={COLORS.themeTwo} />;
+  const firstPageComp = () => <Icon type="angleDoubleLeft" color={COLORS['theme-two']} />;
+  const lastPageComp = () => <Icon type="angleDoubleRight" color={COLORS['theme-two']} />;
+  const prevComp = () => <Icon type="angleLeft" scale={0.9} color={COLORS['theme-two']} />;
+  const nextComp = () => <Icon type="angleRight" scale={0.9} color={COLORS['theme-two']} />;
   return (
     <>
       {numberOfTotalPages > 1 && (
@@ -28,10 +28,10 @@ const Pagination = ({ currentPage, setCurrentPage, numberOfTotalPages, ...props 
           prevComp={prevComp}
           nextComp={nextComp}
           containerClassName={cx(
-            'flex--wrap w-per-100 max-w-px-400 flex--jc--between ml-auto mr-auto'
+            'flex--wrap width-per-100 max-width-px-400 flex--jc--between m-l-auto m-r-auto'
           )}
           itemClassName={cx(
-            'w-px-30 height-px-30 flex flex--jc--center flex--ai--center br-rad-per-50 bgRed textWhite fs-px-12',
+            'width-px-30 height-px-30 flex flex--jc--center flex--ai--center br-rad-per-50 bg-red text-white fs-px-12',
             styles.itemContainer
           )}
           activeItemClassName={cx(styles.activeItemContainer)}

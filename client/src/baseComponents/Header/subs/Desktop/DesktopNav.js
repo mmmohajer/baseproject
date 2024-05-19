@@ -37,7 +37,7 @@ const DesktopNav = ({ changesThePage = true, isAppPage }) => {
               <NavItem
                 key={idx}
                 isActive={activeMenu === item.identifier}
-                className={cx('mr2 mouse-hand pos-rel', styles.desktopNavItem)}
+                className={cx('m-r-16 mouse-hand pos-rel', styles.desktopNavItem)}
                 activeClassName={'test'}
                 onClick={() => {
                   if (!item?.hasSubMenu) {

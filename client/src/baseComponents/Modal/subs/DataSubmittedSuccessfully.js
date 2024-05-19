@@ -15,9 +15,9 @@ const DataSubmittedSuccessfully = () => {
 
   return (
     <>
-      <Div className="mb2">Your data has been submitted successfully!</Div>
+      <Div className="m-b-16">Your data has been submitted successfully!</Div>
       <Div className="">
-        <Button className={'w-px-100'} onClick={() => clearModal(dispatch)}>
+        <Button className={'width-px-100'} onClick={() => clearModal(dispatch)}>
           OK
         </Button>
       </Div>

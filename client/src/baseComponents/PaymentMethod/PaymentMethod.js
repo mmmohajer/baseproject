@@ -23,10 +23,10 @@ const PaymentMethod = ({
 
   return (
     <>
-      {showTopBorder && <Div className="w-per-100 bgGrayDark height-px-5 mb2" />}
+      {showTopBorder && <Div className="width-per-100 bgGrayDark height-px-5 mb2" />}
       {!showNewPaymentForm ? (
         <Div>
-          <Div className="w-per-100">
+          <Div className="width-per-100">
             <StripeCustomerActivePayments
               setNumberOfPaymentMethods={setNumberOfPaymentMethods}
               isCenteralized={isCenteralized}
@@ -41,11 +41,11 @@ const PaymentMethod = ({
               Add a new payment method
             </Div>
           </Div>
-          {showBottomBorder && <Div className="w-per-100 bgGrayDark height-px-5 mb2" />}
+          {showBottomBorder && <Div className="width-per-100 bgGrayDark height-px-5 mb2" />}
           {showCta && (
             <Div type="flex" hAlign={isCenteralized ? 'center' : 'start'} className="">
               <Button
-                className="w-px-200"
+                className="width-px-200"
                 btnType={2}
                 onClick={onBtnClick}
                 isDisabled={isDisabled || numberOfPaymentMethods <= 0}>
@@ -55,7 +55,7 @@ const PaymentMethod = ({
           )}
         </Div>
       ) : (
-        <Div className="w-per-100">
+        <Div className="width-per-100">
           <StripeTokenizeCharge
             cardAddedFunc={() => setShowNewPaymentForm(false)}
             onCancelClick={() => setShowNewPaymentForm(false)}

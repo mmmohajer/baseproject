@@ -9,7 +9,7 @@ import styles from '../DevDesign.module.scss';
 function DisplayColors() {
   return (
     <>
-      <Div type="flex" className={cx('p1 w-per-90 flex--wrap', styles.card)}>
+      <Div type="flex" className={cx('p-all-1 width-per-90 flex--wrap', styles.card)}>
         {Object.keys(COLORS).map((c, idx) => (
           <Div type="flex" vAlign="center" hAlign="center" key={idx} className="">
             <Div
@@ -17,8 +17,8 @@ function DisplayColors() {
               hAlign="center"
               vAlign="center"
               style={{ backgroundColor: COLORS[c] }}
-              className="w-px-150 height-px-150">
-              <Text className="bgWhite">{c}</Text>
+              className="width-px-150 height-px-150">
+              <Text className="bg-white">{c}</Text>
             </Div>
           </Div>
         ))}

@@ -18,7 +18,7 @@ const CheckBox = ({
   checked = false,
   className,
   onBoxClick,
-  hasDefaultClass = true,
+  hasMarginBottom = true,
   ...props
 }) => {
   return (
@@ -30,26 +30,26 @@ const CheckBox = ({
         hAlign={hAlign}
         vAlign={vAlign}
         distributedBetween={distributedBetween}
-        className={cx('pos-rel', hasDefaultClass && 'mainCheckBoxContainer', className)}>
+        className={cx('pos-rel', hasMarginBottom && 'm-b-16', className)}>
         {labelText && (
           <Div
             className={cx(
-              'labelForCheckBoxFieldContainer',
-              direction === 'horizontal' && 'mr1',
-              direction === 'vertical' && 'mb1'
+              'text-gray f-s-small',
+              direction === 'horizontal' && 'm-r-8',
+              direction === 'vertical' && 'm-b-8'
             )}>
-            <Label className={cx(isRequired && 'required', 'labelForCheckBoxField')}>
-              {labelText}
-            </Label>
+            <Label className={cx(isRequired && 'required', '')}>{labelText}</Label>
           </Div>
         )}
         <Div
           type="flex"
           hAlign="center"
           vAlign="start"
-          className={cx('chechBoxField mouse-hand mr1 br-all-solid-2 br-color-themeOne')}
+          className={cx(
+            'mouse-hand m-r-8 br-all-solid-2 br-gray width-px-20 height-px-20 box-shadow-type-one br-rad-px-5'
+          )}
           onClick={onBoxClick}>
-          {checked && <Icon type="check-mark" color={COLORS.themeOne} />}
+          {checked && <Icon type="dashboard" color={COLORS['theme-one']} />}
         </Div>
       </Div>
     </>
