@@ -26,7 +26,9 @@ LOCAL_APPS = [
     'like',
     'websocket',
     'chat',
-    'stripe_payment'
+    'stripe_payment',
+    'todos',
+    'paypal_payment'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
