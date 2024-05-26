@@ -5,8 +5,6 @@ import ActivateUserComponent from '@/baseComponents/ActivateUser';
 import PublicRoute from '@/components/PublicRoute';
 import Seo from '@/components/Seo';
 
-import styles from './Index.module.scss';
-
 const Index = () => {
   return (
     <PublicRoute>

@@ -26,6 +26,8 @@ import DisplayUserEvent from './subs/DisplayUserEvent';
 import DisplayLimitedSwipeableSlider from './subs/DisplayLimitedSwipeableSlider';
 import DisplayPngIcon from './subs/DisplayPngIcon';
 import DisplaySlider from './subs/DisplaySlider';
+import DisplayFlipDiv from './subs/DisplayFlipDiv';
+import DisplayInputWithButton from './subs/DisplayInputWithButton';
 
 import DevSection from './subs/DevSection';
 import styles from './DevDesign.module.scss';
@@ -92,6 +94,13 @@ const DevDesign = () => {
       </DevSection>
 
       <DevSection
+        title="Flip Div"
+        activeElements={activeElements}
+        setActiveElements={setActiveElements}>
+        <DisplayFlipDiv />
+      </DevSection>
+
+      <DevSection
         title="Form Components"
         activeElements={activeElements}
         setActiveElements={setActiveElements}>
@@ -110,6 +119,13 @@ const DevDesign = () => {
         activeElements={activeElements}
         setActiveElements={setActiveElements}>
         <DisplayIcons />
+      </DevSection>
+
+      <DevSection
+        title="Input With Button"
+        activeElements={activeElements}
+        setActiveElements={setActiveElements}>
+        <DisplayInputWithButton />
       </DevSection>
 
       <DevSection

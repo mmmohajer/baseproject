@@ -6,29 +6,22 @@ import PublicRoute from '@/components/PublicRoute';
 import RoleBasedRoute from '@/components/RoleBasedRoute';
 import Seo from '@/components/Seo';
 import PageContainer from '@/components/PageContainer';
+import TemporaryLanding from '@/components/PublicWebPages/TemporaryLanding';
 
 import { USER_GROUPS } from '@/constants/userGroups';
 import { IS_STAGING_ENV } from 'config';
 
-import styles from './index.module.scss';
-
 const Index = () => {
   return (
     <RoleBasedRoute hasAccessRole={IS_STAGING_ENV ? [USER_GROUPS.APP_ADMIN] : ['Public']}>
-      <Seo title="Mohammad Mohajer">
+      <Seo>
         <PageContainer
           pageIdentifier="home"
-          // pageSubNavIdentifier=""
-          // pageDashboardIdentifier=""
-          hasHeader={true}
-          hasFooter={true}
+          hasHeader={false}
+          hasFooter={false}
           hasStickyHeader={false}
-          hasStickyFooter={false}
-          hasSideBarDashboard={false}
-          changesThePage={false}>
-          <Div className="bg-theme-two bg-theme-one-on-hover width-per-100 mouse-hand">
-            HomePage
-          </Div>
+          hasStickyFooter={false}>
+          <TemporaryLanding />
         </PageContainer>
       </Seo>
     </RoleBasedRoute>

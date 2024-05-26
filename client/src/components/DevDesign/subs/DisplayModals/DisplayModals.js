@@ -5,6 +5,7 @@ import { Div } from 'basedesign-iswad';
 import { MODAL_TYPES } from '@/constants/devDesignVars';
 
 import DataSubmittedSuccessfully from './subs/DataSubmittedSuccessfully';
+import PromptMessage from './subs/PromptMessage';
 import styles from '../../DevDesign.module.scss';
 
 const DisplayModals = () => {
@@ -17,10 +18,18 @@ const DisplayModals = () => {
         vAlign="center"
         className={cx('p-all-1 width-per-90 flex--wrap', styles.card)}>
         {Object.keys(MODAL_TYPES)?.map((item, idx) => {
-          if (item === 'dataSubmittedSuccessfully') {
+          if (MODAL_TYPES[item] === MODAL_TYPES['dataSubmittedSuccessfully']) {
             return (
               <Div key={idx}>
                 <DataSubmittedSuccessfully />
+              </Div>
+            );
+          }
+
+          if (MODAL_TYPES[item] === MODAL_TYPES['prompt-message']) {
+            return (
+              <Div key={idx}>
+                <PromptMessage />
               </Div>
             );
           }

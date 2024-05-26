@@ -5,32 +5,22 @@ import { Div } from 'basedesign-iswad';
 import Icon from '@/baseComponents/Icon';
 
 import { COLORS } from '@/constants/vars';
+import { LIST_OF_ICONS } from '@/constants/devDesignVars';
 
 import styles from '../List.module.scss';
 
-const ListItem = ({ item, isIconWhite, ...props }) => {
+const ListItem = ({ item, isIconWhite = false, ...props }) => {
   return (
     <>
-      <Div type="flex" vAlign="center" className="m-b-8" {...props}>
-        <Div>
-          <Div
-            className={cx(
-              'width-px-20 height-px-20 br-rad-per-50 box-shadow-type-1 pos-rel',
-              isIconWhite ? 'bg-theme-one' : styles.type1CheckContainer
-            )}>
-            <Div
-              type="flex"
-              hAlign="center"
-              vAlign="center"
-              className="width-px-20 height-px-20 pos-abs pos-abs--lt">
-              <Icon
-                type="dashboard"
-                color={isIconWhite ? 'white' : COLORS['theme-one']}
-                scale={0.9}
-              />
-            </Div>
-          </Div>
+      <Div type="flex" vAlign="start" className="m-b-8" {...props}>
+        <Div className="p-t-4">
+          <Icon
+            type={LIST_OF_ICONS['circle-check']}
+            color={isIconWhite ? 'white' : COLORS['theme-one']}
+            scale={0.9}
+          />
         </Div>
+
         <Div className="m-l-8">
           <Div className={'fs-px-12'}>{item}</Div>
         </Div>

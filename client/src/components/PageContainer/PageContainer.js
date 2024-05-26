@@ -206,7 +206,7 @@ const PageContainer = ({
           </DivMinFullHeight>
 
           {hasScrollToTop && scrollPosition > 0 ? (
-            <Div className={cx('pos-fix', styles.scrollToTopContainer)}>
+            <Div className={cx('pos-fix z-1000', styles.scrollToTopContainer)}>
               <ScrollToTop />
             </Div>
           ) : (

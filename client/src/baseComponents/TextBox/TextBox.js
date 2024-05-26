@@ -20,7 +20,9 @@ const TextBox = ({
   iconType,
   iconColor = 'gray',
   hasMarginBottom = true,
+  hasBorderRadius = true,
   inputFieldClassName = '',
+  hasBoxShadow = true,
   ...props
 }) => {
   const [curType, setCurType] = useState(type);
@@ -33,8 +35,11 @@ const TextBox = ({
           <BaseInput
             containerClassName={cx('width-per-100 pos-rel')}
             className={cx(
-              'width-per-100 p-y-8 p-x-8',
+              'width-per-100 p-y-16 p-x-8 br-none',
+              hasBoxShadow && 'box-shadow-type-one',
+              hasBorderRadius && 'br-rad-px-8',
               type === 'password' && 'p-x-24',
+              styles.input,
               inputFieldClassName
             )}
             errorContainerClassName={cx('global-error-message')}
@@ -68,7 +73,7 @@ const TextBox = ({
                 hAlign="center"
                 vAlign="center"
                 className={cx('mouse-hand width-px-20 height-px-30 pos-abs z-1000')}
-                style={{ top: '27px', left: '4px' }}
+                style={{ top: '32px', left: '4px' }}
                 onClick={() => {
                   if (curType === 'password') {
                     setCurType('text');

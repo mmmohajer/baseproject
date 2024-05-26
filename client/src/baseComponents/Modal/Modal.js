@@ -7,10 +7,11 @@ import Close from '@/baseComponents/Close';
 
 import { COLORS } from '@/constants/vars';
 import { clearModal } from '@/utils/modal';
+import { MODAL_TYPES } from '@/constants/devDesignVars';
 
 import { HAS_CCELEBERATION_BG_TYPES } from './constans';
 import DataSubmittedSuccessfully from './subs/DataSubmittedSuccessfully';
-
+import PromptMessage from './subs/PromptMessage';
 import styles from './Modal.module.scss';
 
 const Modal = () => {
@@ -50,9 +51,10 @@ const Modal = () => {
               direction="vertical"
               hAlign="start"
               className={cx('of-y-auto scroll-type-one p-all-16', styles.mainContentContainer)}>
-              {modalType === 'data-submitted-successfully' && (
+              {modalType === MODAL_TYPES['dataSubmittedSuccessfully'] && (
                 <DataSubmittedSuccessfully {...modalProps} />
               )}
+              {modalType === MODAL_TYPES['prompt-message'] && <PromptMessage {...modalProps} />}
             </Div>
           </Div>
         </BaseModal>

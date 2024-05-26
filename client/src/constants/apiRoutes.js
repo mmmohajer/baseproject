@@ -28,6 +28,7 @@ export const STRIPE_CUSTOMER_SOURCE_HANDLER = '/api/stripe-customer-source-handl
 export const PUBLIC_CAHT_ROOM_API_ROUTE = '/api/public-chat-room/';
 export const USER_EVENT_API_ROUTE = '/api/user-event/';
 export const CONTACT_FORM_API_ROUTE = '/api/contact-form/';
+export const WEB_SUBSCRIBER_API_ROUTE = '/api/web-subscriber/';
 
 // WEBSOCKET API ROUTES
 export const WEBSOCKET_CHAT_API_ROUTE = `/wss/public-chat/`;

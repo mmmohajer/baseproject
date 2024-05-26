@@ -41,8 +41,8 @@ import styles from \"./$compName.module.scss\";
 const $compName = () => {
   return (
     <RoleBasedRoute hasAccessRole={IS_STAGING_ENV ? [USER_GROUPS.APP_ADMIN] : ['Public']}>
-      <Seo title=\"$compName | App\">
-        <PageContainer pageIdentifier=\"$compName\">
+      <Seo title=\"Home | Troop\">
+        <PageContainer pageIdentifier=\"home\" hasWavyShape={true} footerIsColored={true}>
           <Div className=\"\">$compName</Div>
         </PageContainer>
       </Seo>

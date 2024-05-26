@@ -1,8 +1,16 @@
 @import '@/styles/base/_variables';
 
+.input::placeholder {
+  color: silver;
+}
+
+.input:focus {
+  outline: none;
+}
+
 .icon {
   position: absolute;
-  top: 12px;
+  top: 46px;
   left: 6px;
 }
 

@@ -1,5 +1,5 @@
 %fontclass {
-  font-family: map-get($fontTypes, 'regular'), sans-serif;
+  font-family: 'Manrope', sans-serif;
   color: black;
   font-size: map-get($fontSizes, 'regular-xs');
 
@@ -159,6 +159,26 @@ button {
 
     &-is-active {
       display: block;
+    }
+  }
+
+  &font- {
+    &regular {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    &title {
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+
+  &bg- {
+    &grad-one {
+      background-image: linear-gradient(
+        to right,
+        #{map-get($colors, 'theme-one')},
+        #{map-get($colors, 'theme-two')}
+      );
     }
   }
 }

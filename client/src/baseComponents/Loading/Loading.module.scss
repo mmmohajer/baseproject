@@ -12,8 +12,8 @@
 
   &::after {
     content: '';
-    border: solid blue;
-    border-top-color: red;
+    border: solid map-get($colors, 'theme-one');
+    border-top-color: map-get($colors, 'theme-two');
     border-radius: 50%;
     animation: loading 1s ease infinite;
   }

@@ -22,9 +22,9 @@ const Seo = ({ title, keywords, description, children }) => {
 };
 
 Seo.defaultProps = {
-  title: 'Troop',
-  description: `A social impact tool that brings together needs from local charities to help businesses do corporate social responsibility differently.`,
-  keywords: 'Troop, troop impact inc., social impact, social, impact, need, charity'
+  title: 'ISWAD',
+  description: `Empower your business with ISWAD's cutting-edge AI focused development services. Our software solutions, including MVP development, web and app development, team augmentation, coaching, and advisory services, are designed to transform your vision into reality. Explore how ISWAD can elevate your business with quality content and a user-friendly experience.`,
+  keywords: 'develop, app, ai, mobile, service, company, business'
 };
 
 export default Seo;

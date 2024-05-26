@@ -21,7 +21,7 @@ const UserNav = () => {
           onClick={() => dispatch(hideUserNav())}
         />
       )}
-      <Div
+      {/* <Div
         className={cx(
           'pos-abs p2 bg-theme-one box-shadow-type-one z-100 width-px-100 text-white',
           styles.container,
@@ -30,7 +30,7 @@ const UserNav = () => {
         <Logout>
           <Div className="text-center">Logout</Div>
         </Logout>
-      </Div>
+      </Div> */}
     </>
   );
 };

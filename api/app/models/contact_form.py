@@ -6,7 +6,7 @@ from core.models.general import TimeStampedUUIDModel
 
 class ContactForm(TimeStampedUUIDModel):
     name = models.CharField(max_length=12)
-    email = models.BooleanField(default=True)
+    email = models.CharField(max_length=12)
     submitted_date = models.DateField()
     submitted_time = models.TimeField()
     submitted_date_time = models.DateTimeField()

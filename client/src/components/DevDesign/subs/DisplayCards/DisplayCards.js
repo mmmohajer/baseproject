@@ -5,6 +5,7 @@ import { Div } from 'basedesign-iswad';
 import { CARD_TYPES } from '@/constants/devDesignVars';
 
 import ServiceCard from './subs/ServiceCard';
+import TemporaryServiceCard from './subs/TemporaryServiceCard';
 import styles from '../../DevDesign.module.scss';
 
 function DisplayCards() {
@@ -17,8 +18,12 @@ function DisplayCards() {
         vAlign="center"
         className={cx('p-all-8 width-per-90 flex--wrap', styles.card)}>
         {Object.keys(CARD_TYPES)?.map((item, idx) => {
-          if (item === 'serviceTest') {
-            return <ServiceCard key={idx} />;
+          if (CARD_TYPES[item] === CARD_TYPES.serviceTest) {
+            return <ServiceCard />;
+          }
+
+          if (CARD_TYPES[item] === CARD_TYPES.temporaryService) {
+            return <TemporaryServiceCard key={idx} />;
           }
         })}
       </Div>

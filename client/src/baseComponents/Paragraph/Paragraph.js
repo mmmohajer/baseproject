@@ -4,17 +4,25 @@ import { Div, Paragraph as BaseParagraph } from 'basedesign-iswad';
 
 import styles from './Paragraph.module.scss';
 
-const Paragraph = ({ type = 1, className, children, ...props }) => {
+const Paragraph = ({
+  type = 1,
+  isJustified = false,
+  isCentralized = false,
+  className,
+  children,
+  ...props
+}) => {
   return (
     <>
       {type === 1 && (
-        <BaseParagraph className={cx('m-t-16 m-b-16', styles.paragraph, className)} {...props}>
-          {children}
-        </BaseParagraph>
-      )}
-      {type === 2 && (
         <BaseParagraph
-          className={cx('m-t-8 m-b-8 fs-px-12', styles.paragraph2, className)}
+          className={cx(
+            '',
+            styles.paragraphOne,
+            isJustified && styles.paragraphOneJustified,
+            isCentralized && styles.paragraphOneCenteralized,
+            className
+          )}
           {...props}>
           {children}
         </BaseParagraph>

@@ -33,9 +33,10 @@ run() {
             [ $selected == 5 ] && createReactPage
             [ $selected == 6 ] && addDjangoApp
             [ $selected == 7 ] && initialSetupInServer
-            [ $selected == 8 ] && deploy
-            [ $selected == 9 ] && makeBackupOfDb
-            [ $selected == 10 ] && restoreDb
+            [ $selected == 8 ] && deployToStaging
+            [ $selected == 9 ] && deployToProd
+            [ $selected == 10 ] && makeBackupOfDb
+            [ $selected == 11 ] && restoreDb
         else
             run
         fi

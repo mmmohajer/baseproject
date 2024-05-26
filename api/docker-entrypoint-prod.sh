@@ -3,7 +3,7 @@
 echo "Waiting for database to start"
 ./wait-for db:5432
 
-"Collect static files"
+echo "Collect static files"
 python manage.py collectstatic --noinput
 
 echo "Migrating database"

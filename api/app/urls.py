@@ -5,4 +5,5 @@ from . import views
 
 urlpatterns = [
     path('contact-form/', views.ContactFormViewSet),
+    path('web-subscriber/', views.WebSubscriberViewSet),
 ]

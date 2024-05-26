@@ -28,7 +28,7 @@ const AppImage = ({
 
   return (
     <>
-      <Div type="flex" className="pos-rel">
+      <DivWidthDynamic setContainerWidth={setContainerWidth} type="flex" className="pos-rel">
         <Image
           width={width ? width : containerWidth}
           height={height ? height : containerWidth * heightOverWidthAsprctRatio}
@@ -36,7 +36,7 @@ const AppImage = ({
           {...props}
           onLoad={() => setLoading(false)}
         />
-      </Div>
+      </DivWidthDynamic>
       {loading && (
         <Div
           type="flex"

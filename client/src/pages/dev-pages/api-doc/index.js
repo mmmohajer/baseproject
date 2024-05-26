@@ -11,8 +11,6 @@ import ApiDoc from '@/components/ApiDoc';
 import { USER_GROUPS } from '@/constants/userGroups';
 import { PRODUCTION } from 'config';
 
-import styles from './Index.module.scss';
-
 const Index = () => {
   return (
     <RoleBasedRoute

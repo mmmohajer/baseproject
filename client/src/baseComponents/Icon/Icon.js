@@ -4,7 +4,18 @@ import PropTypes from 'prop-types';
 import { Div } from 'basedesign-iswad';
 // import { config, library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesUp, faSearch, faClose, faUpload } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAnglesUp,
+  faSearch,
+  faClose,
+  faUpload,
+  faCirclePlus,
+  faCircleMinus,
+  faCircleCheck,
+  faAngleLeft,
+  faAngleRight,
+  faCheck
+} from '@fortawesome/free-solid-svg-icons';
 import { faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart as emptyHeart } from '@fortawesome/free-regular-svg-icons';
 
@@ -38,7 +49,34 @@ function Icon({ type, color, width, scale, isBlock = true, className, ...props }
         icon={faSquareInstagram}
         style={{ color, width, transform: `scale(${scale})` }}
       />
-    )
+    ),
+
+    'circle-plus': (
+      <FontAwesomeIcon icon={faCirclePlus} style={{ color, width, transform: `scale(${scale})` }} />
+    ),
+
+    'circle-minus': (
+      <FontAwesomeIcon
+        icon={faCircleMinus}
+        style={{ color, width, transform: `scale(${scale})` }}
+      />
+    ),
+
+    'circle-check': (
+      <FontAwesomeIcon
+        icon={faCircleCheck}
+        style={{ color, width, transform: `scale(${scale})` }}
+      />
+    ),
+
+    'angle-left': (
+      <FontAwesomeIcon icon={faAngleLeft} style={{ color, width, transform: `scale(${scale})` }} />
+    ),
+
+    'angle-right': (
+      <FontAwesomeIcon icon={faAngleRight} style={{ color, width, transform: `scale(${scale})` }} />
+    ),
+    check: <FontAwesomeIcon icon={faCheck} style={{ color, width, transform: `scale(${scale})` }} />
   };
 
   iconTypes['dashboard'] = (
