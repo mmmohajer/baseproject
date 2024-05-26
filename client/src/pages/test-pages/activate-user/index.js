@@ -1,9 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 
-import ActivateUserComponent from '@/baseComponents/ActivateUser';
-import PublicRoute from '@/components/PublicRoute';
-import Seo from '@/components/Seo';
+import ActivateUserComponent from '@/baseComponents/LoginRegister/ActivateUser';
+import PublicRoute from '@/components/RouteHandlers/PublicRoute';
+import Seo from '@/components/PageWrappers/Seo';
 
 const Index = () => {
   return (

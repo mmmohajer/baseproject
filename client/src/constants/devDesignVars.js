@@ -35,8 +35,7 @@ export const MODAL_TYPES = {
 };
 
 export const CARD_TYPES = {
-  serviceTest: 'service',
-  temporaryService: 'temporary-service'
+  serviceTest: 'service' // This is a sample of test card
 };
 
 export const EMAIL_TEMPLATES = {

@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import { store } from '@/root/src/store';
 
-import BaseTemplate from '@/baseComponents/BaseTemplate';
+import BaseTemplate from '@/baseComponents/PageParts/BaseTemplate';
 
 import 'basedesign-iswad/dist/styles.min.css';
 import '@/styles/main.scss';

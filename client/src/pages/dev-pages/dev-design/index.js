@@ -2,11 +2,10 @@ import React from 'react';
 import cx from 'classnames';
 import { Div } from 'basedesign-iswad';
 
-import PublicRoute from '@/components/PublicRoute';
-import RoleBasedRoute from '@/components/RoleBasedRoute';
-import Seo from '@/components/Seo';
-import DevDesign from '@/components/DevDesign';
-import PageContainer from '@/components/PageContainer';
+import RoleBasedRoute from '@/components/RouteHandlers/RoleBasedRoute';
+import Seo from '@/components/PageWrappers/Seo';
+import PageContainer from '@/components/PageWrappers/PageContainer';
+import DevDesign from '@/components/DeveloprsPages/DevDesign';
 
 import { USER_GROUPS } from '@/constants/userGroups';
 import { PRODUCTION } from 'config';
@@ -16,7 +15,12 @@ const Index = () => {
     <RoleBasedRoute
       hasAccessRole={PRODUCTION ? [USER_GROUPS.APP_ADMIN, USER_GROUPS.DEVELOPER] : 'Public'}>
       <Seo>
-        <PageContainer pageDashboardIdentifier="dev-design">
+        <PageContainer
+          pageIdentifier="dev-design"
+          hasHeader={true}
+          hasFooter={true}
+          hasStickyHeader={false}
+          hasStickyFooter={false}>
           <DevDesign />
         </PageContainer>
       </Seo>

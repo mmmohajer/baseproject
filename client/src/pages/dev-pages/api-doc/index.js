@@ -2,11 +2,10 @@ import React from 'react';
 import cx from 'classnames';
 import { Div } from 'basedesign-iswad';
 
-import PublicRoute from '@/components/PublicRoute';
-import RoleBasedRoute from '@/components/RoleBasedRoute';
-import Seo from '@/components/Seo';
-import PageContainer from '@/components/PageContainer';
-import ApiDoc from '@/components/ApiDoc';
+import RoleBasedRoute from '@/components/RouteHandlers/RoleBasedRoute';
+import Seo from '@/components/PageWrappers/Seo';
+import PageContainer from '@/components/PageWrappers/PageContainer';
+import ApiDoc from '@/components/DeveloprsPages/ApiDoc';
 
 import { USER_GROUPS } from '@/constants/userGroups';
 import { PRODUCTION } from 'config';

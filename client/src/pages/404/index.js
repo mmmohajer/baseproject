@@ -2,10 +2,10 @@ import React from 'react';
 import cx from 'classnames';
 import { Div } from 'basedesign-iswad';
 
-import DivMinFullHeight from '@/baseComponents/DivMinFullHeight';
-import PublicRoute from '@/components/PublicRoute';
-import Seo from '@/components/Seo';
-import PageContainer from '@/components/PageContainer';
+import DivMinFullHeight from '@/baseComponents/ReusableComps/DivMinFullHeight';
+import PublicRoute from '@/components/RouteHandlers/PublicRoute';
+import Seo from '@/components/PageWrappers/Seo';
+import PageContainer from '@/components/PageWrappers/PageContainer';
 
 import styles from './index.module.scss';
 
