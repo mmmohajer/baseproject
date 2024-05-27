@@ -116,3 +116,110 @@ describe(\"Test $compName Component\", () => {
 
 """
 }
+
+getDevCardFileContext() {
+  local compName=$1
+
+  echo """import React from 'react';
+import cx from 'classnames';
+import { Div } from 'basedesign-iswad';
+
+import Card from '@/baseComponents/ReusableComps/Card';
+
+import { CARD_TYPES } from '@/constants/devDesignVars';
+
+import styles from '../../../DevDesign.module.scss';
+
+const $compName = ({ ...props }) => {
+  return (
+    <>
+      <Div
+        direction='vertical'
+        type='flex'
+        hAlign='center'
+        vAlign='center'
+        className='m-b-32 width-px-350'
+        {...props}>
+        <Div className='m-b-8'>Type: {CARD_TYPES.serviceTest}</Div>
+        <Card type={CARD_TYPES.serviceTest} />
+      </Div>
+    </>
+  );
+};
+
+export default $compName;
+"""
+}
+
+
+
+getModalContext() {
+  local compName=$1
+
+  echo """import React, { useEffect } from 'react';
+import cx from 'classnames';
+import { useDispatch, useSelector } from 'react-redux';
+import { Div } from 'basedesign-iswad';
+
+import { setModalHeader } from '@/reducers/general/modalHeader';
+import { clearModal } from '@/utils/modal';
+
+import styles from '../Modal.module.scss';
+
+const $compName = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setModalHeader('Confirm Action'));
+  }, []);
+
+  return (
+    <>
+      <Div>Hello</Div>
+    </>
+  );
+};
+
+export default $compName;
+"""
+}
+
+
+getDevModalContext() {
+  local compName=$1
+
+  echo """import React from "react";
+import cx from 'classnames';
+import { useDispatch } from 'react-redux';
+import { Div } from 'basedesign-iswad';
+
+import Button from '@/baseComponents/ReusableComps/Button';
+
+import { MODAL_TYPES } from '@/constants/devDesignVars';
+import { setModalType } from '@/reducers/general/modalType';
+import { setModalProps } from '@/reducers/general/modalProps';
+
+import styles from '../../../DevDesign.module.scss';
+
+const $compName = () => {
+  const dispatch = useDispatch();
+
+  return (
+    <>
+      <Button
+        className={'width-px-300 m-l-auto m-r-auto m-b-8'}
+        onClick={() => {
+          dispatch(setModalProps({ }));
+          dispatch(setModalType(MODAL_TYPES['prompt-message']));
+        }}
+      >
+        Show moal of type {MODAL_TYPES['prompt-message']}
+      </Button>
+    </>
+  );
+};
+
+export default $compName;
+
+"""
+}

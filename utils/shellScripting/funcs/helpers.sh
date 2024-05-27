@@ -71,12 +71,15 @@ cat << EOF
 3. Create a new react component.
 4. Create a new react base component.
 5. Create a new react page.
-6. Create a new django app.
-7. Copy environment variables in server
-8. Deploy to staging server
-9. Deploy to prod server
-10. Make a backup from the local db
-11. Restore local db from a file
+6. Create a new react card.
+7. Create a new react modal.
+8. Create a new react file.
+9. Create a new django app.
+10. Copy environment variables in server
+11. Deploy to staging server
+12. Deploy to prod server
+13. Make a backup from the local db
+14. Restore local db from a file
 $(echo -en "${I_CYAN}")0. Show MenuBar
 $(echo -en "${I_RED}")Q. Exit
 EOF

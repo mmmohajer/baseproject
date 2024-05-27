@@ -84,3 +84,99 @@ buildClient() {
         buildClient
     fi
 }
+
+createReactCard() {
+    local compName=$(readData "What is the card name?")
+    
+    compName="$(tr '[:lower:]' '[:upper:]' <<< ${compName:0:1})${compName:1}"
+    
+    local jsContext=$(getJsContext $compName)
+    
+    local innerJsFileAddr="client/src/baseComponents/ReusableComps/Card/subs/$compName.js"
+    
+    echo "$jsContext" >> $innerJsFileAddr
+
+    # -----------------------------------
+
+    local innerJsFileAddr="client/src/components/DevelopersPages/DevDesign/subs/DisplayCards/subs/$compName.js"
+    
+    local jsContext=$(getDevCardFileContext $compName)
+    echo "$jsContext" >> $innerJsFileAddr
+    
+    echo -en "${I_YELLOW}"
+    echo "1. Don't forget to add assign a new type to the CARD_TYPES varibles inside @/contants/devDesignVars.js"
+    echo -en "${DEFAULT_COLOR}"
+    echo "------------------------------------"
+    echo -en "${I_YELLOW}"
+    echo "2. Don't forget to import this newly created card into @/baseComponents/ReusableComps/Card/Card.js file and assign the newly created type to it."
+    echo -en "${DEFAULT_COLOR}"
+    echo "------------------------------------"
+    echo -en "${I_YELLOW}"
+    echo "3. Don't forget to import this newly created card into @/components/DevelopersPage/DevDesign/subs/DisplayCards/DisplayCards.js file and create a new block for this new type be displayed in the dev design page."
+    echo -en "${DEFAULT_COLOR}"
+    echo "------------------------------------"
+    echo -en "${I_YELLOW}"
+    echo "4. Don't forget to update the type of card in @/components/DevelopersPage/DevDesign/subs/DisplayCards/subs/$compName.js file."
+    echo -en "${DEFAULT_COLOR}"
+    echo "------------------------------------"
+    echo "Done!"
+    
+    return 0
+}
+
+
+
+createReactModal() {
+    local compName=$(readData "What is the modal name?")
+    
+    compName="$(tr '[:lower:]' '[:upper:]' <<< ${compName:0:1})${compName:1}"
+    
+    local jsContext=$(getModalContext $compName)
+    
+    local innerJsFileAddr="client/src/baseComponents/PageParts/Modal/subs/$compName.js"
+    
+    echo "$jsContext" >> $innerJsFileAddr
+
+    # -----------------------------------
+
+    local innerJsFileAddr="client/src/components/DevelopersPages/DevDesign/subs/DisplayModals/subs/$compName.js"
+    
+    local jsContext=$(getDevModalContext $compName)
+    echo "$jsContext" >> $innerJsFileAddr
+    
+    echo -en "${I_YELLOW}"
+    echo "1. Don't forget to add assign a new type to the MODAL_TYPES varibles inside @/contants/devDesignVars.js"
+    echo -en "${DEFAULT_COLOR}"
+    echo "------------------------------------"
+    echo -en "${I_YELLOW}"
+    echo "2. Don't forget to import this newly created modal into @/baseComponents/PageParts/Modal/Modal.js file and assign the newly created type to it."
+    echo -en "${DEFAULT_COLOR}"
+    echo "------------------------------------"
+    echo -en "${I_YELLOW}"
+    echo "3. Don't forget to import this newly created modal into @/components/DevelopersPage/DevDesign/subs/DisplayModals/DisplayModals.js file and create a new block for this new type be displayed in the dev design page."
+    echo -en "${DEFAULT_COLOR}"
+    echo "------------------------------------"
+    echo -en "${I_YELLOW}"
+    echo "4. Don't forget to update the type of card in @/components/DevelopersPage/DevDesign/subs/DisplayModals/subs/$compName.js file."
+    echo -en "${DEFAULT_COLOR}"
+    echo "------------------------------------"
+    echo "Done!"
+    
+    return 0
+}
+
+
+createReactSubComp() {
+    local compName=$(readData "What is the modal name?")
+    
+    compName="$(tr '[:lower:]' '[:upper:]' <<< ${compName:0:1})${compName:1}"
+    
+    local jsContext=$(getJsContext $compName)
+    
+    local innerJsFileAddr="client/src/components/$compName.js"
+    
+    echo "$jsContext" >> $innerJsFileAddr
+    echo "Done!"
+    
+    return 0
+}

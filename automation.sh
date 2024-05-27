@@ -31,12 +31,15 @@ run() {
             [ $selected == 3 ] && createReactComponent
             [ $selected == 4 ] && createReactBaseComponent
             [ $selected == 5 ] && createReactPage
-            [ $selected == 6 ] && addDjangoApp
-            [ $selected == 7 ] && initialSetupInServer
-            [ $selected == 8 ] && deployToStaging
-            [ $selected == 9 ] && deployToProd
-            [ $selected == 10 ] && makeBackupOfDb
-            [ $selected == 11 ] && restoreDb
+            [ $selected == 6 ] && createReactCard
+            [ $selected == 7 ] && createReactModal
+            [ $selected == 8 ] && createReactSubComp
+            [ $selected == 9 ] && addDjangoApp
+            [ $selected == 10 ] && initialSetupInServer
+            [ $selected == 11 ] && deployToStaging
+            [ $selected == 12 ] && deployToProd
+            [ $selected == 13 ] && makeBackupOfDb
+            [ $selected == 14 ] && restoreDb
         else
             run
         fi
