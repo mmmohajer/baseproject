@@ -90,7 +90,7 @@ createReactCard() {
     
     compName="$(tr '[:lower:]' '[:upper:]' <<< ${compName:0:1})${compName:1}"
     
-    local jsContext=$(getJsContext $compName)
+    local jsContext=$(getCardContext $compName)
     
     local innerJsFileAddr="client/src/baseComponents/ReusableComps/Card/subs/$compName.js"
     

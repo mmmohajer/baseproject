@@ -117,6 +117,28 @@ describe(\"Test $compName Component\", () => {
 """
 }
 
+getCardContext() {
+    local compName=$1
+    compName="$(tr '[:lower:]' '[:upper:]' <<< ${compName:0:1})${compName:1}"
+
+    echo """import React from \"react\";
+import cx from \"classnames\";
+import { Div } from \"basedesign-iswad\";
+
+import styles from \"../Card.module.scss\";
+
+const $compName = () => {
+  return (
+    <>
+      <Div>$compName</Div>
+    </>
+  );
+};
+
+export default $compName;
+"""
+}
+
 getDevCardFileContext() {
   local compName=$1
 
