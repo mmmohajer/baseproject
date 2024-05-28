@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { Div } from 'basedesign-iswad';
 
-import Icon from '@/baseComponents/ReusableComps/Close';
+import Icon from '@/baseComponents/ReusableComps/Icon';
 
 import { COLORS } from '@/constants/vars';
 import { LIST_OF_ICONS } from '@/constants/devDesignVars';
