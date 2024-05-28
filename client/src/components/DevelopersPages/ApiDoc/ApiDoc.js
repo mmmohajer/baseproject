@@ -12,9 +12,9 @@ const ApiDoc = () => {
 
   return (
     <>
-      <Div className="p2">
+      <Div className="p-all-16">
         {APIS?.map((api, idx) => (
-          <Div key={idx} className="mb2">
+          <Div key={idx} className="m-b-16">
             {api?.map((item, subIdx) => (
               <Div key={subIdx}>
                 <Item

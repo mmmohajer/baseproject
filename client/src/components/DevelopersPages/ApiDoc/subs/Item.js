@@ -24,12 +24,12 @@ const Item = ({ category, endpoints, info, setInfoModalContext }) => {
 
   return (
     <>
-      <Div className={cx('width-per-100 textBlack', styles.itemContainer)}>
+      <Div className={cx('width-per-100 text-black', styles.itemContainer)}>
         <Div
           type="flex"
           distributedBetween
           vAlign="center"
-          className={cx('p2 bgBlue textWhite mouse-hand f-b text-title')}
+          className={cx('p-all-16 bg-blue text-white mouse-hand f-b text-title')}
           onClick={() => setCategoryIsActive(!categoryIsActive)}>
           <Div>{category}</Div>
           {info && (
@@ -49,7 +49,7 @@ const Item = ({ category, endpoints, info, setInfoModalContext }) => {
               <Div
                 key={idx}
                 className={cx(
-                  'p2 m2 br-rad-px-10 mouse-hand',
+                  'p-all-16 m-all-16 br-rad-px-10 mouse-hand',
                   styles[`item${item?.method?.toUpperCase()}CategoryContainer`]
                 )}
                 onClick={() => {
@@ -68,30 +68,30 @@ const Item = ({ category, endpoints, info, setInfoModalContext }) => {
                   <Div className="f-b">{item?.title}</Div>
                 </Div>
                 <HeightTransitionEffect isActive={activeSubItems[idx]} className="">
-                  <Div className="my2 br-bottom-solid-3 br-top-solid-3 py2">
-                    <span className="f-b mr2">Method</span> {item?.method}
+                  <Div className="m-y-16 br-bottom-solid-3 br-top-solid-3 p-y-16">
+                    <span className="f-b m-r-16">Method</span> {item?.method}
                   </Div>
-                  <Div className="mb2 br-bottom-solid-3 py2">
-                    <span className="f-b mr2">URL</span> {item?.url}
+                  <Div className="m-b-16 br-bottom-solid-3 p-y-16">
+                    <span className="f-b m-r-16">URL</span> {item?.url}
                   </Div>
 
-                  <Div className="mb2 br-bottom-solid-3 py2">
-                    <span className="f-b mr2">Authorized Groups</span>{' '}
+                  <Div className="m-b-16 br-bottom-solid-3 p-y-16">
+                    <span className="f-b m-r-16">Authorized Groups</span>{' '}
                     {JSON.stringify(item?.authorizedGroups, null, 2)}
                   </Div>
                   {item?.headerParams?.length >= 1 && (
                     <Div className={'br-bottom-solid-3'}>
-                      <Div className="my2 f-b">Header Params</Div>
-                      <Div className="ml2">
+                      <Div className="m-y-16 f-b">Header Params</Div>
+                      <Div className="m-l-16">
                         {item?.headerParams?.map((param, idx) => (
-                          <Div key={idx} className="mb2">
+                          <Div key={idx} className="m-b-16">
                             <Div>
                               <span className={cx('f-b', param?.isRequired && 'required')}>
                                 {param?.name}
                               </span>
-                              <span className="ml2">{`<${param?.type}>`}</span>
+                              <span className="m-l-16">{`<${param?.type}>`}</span>
                             </Div>
-                            <Div className="mt1 ml2 fs-px-14">{param?.description}</Div>
+                            <Div className="m-t-8 m-l-16 f-s-px-14">{param?.description}</Div>
                           </Div>
                         ))}
                       </Div>
@@ -100,17 +100,17 @@ const Item = ({ category, endpoints, info, setInfoModalContext }) => {
 
                   {item?.bodyParams?.length >= 1 && (
                     <Div className={'br-bottom-solid-3'}>
-                      <Div className="my2 f-b">Body Params</Div>
-                      <Div className="ml2">
+                      <Div className="m-y-16 f-b">Body Params</Div>
+                      <Div className="m-l-16">
                         {item?.bodyParams?.map((param, idx) => (
-                          <Div key={idx} className="mb2">
+                          <Div key={idx} className="m-b-16">
                             <Div>
                               <span className={cx('f-b', param?.isRequired && 'required')}>
                                 {param?.name}
                               </span>
-                              <span className="ml2">{`<${param?.type}>`}</span>
+                              <span className="m-l-16">{`<${param?.type}>`}</span>
                             </Div>
-                            <Div className="mt1 ml2 fs-px-14">{param?.description}</Div>
+                            <Div className="m-t-8 m-l-16 f-s-px-14">{param?.description}</Div>
                           </Div>
                         ))}
                       </Div>
@@ -119,44 +119,44 @@ const Item = ({ category, endpoints, info, setInfoModalContext }) => {
 
                   {item?.queryParams?.length >= 1 && (
                     <Div className={'br-bottom-solid-3'}>
-                      <Div className="my2 f-b">Query Params</Div>
-                      <Div className="ml2">
+                      <Div className="m-y-16 f-b">Query Params</Div>
+                      <Div className="m-l-16">
                         {item?.queryParams?.map((param, idx) => (
-                          <Div key={idx} className="mb2">
+                          <Div key={idx} className="m-b-16">
                             <Div>
                               <span className={cx('f-b', param?.isRequired && 'required')}>
                                 {param?.name}
                               </span>
-                              <span className="ml2">{`<${param?.type}>`}</span>
+                              <span className="m-l-16">{`<${param?.type}>`}</span>
                             </Div>
-                            <Div className="mt1 ml2 fs-px-14">{param?.description}</Div>
+                            <Div className="m-t-8 m-l-16 f-s-px-14">{param?.description}</Div>
                           </Div>
                         ))}
                       </Div>
                     </Div>
                   )}
                   {item?.description && (
-                    <Div className={'br-bottom-solid-3 pb2'}>
-                      <Div className="my2 f-b">Description</Div>
-                      <Div className="ml2">{item?.description}</Div>
+                    <Div className={'br-bottom-solid-3 p-b-16'}>
+                      <Div className="m-y-16 f-b">Description</Div>
+                      <Div className="m-l-16">{item?.description}</Div>
                     </Div>
                   )}
-                  <Div className="my2 f-b">Responses</Div>
+                  <Div className="m-y-16 f-b">Responses</Div>
                   {item?.responses?.map((response, idx) => (
                     <Div
                       key={idx}
                       className={cx(
-                        'mb4 p2',
+                        'm-b-32 p-all-16',
                         response?.type?.toUpperCase() === 'SUCCESS'
                           ? styles.itemResponseSuccessContainer
                           : styles.itemResponseErrorContainer
                       )}>
-                      <Div className="mb2">Type: {response?.type}</Div>
-                      <Div className="mb2">Code: {response?.code}</Div>
+                      <Div className="m-b-16">Type: {response?.type}</Div>
+                      <Div className="m-b-16">Code: {response?.code}</Div>
                       <Div>
-                        <Div className="mb2">Response Sample:</Div>
+                        <Div className="m-b-16">Response Sample:</Div>
                         <pre>{JSON.stringify(response?.ex || {}, null, 2)}</pre>
-                        <Div className="my2">{response?.description}</Div>
+                        <Div className="m-y-16">{response?.description}</Div>
                       </Div>
                     </Div>
                   ))}

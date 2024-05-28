@@ -13,9 +13,9 @@ const InfoModal = ({ categoryInfo, setInfoModalContext }) => {
   return (
     <>
       <Modal
-        fullHeightclassName={cx('ModalMainClickableZIndex bgBlack op-70')}
+        fullHeightclassName={cx('ModalMainClickableZIndex bg-black op-70')}
         className={cx(
-          'pos-rel width-per-80 baxShadowType1 bgWhite br-rad-px-10 of-hidden ModalContainerZIndex',
+          'pos-rel width-per-80 bax-shadow-type-one bg-white br-rad-px-10 of-hidden ModalContainerZIndex',
           styles.modalContainer
         )}>
         <Div type="flex" direction="vertical" hAlign="start" className="">
@@ -24,7 +24,7 @@ const InfoModal = ({ categoryInfo, setInfoModalContext }) => {
             type="flex"
             direction="vertical"
             hAlign="start"
-            className={cx('of-y-auto scrollType1 p2', styles.modalMainContentContainer)}>
+            className={cx('of-y-auto scroll-type-one p-all-16', styles.modalMainContentContainer)}>
             <DivConvertTextToHtml
               className={cx('text-justify', styles.modalInfoTextContainer)}
               text={categoryInfo}
@@ -32,12 +32,14 @@ const InfoModal = ({ categoryInfo, setInfoModalContext }) => {
           </Div>
         </Div>
 
-        <Div className="pb2 pl2 pr2">
+        <Div className="p-b-16 p-x-16">
           <Div
             type="flex"
             hAlign="center"
             vAlign="center"
-            className={'bgBlue textWhite p2 width-px-80 mouse-hand hover-bg-green br-rad-px-5'}
+            className={
+              'bg-blue text-white p-all-16 width-px-80 mouse-hand bg-green-on-hover br-rad-px-5'
+            }
             onClick={() => setInfoModalContext('')}>
             OK
           </Div>
