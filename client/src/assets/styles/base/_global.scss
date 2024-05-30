@@ -174,8 +174,8 @@ button {
 
   &bg- {
     &grad-one {
-      background-image: linear-gradient(
-        to right,
+      background-image: radial-gradient(
+        circle at center,
         #{map-get($colors, 'theme-one')},
         #{map-get($colors, 'theme-two')}
       );

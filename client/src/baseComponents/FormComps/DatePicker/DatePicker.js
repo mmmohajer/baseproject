@@ -37,7 +37,7 @@ const DatePicker = ({
             selected={chosenDate}
             onChange={(date) => setChosenDate(date)}
             className={cx(
-              'width-per- p-y-8 p-x-8 br-all-solid-1 global-outline-none box-shadow-type-one width-per-100 text-gray'
+              'width-per- p-y-16 p-x-8 br-none global-outline-none box-shadow-type-one width-per-100 text-gray br-rad-px-10'
             )}
             dateFormat={dateFormat}
             yearDropdownItemNumber={yearDropdownItemNumber}

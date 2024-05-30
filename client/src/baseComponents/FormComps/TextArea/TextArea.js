@@ -26,7 +26,7 @@ const TextArea = ({
         <Div className={cx('')}>
           <BaseTextArea
             className={cx(
-              'width-per-100 min-width-per-100 max-width-per-100 min-height-px-40 max-height-px-150 height-px-100 bg-white box-shadow-type-one global-outline-none br-all-solid-1 br-black'
+              'width-per-100 min-width-per-100 max-width-per-100 min-height-px-40 max-height-px-150 height-px-100 bg-white box-shadow-type-one global-outline-none br-none p-all-8'
             )}
             value={val}
             onChange={(e) => {

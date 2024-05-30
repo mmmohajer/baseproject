@@ -17,8 +17,8 @@ const Index = () => {
       <Seo>
         <PageContainer
           pageIdentifier="home"
-          hasHeader={false}
-          hasFooter={false}
+          hasHeader={true}
+          hasFooter={true}
           hasStickyHeader={false}
           hasStickyFooter={false}>
           <Home />

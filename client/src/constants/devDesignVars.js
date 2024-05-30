@@ -1,6 +1,8 @@
 export const LIST_OF_ICONS = {
+  angleDown: 'angle-down',
   'angle-left': 'angle-left',
   'angle-right': 'angle-right',
+  angleUp: 'angle-up',
   anglesUp: 'angles-up',
   check: 'check',
   'circle-check': 'circle-check',
@@ -8,7 +10,9 @@ export const LIST_OF_ICONS = {
   'circle-plus': 'circle-plus',
   close: 'close',
   dashboard: 'dashboard',
+  envelope: 'envelope',
   instagramFill: 'instagram-fill',
+  phone: 'phone',
   search: 'search',
   upload: 'upload'
 };
@@ -30,12 +34,11 @@ export const ALERT_TYPES = {
 };
 
 export const MODAL_TYPES = {
-  dataSubmittedSuccessfully: 'data-submitted-successfully',
   'prompt-message': 'prompt-message'
 };
 
 export const CARD_TYPES = {
-  serviceTest: 'service' // This is a sample of test card
+  serviceTest: 'service' // This is a sample of test card.
 };
 
 export const EMAIL_TEMPLATES = {

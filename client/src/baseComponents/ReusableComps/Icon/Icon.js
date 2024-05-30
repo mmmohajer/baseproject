@@ -6,6 +6,8 @@ import { Div } from 'basedesign-iswad';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAnglesUp,
+  faAngleDown,
+  faAngleUp,
   faSearch,
   faClose,
   faUpload,
@@ -14,7 +16,9 @@ import {
   faCircleCheck,
   faAngleLeft,
   faAngleRight,
-  faCheck
+  faCheck,
+  faPhone,
+  faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
 import { faSquareInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart as emptyHeart } from '@fortawesome/free-regular-svg-icons';
@@ -41,6 +45,12 @@ function Icon({
   let iconTypes = {
     'angles-up': (
       <FontAwesomeIcon icon={faAnglesUp} style={{ color, width, transform: `scale(${scale})` }} />
+    ),
+    'angle-down': (
+      <FontAwesomeIcon icon={faAngleDown} style={{ color, width, transform: `scale(${scale})` }} />
+    ),
+    'angle-up': (
+      <FontAwesomeIcon icon={faAngleUp} style={{ color, width, transform: `scale(${scale})` }} />
     ),
     search: (
       <FontAwesomeIcon icon={faSearch} style={{ color, width, transform: `scale(${scale})` }} />
@@ -84,7 +94,15 @@ function Icon({
     'angle-right': (
       <FontAwesomeIcon icon={faAngleRight} style={{ color, width, transform: `scale(${scale})` }} />
     ),
-    check: <FontAwesomeIcon icon={faCheck} style={{ color, width, transform: `scale(${scale})` }} />
+    check: (
+      <FontAwesomeIcon icon={faCheck} style={{ color, width, transform: `scale(${scale})` }} />
+    ),
+    phone: (
+      <FontAwesomeIcon icon={faPhone} style={{ color, width, transform: `scale(${scale})` }} />
+    ),
+    envelope: (
+      <FontAwesomeIcon icon={faEnvelope} style={{ color, width, transform: `scale(${scale})` }} />
+    )
   };
 
   iconTypes['dashboard'] = (

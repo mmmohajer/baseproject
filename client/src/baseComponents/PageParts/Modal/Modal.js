@@ -44,6 +44,7 @@ const Modal = () => {
               }
               headerText={header}
               onClick={() => clearModal(dispatch)}
+              iconScale={0.7}
             />
             <Div
               type="flex"

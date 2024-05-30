@@ -7,7 +7,7 @@ import styles from './Label.module.scss';
 const Label = ({ labelText, isRequired, className }) => {
   return (
     <>
-      <Div className={cx('text-gray-dark f-s-small', className)}>
+      <Div className={cx('text-gray-dark f-s-small m-b-4', className)}>
         <BaseLabel className={cx(isRequired && 'required')}>{labelText}</BaseLabel>
       </Div>
     </>

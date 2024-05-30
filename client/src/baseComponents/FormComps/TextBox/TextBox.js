@@ -73,7 +73,7 @@ const TextBox = ({
                 hAlign="center"
                 vAlign="center"
                 className={cx('mouse-hand width-px-20 height-px-30 pos-abs z-1000')}
-                style={{ top: '32px', left: '4px' }}
+                style={{ top: '28px', left: '4px' }}
                 onClick={() => {
                   if (curType === 'password') {
                     setCurType('text');

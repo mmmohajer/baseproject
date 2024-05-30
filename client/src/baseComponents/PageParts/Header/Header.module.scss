@@ -3,7 +3,7 @@
 
 $HEADER_BG_COLOR: green;
 $SUBNAV_BG_COLOR: brown;
-$MENU_BORDER_BTM_ON_HOVER_COLOR: purple;
+$MENU_BORDER_BTM_ON_HOVER_COLOR: black;
 $SUB_MENU_BORDER_BTM_ON_HOVER_COLOR: yellow;
 $MENU_ITEM_COLOR: black;
 $SUB_MENU_ITEM_COLOR: red;
@@ -98,16 +98,14 @@ $BORDER_BTM_THICKNESS: 2px;
 
 .mobNav {
   &Container {
-    padding: $MOB_NAV_CONTAINER_PADDING;
-    background-color: $MOB_NAV_CONTAINER_COLOR;
     overflow: hidden;
     position: fixed;
     top: calc(map-get($heights, 'header') + 2px);
-    left: 0.5rem;
+    right: 0.5rem;
     transition: all 0.3s ease-in-out;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 10px;
-    transform: translateX(-150%);
+    transform: translateX(150%);
 
     &IsActive {
       transform: translateX(0);
@@ -124,9 +122,7 @@ $BORDER_BTM_THICKNESS: 2px;
         $BORDER_BTM_THICKNESS no-repeat;
       background-size: 0% $BORDER_BTM_THICKNESS;
       transition: all 0.3s ease-in-out;
-      color: $MOB_MENU_ITEM_COLOR;
       margin-bottom: $NAV_ITEM_IN_MOBILE_MARGIN_BTM;
-
       &:hover {
         background-size: 100% $BORDER_BTM_THICKNESS;
       }

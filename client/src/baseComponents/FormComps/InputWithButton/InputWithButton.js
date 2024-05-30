@@ -29,9 +29,8 @@ const InputWithButton = ({ val, setVal, placeHolder, name, id, btnText, onBtnCli
             setVal={setVal}
             name={name}
             id={id}
-            hasBorder={false}
             hasMarginBottom={false}
-            className="width-per-100"
+            className="width-per-100 br-none"
             hasBoxShadow={false}
             hasBorderRadius={false}
           />
