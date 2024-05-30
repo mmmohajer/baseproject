@@ -23,7 +23,15 @@ import Dashboard from '@/images/js-Images/icons/svg/dashboard.svg';
 // library.add(fab);
 
 import { LIST_OF_ICONS } from '@/constants/devDesignVars';
-function Icon({ type, color, width, scale, isBlock = true, className, ...props }) {
+function Icon({
+  type = 'close',
+  color = 'black',
+  width = '16px',
+  scale,
+  isBlock = true,
+  className,
+  ...props
+}) {
   const [showIcon, setShowIcon] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -94,18 +102,5 @@ function Icon({ type, color, width, scale, isBlock = true, className, ...props }
     </>
   );
 }
-
-Icon.propTypes = {
-  type: PropTypes.oneOf(LIST_OF_ICONS),
-  color: PropTypes.string,
-  width: PropTypes.string,
-  className: PropTypes.string
-};
-
-Icon.defaultProps = {
-  type: 'close',
-  color: 'black',
-  width: '16px'
-};
 
 export default Icon;

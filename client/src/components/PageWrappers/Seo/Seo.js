@@ -2,7 +2,12 @@ import Head from 'next/head';
 
 import { IS_STAGING_ENV } from 'config';
 
-const Seo = ({ title, keywords, description, children }) => {
+const Seo = ({
+  title = 'ISWAD',
+  keywords = 'develop, app, ai, mobile, service, company, business',
+  description = `Empower your business with ISWAD's cutting-edge AI focused development services. Our software solutions, including MVP development, web and app development, team augmentation, coaching, and advisory services, are designed to transform your vision into reality. Explore how ISWAD can elevate your business with quality content and a user-friendly experience.`,
+  children
+}) => {
   return (
     <>
       <Head>
@@ -20,11 +25,3 @@ const Seo = ({ title, keywords, description, children }) => {
     </>
   );
 };
-
-Seo.defaultProps = {
-  title: 'ISWAD',
-  description: `Empower your business with ISWAD's cutting-edge AI focused development services. Our software solutions, including MVP development, web and app development, team augmentation, coaching, and advisory services, are designed to transform your vision into reality. Explore how ISWAD can elevate your business with quality content and a user-friendly experience.`,
-  keywords: 'develop, app, ai, mobile, service, company, business'
-};
-
-export default Seo;
