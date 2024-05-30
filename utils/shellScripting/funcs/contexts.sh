@@ -210,7 +210,7 @@ export default $compName;
 getDevModalContext() {
   local compName=$1
 
-  echo """import React from "react";
+  echo """import React from 'react';
 import cx from 'classnames';
 import { useDispatch } from 'react-redux';
 import { Div } from 'basedesign-iswad';

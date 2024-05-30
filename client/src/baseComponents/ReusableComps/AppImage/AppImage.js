@@ -36,16 +36,17 @@ const AppImage = ({
           {...props}
           onLoad={() => setLoading(false)}
         />
+
+        {loading && (
+          <Div
+            type="flex"
+            hAlign="center"
+            vAlign="center"
+            className={cx('pos-abs pos-abs--center width-per-100 height-per-100', styles.spinner)}>
+            <ImageLoader type={type} />
+          </Div>
+        )}
       </DivWidthDynamic>
-      {loading && (
-        <Div
-          type="flex"
-          hAlign="center"
-          vAlign="center"
-          className={cx('pos-abs pos-abs--center width-per-100 height-per-100', styles.spinner)}>
-          <ImageLoader type={type} />
-        </Div>
-      )}
     </>
   );
 };
