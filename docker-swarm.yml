@@ -11,6 +11,8 @@ services:
       - ./nginx/certbot/conf:/etc/letsencrypt
       - ./nginx/certbot/www:/var/www/certbot
       - ./nginx/htpasswd:/etc/nginx/.htpasswd
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
@@ -21,6 +23,8 @@ services:
       - ./nginx/certbot/conf:/etc/letsencrypt
       - ./nginx/certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
@@ -30,6 +34,8 @@ services:
     command: npm start
     environment:
       - CHOKIDAR_USEPOLLING=true
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
@@ -41,6 +47,8 @@ services:
     command: ./docker-entrypoint-prod.sh
     volumes:
       - static-data:/usr/src/app/vol
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
@@ -52,6 +60,8 @@ services:
     volumes:
       - static-data:/usr/src/app/vol
     command: celery -A config worker -l info
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
@@ -63,6 +73,8 @@ services:
     volumes:
       - static-data:/usr/src/app/vol
     command: celery -A config beat -l info
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
@@ -74,6 +86,8 @@ services:
     volumes:
       - static-data:/usr/src/app/vol
     command: celery -A config flower --url_prefix=/flower --basic_auth=${CELERY_FLOWER_USER}:${CELERY_FLOWER_PASSWORD}
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
@@ -83,6 +97,8 @@ services:
     env_file:
       - ./config/envFiles/django/prod/.env
     command: daphne -b 0.0.0.0 -p 8001 config.asgi:application
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
@@ -96,6 +112,8 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./db_backups:/db_backups
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
@@ -105,9 +123,15 @@ services:
     volumes:
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
     command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      - mynetwork
     deploy:
       restart_policy:
         condition: on-failure
+
+networks:
+  mynetwork:
+    driver: overlay
 
 volumes:
   pgdata:
