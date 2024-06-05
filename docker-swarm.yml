@@ -1,0 +1,114 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: mmmohajer70/baseproject-nginx:1.0.0
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - static-data:/vol/static
+      - ./nginx/certbot/conf:/etc/letsencrypt
+      - ./nginx/certbot/www:/var/www/certbot
+      - ./nginx/htpasswd:/etc/nginx/.htpasswd
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./nginx/certbot/conf:/etc/letsencrypt
+      - ./nginx/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  client:
+    image: mmmohajer70/baseproject-client:1.0.0
+    command: npm start
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  api:
+    image: mmmohajer70/baseproject-api:1.0.0
+    env_file:
+      - ./config/envFiles/django/prod/.env
+    command: ./docker-entrypoint-prod.sh
+    volumes:
+      - static-data:/usr/src/app/vol
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  celery:
+    image: mmmohajer70/baseproject-api:1.0.0
+    env_file:
+      - ./config/envFiles/django/prod/.env
+    volumes:
+      - static-data:/usr/src/app/vol
+    command: celery -A config worker -l info
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  celery-beat:
+    image: mmmohajer70/baseproject-api:1.0.0
+    env_file:
+      - ./config/envFiles/django/prod/.env
+    volumes:
+      - static-data:/usr/src/app/vol
+    command: celery -A config beat -l info
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  celery-flower:
+    image: mmmohajer70/baseproject-api:1.0.0
+    env_file:
+      - ./config/envFiles/django/prod/.env
+    volumes:
+      - static-data:/usr/src/app/vol
+    command: celery -A config flower --url_prefix=/flower --basic_auth=${CELERY_FLOWER_USER}:${CELERY_FLOWER_PASSWORD}
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  channels:
+    image: mmmohajer70/baseproject-api:1.0.0
+    env_file:
+      - ./config/envFiles/django/prod/.env
+    command: daphne -b 0.0.0.0 -p 8001 config.asgi:application
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  db:
+    image: postgres:13-alpine
+    env_file:
+      - ./config/envFiles/postgres/prod/.env
+    ports:
+      - "${SERVER_PORT}:${DB_PORT}"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db_backups:/db_backups
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  redis:
+    image: redis:7.0.4-alpine3.16
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+volumes:
+  pgdata:
+  static-data:
