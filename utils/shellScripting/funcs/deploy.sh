@@ -154,6 +154,8 @@ export API_REPO=$API_REPO
 export NGINX_VERSION=$nginx_ver
 export CLIENT_VERSION=$client_ver
 export API_VERSION=$api_ver
+export CELERY_FLOWER_USER=$CELERY_FLOWER_USER
+export CELERY_FLOWER_PASSWORD=$CELERY_FLOWER_PASSWORD
 envsubst < docker-swarm.yml > docker-swarm.tmp.yml
 docker build -t \$NGINX_REPO:\$NGINX_VERSION -f nginx/Dockerfile.swarm ./nginx && docker build -t \$CLIENT_REPO:\$CLIENT_VERSION -f client/Dockerfile ./client && docker build -t \$API_REPO:\$API_VERSION -f api/Dockerfile ./api && docker push \$NGINX_REPO:\$NGINX_VERSION && docker push \$CLIENT_REPO:\$CLIENT_VERSION && docker push \$API_REPO:\$API_VERSION && docker stack deploy -c docker-swarm.tmp.yml app && docker system prune -a --volumes -f && rm docker-swarm.tmp.yml
 EOF

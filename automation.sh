@@ -3,6 +3,7 @@
 source ./utils/shellScripting/constants/colours.sh
 source ./utils/shellScripting/constants/constants.sh
 source ./utils/shellScripting/constants/versioning.sh
+source ./utils/shellScripting/constants/env.sh
 source ./utils/shellScripting/funcs/helpers.sh
 source ./utils/shellScripting/funcs/contexts.sh
 source ./utils/shellScripting/funcs/client.sh
