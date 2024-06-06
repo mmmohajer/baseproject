@@ -157,6 +157,7 @@ export API_VERSION=$api_ver
 export CELERY_FLOWER_USER=$CELERY_FLOWER_USER
 export CELERY_FLOWER_PASSWORD=$CELERY_FLOWER_PASSWORD
 envsubst < docker-swarm.yml > docker-swarm.tmp.yml
+cat docker-swarm.tmp.yml
 EOF
 )
 ssh $STAGING_SERVER_ALIAS "$script" 
