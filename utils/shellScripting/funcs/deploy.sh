@@ -121,7 +121,7 @@ then
 local script=$( cat << EOF
 cd /var/www/app;
 git pull origin staging;
-docker build -t mmmohajer70/baseproject-nginx:1.0.0 -f nginx/Dockerfile.swarm ./nginx && docker build -t mmmohajer70/baseproject-client:1.0.0 -f client/Dockerfile ./client && docker build -t mmmohajer70/baseproject-api:1.0.0 -f api/Dockerfile ./api && docker push mmmohajer70/baseproject-nginx:1.0.0 && docker push mmmohajer70/baseproject-client:1.0.0 && docker push mmmohajer70/baseproject-api:1.0.0 && docker stack rm app && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes
+docker build -t mmmohajer70/baseproject-nginx:1.0.0 -f nginx/Dockerfile.swarm ./nginx && docker build -t mmmohajer70/baseproject-client:1.0.0 -f client/Dockerfile ./client && docker build -t mmmohajer70/baseproject-api:1.0.0 -f api/Dockerfile ./api && docker push mmmohajer70/baseproject-nginx:1.0.0 && docker push mmmohajer70/baseproject-client:1.0.0 && docker push mmmohajer70/baseproject-api:1.0.0 && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes -f
 EOF
 )
 ssh $STAGING_SERVER_ALIAS "$script" 
@@ -165,7 +165,7 @@ then
 local script=$( cat << EOF
 cd /var/www/app;
 git pull origin master;
-docker build -t mmmohajer70/baseproject-nginx:1.0.0 -f nginx/Dockerfile.swarm ./nginx && docker build -t mmmohajer70/baseproject-client:1.0.0 -f client/Dockerfile ./client && docker build -t mmmohajer70/baseproject-api:1.0.0 -f api/Dockerfile ./api && docker push mmmohajer70/baseproject-nginx:1.0.0 && docker push mmmohajer70/baseproject-client:1.0.0 && docker push mmmohajer70/baseproject-api:1.0.0 && docker stack rm app && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes
+docker build -t mmmohajer70/baseproject-nginx:1.0.0 -f nginx/Dockerfile.swarm ./nginx && docker build -t mmmohajer70/baseproject-client:1.0.0 -f client/Dockerfile ./client && docker build -t mmmohajer70/baseproject-api:1.0.0 -f api/Dockerfile ./api && docker push mmmohajer70/baseproject-nginx:1.0.0 && docker push mmmohajer70/baseproject-client:1.0.0 && docker push mmmohajer70/baseproject-api:1.0.0 && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes -f
 EOF
 )
 ssh $STAGING_SERVER_ALIAS "$script" 
