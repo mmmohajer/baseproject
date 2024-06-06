@@ -103,11 +103,11 @@ deployToStagingWithSwarm() {
   buildClient $clientBump
 
   # Update versions in constants.sh
-  local ninx_ver=$(increment_version "$NGINX_VERSION" "$nginxBump")
+  local nginx_ver=$(increment_version "$NGINX_VERSION" "$nginxBump")
   local client_ver=$(increment_version "$CLIENT_VERSION" "$clientBump")
   local api_ver=$(increment_version "$API_VERSION" "$apiBump")
 
-  update_constants_file "$ninx_ver" "$client_ver" "$api_ver"
+  update_constants_file "$nginx_ver" "$client_ver" "$api_ver"
 
   # Commit and push changes to GitHub
   local commitMsg="Ready for new release to staging server: $(date)"
@@ -133,11 +133,11 @@ deployToProdWithSwarm() {
   buildClient $clientBump
 
   # Update versions in constants.sh
-  local ninx_ver=$(increment_version "$NGINX_VERSION" "$nginxBump")
+  local nginx_ver=$(increment_version "$NGINX_VERSION" "$nginxBump")
   local client_ver=$(increment_version "$CLIENT_VERSION" "$clientBump")
   local api_ver=$(increment_version "$API_VERSION" "$apiBump")
 
-  update_constants_file "$ninx_ver" "$client_ver" "$api_ver"
+  update_constants_file "$nginx_ver" "$client_ver" "$api_ver"
 
   # Commit and push changes to GitHub
   local commitMsg="Ready for new release to production server: $(date)"
@@ -148,7 +148,15 @@ deployToProdWithSwarm() {
 local script=$( cat << EOF
 cd /var/www/app;
 git pull origin master;
-docker build -t $NGINX_REPO:$NGINX_VERSION -f nginx/Dockerfile.swarm ./nginx && docker build -t $CLIENT_REPO:$CLIENT_VERSION -f client/Dockerfile ./client && docker build -t $API_REPO:$API_VERSION -f api/Dockerfile ./api && docker push $NGINX_REPO:$NGINX_VERSION && docker push $CLIENT_REPO:$CLIENT_VERSION && docker push $API_REPO:$API_VERSION && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes -f
+export NGINX_REPO=$NGINX_REPO
+export CLIENT_REPO=$CLIENT_REPO
+export API_REPO=$API_REPO
+export NGINX_VERSION=$nginx_ver
+export CLIENT_VERSION=$client_ver
+export API_VERSION=$api_ver
+envsubst < docker-swarm.yml > docker-swarm.tmp.yml
+cat docker-swarm.tmp.yml
+rm docker-swarm.tmp.yml
 EOF
 )
 ssh $STAGING_SERVER_ALIAS "$script" 
