@@ -121,7 +121,7 @@ then
 local script=$( cat << EOF
 cd /var/www/app;
 git pull origin staging;
-docker build -t mmmohajer70/baseproject-nginx:1.0.0 -f nginx/Dockerfile.swarm ./nginx && docker build -t mmmohajer70/baseproject-client:1.0.0 -f client/Dockerfile ./client && docker build -t mmmohajer70/baseproject-api:1.0.0 -f api/Dockerfile ./api && docker push mmmohajer70/baseproject-nginx:1.0.0 && docker push mmmohajer70/baseproject-client:1.0.0 && docker push mmmohajer70/baseproject-api:1.0.0 && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes -f
+docker build -t $NGINX_REPO:$NGINX_VERSION -f nginx/Dockerfile.swarm ./nginx && docker build -t $CLIENT_REPO:$CLIENT_VERSION -f client/Dockerfile ./client && docker build -t $API_REPO:$API_VERSION -f api/Dockerfile ./api && docker push $NGINX_REPO:$NGINX_VERSION && docker push $CLIENT_REPO:$CLIENT_VERSION && docker push $API_REPO:$API_VERSION && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes -f
 EOF
 )
 ssh $STAGING_SERVER_ALIAS "$script" 
@@ -165,7 +165,7 @@ then
 local script=$( cat << EOF
 cd /var/www/app;
 git pull origin master;
-docker build -t mmmohajer70/baseproject-nginx:1.0.0 -f nginx/Dockerfile.swarm ./nginx && docker build -t mmmohajer70/baseproject-client:1.0.0 -f client/Dockerfile ./client && docker build -t mmmohajer70/baseproject-api:1.0.0 -f api/Dockerfile ./api && docker push mmmohajer70/baseproject-nginx:1.0.0 && docker push mmmohajer70/baseproject-client:1.0.0 && docker push mmmohajer70/baseproject-api:1.0.0 && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes -f
+docker build -t $NGINX_REPO:$NGINX_VERSION -f nginx/Dockerfile.swarm ./nginx && docker build -t $CLIENT_REPO:$CLIENT_VERSION -f client/Dockerfile ./client && docker build -t $API_REPO:$API_VERSION -f api/Dockerfile ./api && docker push $NGINX_REPO:$NGINX_VERSION && docker push $CLIENT_REPO:$CLIENT_VERSION && docker push $API_REPO:$API_VERSION && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes -f
 EOF
 )
 ssh $STAGING_SERVER_ALIAS "$script" 
