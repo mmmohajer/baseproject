@@ -95,47 +95,33 @@ fi
 }
 
 deployToStagingWithSwarm() {
-getConfirmation "Are you willing to push it to github?"
-local pushToGithub=$?
+# Prompt for version increments
+  local nginxBump=$(prompt_for_version_bump "nginx")
+  local clientBump=$(prompt_for_version_bump "client")
+  local apiBump=$(prompt_for_version_bump "API")
 
-getConfirmation "Are you willing to build client folder in your local?"
-local buildClientInLocal=$?
+  buildClient $clientBump
 
-getConfirmation "Are you willing to deploy all new changes in the staging server?"
-local mustBuildNewChangesInServer=$?
+  # Update versions in constants.sh
+  local ninx_ver=$(increment_version "$NGINX_VERSION" "$nginxBump")
+  local client_ver=$(increment_version "$CLIENT_VERSION" "$clientBump")
+  local api_ver=$(increment_version "$API_VERSION" "$apiBump")
 
-if [ $buildClientInLocal -eq 0 ]
-then
-    buildClient
-fi
-if [ $pushToGithub -eq 0 ]
-then
-    local commitMsg=$(readData "What is your commit message to git?")
-    git add .
-    git commit -m "$commitMsg"
-    git push origin staging
-fi
+  update_constants_file "$ninx_ver" "$client_ver" "$api_ver"
 
-if [ $mustBuildNewChangesInServer -eq 0 ]
-then
+  # Commit and push changes to GitHub
+  local commitMsg="Ready for new release to staging server: $(date)"
+  git add .
+  git commit -m "$commitMsg"
+  git push origin staging
+
 local script=$( cat << EOF
 cd /var/www/app;
 git pull origin staging;
 docker build -t $NGINX_REPO:$NGINX_VERSION -f nginx/Dockerfile.swarm ./nginx && docker build -t $CLIENT_REPO:$CLIENT_VERSION -f client/Dockerfile ./client && docker build -t $API_REPO:$API_VERSION -f api/Dockerfile ./api && docker push $NGINX_REPO:$NGINX_VERSION && docker push $CLIENT_REPO:$CLIENT_VERSION && docker push $API_REPO:$API_VERSION && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes -f
 EOF
 )
-ssh $STAGING_SERVER_ALIAS "$script" 
-fi
-
-if [ $mustBuildNewChangesInServer -ne 0 ]
-then
-local script=$( cat << EOF
-cd /var/www/app;
-git pull origin staging;
-EOF
-)
-ssh $STAGING_SERVER_ALIAS "$script" 
-fi
+ssh $STAGING_SERVER_ALIAS "$script"
 }
 
 deployToProdWithSwarm() {
