@@ -73,7 +73,7 @@ createReactPage() {
 
 buildClient() {
     local versioningOptions=("patch" "minor" "major" "none")
-    local changeVersion=$(readData "How would you like to change your versioning(patch|minor|major:none)?")
+    local changeVersion=$1
     if [[ ${versioningOptions[*]} =~ $changeVersion ]]
     then
         [ $changeVersion == "patch" ] && cd client && npm run build-patch && cd ..

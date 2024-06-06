@@ -2,10 +2,12 @@
 
 source ./utils/shellScripting/constants/colours.sh
 source ./utils/shellScripting/constants/constants.sh
+source ./utils/shellScripting/constants/versioning.sh
 source ./utils/shellScripting/funcs/helpers.sh
 source ./utils/shellScripting/funcs/contexts.sh
 source ./utils/shellScripting/funcs/client.sh
 source ./utils/shellScripting/funcs/api.sh
+source ./utils/shellScripting/funcs/cicd.sh
 source ./utils/shellScripting/funcs/deploy.sh
 source ./utils/shellScripting/funcs/initialSetup.sh
 source ./utils/shellScripting/funcs/db_backup_local.sh

@@ -8,7 +8,3 @@ PROD_SERVER_ALIAS=CompleteTestSwarm
 NGINX_REPO="mmmohajer70/baseproject-nginx"
 CLIENT_REPO="mmmohajer70/baseproject-client"
 API_REPO="mmmohajer70/baseproject-api"
-
-NGINX_VERSION="1.0.0"
-CLIENT_VERSION="1.0.0"
-API_VERSION="1.0.0"
