@@ -1,4 +1,4 @@
-deployToStaging() {
+deployToStagingWithCompose() {
 getConfirmation "Are you willing to push it to github?"
 local pushToGithub=$?
 
@@ -39,14 +39,14 @@ if [ $mustBuildNewChangesInServer -ne 0 ]
 then
 local script=$( cat << EOF
 cd /var/www/app;
-git pull origin master;
+git pull origin staging;
 EOF
 )
 ssh $STAGING_SERVER_ALIAS "$script" 
 fi
 }
 
-deployToProd() {
+deployToProdWithCompose() {
 getConfirmation "Are you willing to push it to github?"
 local pushToGithub=$?
 
@@ -92,4 +92,138 @@ EOF
 )
 ssh $PROD_SERVER_ALIAS "$script" 
 fi
+}
+
+deployToStagingWithSwarm() {
+getConfirmation "Are you willing to push it to github?"
+local pushToGithub=$?
+
+getConfirmation "Are you willing to build client folder in your local?"
+local buildClientInLocal=$?
+
+getConfirmation "Are you willing to deploy all new changes in the staging server?"
+local mustBuildNewChangesInServer=$?
+
+if [ $buildClientInLocal -eq 0 ]
+then
+    buildClient
+fi
+if [ $pushToGithub -eq 0 ]
+then
+    local commitMsg=$(readData "What is your commit message to git?")
+    git add .
+    git commit -m "$commitMsg"
+    git push origin staging
+fi
+
+if [ $mustBuildNewChangesInServer -eq 0 ]
+then
+local script=$( cat << EOF
+cd /var/www/app;
+git pull origin staging;
+docker build -t mmmohajer70/baseproject-nginx:1.0.0 -f nginx/Dockerfile.swarm ./nginx && docker build -t mmmohajer70/baseproject-client:1.0.0 -f client/Dockerfile ./client && docker build -t mmmohajer70/baseproject-api:1.0.0 -f api/Dockerfile ./api && docker push mmmohajer70/baseproject-nginx:1.0.0 && docker push mmmohajer70/baseproject-client:1.0.0 && docker push mmmohajer70/baseproject-api:1.0.0 && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes
+EOF
+)
+ssh $STAGING_SERVER_ALIAS "$script" 
+fi
+
+if [ $mustBuildNewChangesInServer -ne 0 ]
+then
+local script=$( cat << EOF
+cd /var/www/app;
+git pull origin staging;
+EOF
+)
+ssh $STAGING_SERVER_ALIAS "$script" 
+fi
+}
+
+deployToProdWithSwarm() {
+getConfirmation "Are you willing to push it to github?"
+local pushToGithub=$?
+
+getConfirmation "Are you willing to build client folder in your local?"
+local buildClientInLocal=$?
+
+getConfirmation "Are you willing to deploy all new changes in the staging server?"
+local mustBuildNewChangesInServer=$?
+
+if [ $buildClientInLocal -eq 0 ]
+then
+    buildClient
+fi
+if [ $pushToGithub -eq 0 ]
+then
+    local commitMsg=$(readData "What is your commit message to git?")
+    git add .
+    git commit -m "$commitMsg"
+    git push origin master
+fi
+
+if [ $mustBuildNewChangesInServer -eq 0 ]
+then
+local script=$( cat << EOF
+cd /var/www/app;
+git pull origin master;
+docker build -t mmmohajer70/baseproject-nginx:1.0.0 -f nginx/Dockerfile.swarm ./nginx && docker build -t mmmohajer70/baseproject-client:1.0.0 -f client/Dockerfile ./client && docker build -t mmmohajer70/baseproject-api:1.0.0 -f api/Dockerfile ./api && docker push mmmohajer70/baseproject-nginx:1.0.0 && docker push mmmohajer70/baseproject-client:1.0.0 && docker push mmmohajer70/baseproject-api:1.0.0 && docker stack deploy -c docker-swarm.yml app && docker system prune -a --volumes
+EOF
+)
+ssh $STAGING_SERVER_ALIAS "$script" 
+fi
+
+if [ $mustBuildNewChangesInServer -ne 0 ]
+then
+local script=$( cat << EOF
+cd /var/www/app;
+git pull origin master;
+EOF
+)
+ssh $STAGING_SERVER_ALIAS "$script" 
+fi
+}
+
+deployToStaging() {
+  local selected
+  echo -en "${I_GREEN}"
+  cat << EOF
+1. Using Docker Swarm.
+2. Using Docker Compose.
+EOF
+  echo -en "${DEFAULT_COLOR}"
+  read -p "Choose an option: " selected
+  local deploy_options=(1 2)
+  
+  if [[ " ${deploy_options[@]} " =~ " ${selected} " ]]; then
+    if [ "$selected" -eq 1 ]; then
+      deployToStagingWithSwarm
+    elif [ "$selected" -eq 2 ]; then
+      deployToStagingWithCompose
+    fi
+  else
+    echo "Invalid option, please choose again."
+    deployToStaging
+  fi
+}
+
+deployToProd() {
+  local selected
+  echo -en "${I_GREEN}"
+  cat << EOF
+1. Using Docker Swarm.
+2. Using Docker Compose.
+EOF
+  echo -en "${DEFAULT_COLOR}"
+  read -p "Choose an option: " selected
+  local deploy_options=(1 2)
+  
+  if [[ " ${deploy_options[@]} " =~ " ${selected} " ]]; then
+    if [ "$selected" -eq 1 ]; then
+      deployToProdWithSwarm
+    elif [ "$selected" -eq 2 ]; then
+      deployToProdWithCompose
+    fi
+  else
+    echo "Invalid option, please choose again."
+    deployToProd
+  fi
 }
