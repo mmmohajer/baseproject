@@ -7,7 +7,7 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   return (
     <>
-      <Div className="bg-red width-per-100 p-all-32">Footer</Div>
+      <Div className="bg-green width-per-100 p-all-32">Footer</Div>
     </>
   );
 };

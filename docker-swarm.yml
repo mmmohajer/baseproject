@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   nginx:
-    image: mmmohajer70/baseproject-nginx:1.0.0
+    image: ${NGINX_REPO}:${NGINX_VERSION}
     ports:
       - "80:80"
       - "443:443"
@@ -30,7 +30,7 @@ services:
         condition: on-failure
 
   client:
-    image: mmmohajer70/baseproject-client:1.0.0
+    image: ${CLIENT_REPO}:${CLIENT_VERSION}
     command: npm start
     environment:
       - CHOKIDAR_USEPOLLING=true
@@ -41,7 +41,7 @@ services:
         condition: on-failure
 
   api:
-    image: mmmohajer70/baseproject-api:1.0.0
+    image: ${API_REPO}:${API_VERSION}
     env_file:
       - ./config/envFiles/django/prod/.env
     command: ./docker-entrypoint-prod.sh
@@ -54,7 +54,7 @@ services:
         condition: on-failure
 
   celery:
-    image: mmmohajer70/baseproject-api:1.0.0
+    image: ${API_REPO}:${API_VERSION}
     env_file:
       - ./config/envFiles/django/prod/.env
     volumes:
@@ -67,7 +67,7 @@ services:
         condition: on-failure
 
   celery-beat:
-    image: mmmohajer70/baseproject-api:1.0.0
+    image: ${API_REPO}:${API_VERSION}
     env_file:
       - ./config/envFiles/django/prod/.env
     volumes:
@@ -80,7 +80,7 @@ services:
         condition: on-failure
 
   celery-flower:
-    image: mmmohajer70/baseproject-api:1.0.0
+    image: ${API_REPO}:${API_VERSION}
     env_file:
       - ./config/envFiles/django/prod/.env
     volumes:
@@ -93,7 +93,7 @@ services:
         condition: on-failure
 
   channels:
-    image: mmmohajer70/baseproject-api:1.0.0
+    image: ${API_REPO}:${API_VERSION}
     env_file:
       - ./config/envFiles/django/prod/.env
     command: daphne -b 0.0.0.0 -p 8001 config.asgi:application
