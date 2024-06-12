@@ -44,5 +44,8 @@ initialSetupInServer() {
     cp "config/envFiles/postgres/prod/.env.sample" "config/envFiles/postgres/prod/.env"
     cp "client/next.config.sample.js" "client/next.config.js"
     cp "redis/redis-sample.conf" "redis/redis.conf"
+    cp "backup_db_swarm.sh.sample" "backup_db_swarm.sh"
+    cp "redeploy-swarm.sh.sample" "redeploy-swarm.sh"
+    cp "nginx/default-swarm.sample.conf" "default-swarm.conf"
     echo "All environment variables have been copied"
 }
