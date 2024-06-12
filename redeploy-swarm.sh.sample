@@ -1,0 +1,17 @@
+#!/bin/bash
+
+source ./utils/shellScripting/constants/constants.sh
+source ./utils/shellScripting/constants/versioning.sh
+source ./utils/shellScripting/constants/env.sh
+
+export NGINX_REPO=$NGINX_REPO
+export CLIENT_REPO=$CLIENT_REPO
+export API_REPO=$API_REPO
+export NGINX_VERSION=$NGINX_VERSION
+export CLIENT_VERSION=$CLIENT_VERSION
+export API_VERSION=$API_VERSION
+export CELERY_FLOWER_USER=$CELERY_FLOWER_USER
+export CELERY_FLOWER_PASSWORD=$CELERY_FLOWER_PASSWORD
+
+envsubst < docker-swarm.yml > docker-swarm.tmp.yml
+docker build -t ${NGINX_REPO}:${NGINX_VERSION} -f nginx/Dockerfile.swarm ./nginx && docker push ${NGINX_REPO}:${NGINX_VERSION} && docker stack deploy -c docker-swarm.tmp.yml app --with-registry-auth && rm docker-swarm.tmp.yml && docker system prune -a --volumes -f

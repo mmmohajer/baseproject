@@ -270,3 +270,6 @@ backup_db_from_local.sh
 restart_docker.sh
 docker-swarm.tmp.yml
 env.sh
+default-swarm.conf
+redeploy-swarm.sh
+backup_db_swarm.sh
