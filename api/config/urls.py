@@ -18,6 +18,8 @@ urlpatterns = [
     path('api/', include('chat.urls')),
     path('api/', include('app.urls')),
     path('api/swagger/', schema_view),
+    path('todo/',include('todos.urls')),
+    path('paypal/', include('paypal_payment.urls')),
 ]
 
 if settings.DEBUG:
