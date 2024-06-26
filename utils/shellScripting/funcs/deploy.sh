@@ -126,8 +126,9 @@ export CLIENT_VERSION="$client_ver"
 export API_VERSION="$api_ver"
 export CELERY_FLOWER_USER=$CELERY_FLOWER_USER_STAGING
 export CELERY_FLOWER_PASSWORD=$CELERY_FLOWER_PASSWORD_STAGING
+[ -f "docker-swarm.tmp.yml" ] && rm docker-swarm.tmp.yml
 envsubst < docker-swarm.yml > docker-swarm.tmp.yml
-docker build -t \$NGINX_REPO:\$NGINX_VERSION -f nginx/Dockerfile.swarm ./nginx && docker build -t \$CLIENT_REPO:\$CLIENT_VERSION -f client/Dockerfile ./client && docker build -t \$API_REPO:\$API_VERSION -f api/Dockerfile ./api && docker push \$NGINX_REPO:\$NGINX_VERSION && docker push \$CLIENT_REPO:\$CLIENT_VERSION && docker push \$API_REPO:\$API_VERSION && docker stack deploy -c docker-swarm.tmp.yml app --with-registry-auth && rm docker-swarm.tmp.yml && docker system prune -a --volumes -f
+docker build -t \$NGINX_REPO:\$NGINX_VERSION -f nginx/Dockerfile.swarm ./nginx && docker build -t \$CLIENT_REPO:\$CLIENT_VERSION -f client/Dockerfile ./client && docker build -t \$API_REPO:\$API_VERSION -f api/Dockerfile ./api && docker push \$NGINX_REPO:\$NGINX_VERSION && docker push \$CLIENT_REPO:\$CLIENT_VERSION && docker push \$API_REPO:\$API_VERSION && docker stack deploy -c docker-swarm.tmp.yml app --with-registry-auth
 EOF
 )
 ssh $STAGING_SERVER_ALIAS "$script" 
@@ -165,8 +166,9 @@ export CLIENT_VERSION=$client_ver
 export API_VERSION=$api_ver
 export CELERY_FLOWER_USER=$CELERY_FLOWER_USER
 export CELERY_FLOWER_PASSWORD=$CELERY_FLOWER_PASSWORD
+[ -f "docker-swarm.tmp.yml" ] && rm docker-swarm.tmp.yml
 envsubst < docker-swarm.yml > docker-swarm.tmp.yml
-docker build -t \$NGINX_REPO:\$NGINX_VERSION -f nginx/Dockerfile.swarm ./nginx && docker build -t \$CLIENT_REPO:\$CLIENT_VERSION -f client/Dockerfile ./client && docker build -t \$API_REPO:\$API_VERSION -f api/Dockerfile ./api && docker push \$NGINX_REPO:\$NGINX_VERSION && docker push \$CLIENT_REPO:\$CLIENT_VERSION && docker push \$API_REPO:\$API_VERSION && docker stack deploy -c docker-swarm.tmp.yml app --with-registry-auth && rm docker-swarm.tmp.yml && docker system prune -a --volumes -f
+docker build -t \$NGINX_REPO:\$NGINX_VERSION -f nginx/Dockerfile.swarm ./nginx && docker build -t \$CLIENT_REPO:\$CLIENT_VERSION -f client/Dockerfile ./client && docker build -t \$API_REPO:\$API_VERSION -f api/Dockerfile ./api && docker push \$NGINX_REPO:\$NGINX_VERSION && docker push \$CLIENT_REPO:\$CLIENT_VERSION && docker push \$API_REPO:\$API_VERSION && docker stack deploy -c docker-swarm.tmp.yml app --with-registry-auth
 EOF
 )
 ssh $PROD_SERVER_ALIAS "$script" 
