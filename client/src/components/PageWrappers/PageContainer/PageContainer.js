@@ -120,10 +120,13 @@ const PageContainer = ({
               })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`}
         </Script>
       )}
-      <Div className={cx(isAppPage ? 'bgCyan' : 'bgWhite')}>
+      <Div className={cx(isAppPage ? 'bg-cyan' : 'bg-white')}>
         <Div
           type="flex"
-          className={cx(hasSideBarDashboard && 'global-container-for-app pos-rel bgFaded')}>
+          className={cx(
+            'global-main-container',
+            hasSideBarDashboard && 'global-container-for-app pos-rel bgFaded'
+          )}>
           {hasSideBarDashboard ? (
             <Div
               showIn={lgDesignSize}
@@ -138,7 +141,14 @@ const PageContainer = ({
               'flex flex--dir--col min-height-vh-full flex--jc--between width-per-100',
               hasSideBarDashboard && styles.headerAndBodyContianer
             )}>
-            <Div className="flex--gr--1">
+            <Div
+              className={cx(
+                'flex--gr--1',
+                hasSideBarDashboard ? styles.container : '',
+                hasSideBarDashboard && sideBarDashboardIsActive
+                  ? styles.containerWhenDashboardIsActive
+                  : ''
+              )}>
               {hasHeader && !hasStickyFooter ? (
                 <Div ref={(el) => (headerRef.current = el)}>
                   <Header
@@ -175,13 +185,7 @@ const PageContainer = ({
                 ) : (
                   ''
                 )}
-                <Div
-                  className={cx(
-                    hasSideBarDashboard ? styles.container : '',
-                    hasSideBarDashboard && sideBarDashboardIsActive
-                      ? styles.containerWhenDashboardIsActive
-                      : ''
-                  )}>
+                <Div>
                   <Div
                     className={cx(
                       hasSideBarDashboard && styles.bodyContainer,

@@ -28,7 +28,7 @@ import DisplayPngIcon from './subs/DisplayPngIcon';
 import DisplaySlider from './subs/DisplaySlider';
 import DisplayFlipDiv from './subs/DisplayFlipDiv';
 import DisplayInputWithButton from './subs/DisplayInputWithButton';
-import DisplayVoiceRecorder from './subs/DisplayVoiceRecorder';
+import DisplayPercentageBar from './subs/DisplayPercentageBar';
 
 import DevSection from './subs/DevSection';
 import styles from './DevDesign.module.scss';
@@ -165,6 +165,13 @@ const DevDesign = () => {
       </DevSection>
 
       <DevSection
+        title="Percentage Bar"
+        activeElements={activeElements}
+        setActiveElements={setActiveElements}>
+        <DisplayPercentageBar />
+      </DevSection>
+
+      <DevSection
         title="PNG Icons"
         activeElements={activeElements}
         setActiveElements={setActiveElements}>
@@ -219,13 +226,6 @@ const DevDesign = () => {
         activeElements={activeElements}
         setActiveElements={setActiveElements}>
         <DisplayLimitedSwipeableSlider />
-      </DevSection>
-
-      <DevSection
-        title="Voice Recorder"
-        activeElements={activeElements}
-        setActiveElements={setActiveElements}>
-        <DisplayVoiceRecorder />
       </DevSection>
     </>
   );

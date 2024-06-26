@@ -19,7 +19,7 @@ function DisplayAnchor() {
         <Div>
           <Div>
             {Object.keys(ANCHOR_TYPES)?.map((item, idx) => (
-              <Anchor anchorType={ANCHOR_TYPES[item]} key={idx} className="m-x-16" to="/">
+              <Anchor anchorType={ANCHOR_TYPES[item]} key={idx} className="m-l-16 m-r-16" to="/">
                 Internal Anchor Type {ANCHOR_TYPES[item]}
               </Anchor>
             ))}
@@ -31,7 +31,7 @@ function DisplayAnchor() {
               <Anchor
                 anchorType={ANCHOR_TYPES[item]}
                 key={idx}
-                className="m-x-16"
+                className="m-l-16 m-r-16"
                 to="https://www.google.com"
                 internal={false}>
                 External Anchor Type {ANCHOR_TYPES[item]}

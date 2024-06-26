@@ -43,6 +43,7 @@ const MobileNav = ({ changesThePage = true, isAppPage }) => {
         {MENU_ITEMS?.map((item, idx) => {
           if (
             item?.showInMobile &&
+            ((item?.isInWeb && !isAppPage) || (item?.isInApp && isAppPage)) &&
             ((!item?.allowedGroups?.length && !isAppPage) ||
               item?.allowedGroups?.includes(curUserGroup))
           ) {

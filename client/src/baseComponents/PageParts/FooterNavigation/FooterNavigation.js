@@ -18,7 +18,7 @@ const FooterNavigation = () => {
         type="flex"
         distributedBetween
         vAlign="center"
-        className={cx('p2 bgWhite', styles.footerContainer)}>
+        className={cx('p-x-32 p-y-16 br-top-solid-2 br-gray-dark')}>
         {FOOTER_NAV_ITEMS?.map((item, idx) => {
           if (
             !item?.allowedGroups?.length ||

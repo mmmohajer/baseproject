@@ -1,2 +1,8 @@
 @import '@/styles/base/_variables';
 @import '@/styles/base/mixins';
+
+.uniqueCardContainer {
+  &:hover {
+    transform: translateY(-30px);
+  }
+}

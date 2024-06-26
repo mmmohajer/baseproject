@@ -6,7 +6,14 @@ export const adminRoutes = [
     identifier: 'dashboard',
     title: 'Dashboard',
     to: PAGE_ROUTES.DASHBOARD,
-    icon: 'dashboard2',
+    icon: 'gauge',
+    allowedGroups: [USER_GROUPS.APP_ADMIN]
+  },
+  {
+    identifier: 'admin-blogs',
+    title: 'Blogs',
+    to: PAGE_ROUTES.ADMIN_BLOGS,
+    icon: 'newspaper',
     allowedGroups: [USER_GROUPS.APP_ADMIN]
   }
 ];

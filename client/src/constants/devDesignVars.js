@@ -5,20 +5,42 @@ export const LIST_OF_ICONS = {
   angleUp: 'angle-up',
   anglesUp: 'angles-up',
   check: 'check',
+  cogs: 'cogs',
+  close: 'close',
+  code: 'code',
+  comments: 'comments',
+  cube: 'cube',
+  dashboard: 'dashboard',
+  database: 'database',
+  envelope: 'envelope',
+  'chart-bar': 'chart-bar',
   'circle-check': 'circle-check',
   'circle-minus': 'circle-minus',
   'circle-plus': 'circle-plus',
-  close: 'close',
-  dashboard: 'dashboard',
-  envelope: 'envelope',
-  instagramFill: 'instagram-fill',
+  'circle-user': 'circle-user',
+  gear: 'gear',
+  gauge: 'gauge',
+  'light-bulb': 'light-bulb',
+  linux: 'linux',
+  'mobile-alt': 'mobile-alt',
+  newspaper: 'newspaper',
+  'paint-brush': 'paint-brush',
+  'pen-ruler': 'pen-ruler',
   phone: 'phone',
+  'right-from-bracket': 'right-from-bracket',
+  rocket: 'rocket',
   search: 'search',
-  upload: 'upload'
+  server: 'server',
+  'sync-alt': 'sync-alt',
+  upload: 'upload',
+  instagramFill: 'instagram-fill'
 };
 
 export const ANCHOR_TYPES = {
-  primary: 1
+  primary: 1,
+  secondary: 2,
+  tertiary: 3,
+  noEffect: 4
 };
 
 export const BUTTON_TYPES = {
@@ -34,11 +56,12 @@ export const ALERT_TYPES = {
 };
 
 export const MODAL_TYPES = {
+  dataSubmittedSuccessfully: 'data-submitted-successfully',
   'prompt-message': 'prompt-message'
 };
 
 export const CARD_TYPES = {
-  serviceTest: 'service' // This is a sample of test card.
+  temporaryService: 'temporary-service' //This is shown in the tempory page of iswad for the services section.
 };
 
 export const EMAIL_TEMPLATES = {

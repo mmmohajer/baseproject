@@ -58,9 +58,20 @@ export const COLORS = {
 
 export const PAGE_ROUTES = {
   HOME: '/',
-  DASHBOARD: '/test-pages/sample-of-admin-route'
+  DASHBOARD: '/app'
 };
 
 // ---------------------------------------------------------------------------
 
 export const DATE_FORMAT = 'DD MMM, YYYY';
+
+// ---------------------------------------------------------------------------
+
+export const ABOUT_ACHIEVEMENTS = [
+  { label: 'Began to Work', value: '2021' },
+  { label: 'Projects Completed', value: '4' },
+  { label: 'Projects on Progress', value: '2' }
+  // { label: 'Achievements', value: '2021' }
+];
+
+export const MEETING_LINK = 'https://calendly.com/mohammad-aqd6/30min';

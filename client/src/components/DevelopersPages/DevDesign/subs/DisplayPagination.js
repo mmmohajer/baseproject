@@ -20,7 +20,7 @@ function DisplayPagination() {
         <Pagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
-          numberOfTotalPages={15}
+          numberOfTotalPages={100}
         />
       </Div>
     </>

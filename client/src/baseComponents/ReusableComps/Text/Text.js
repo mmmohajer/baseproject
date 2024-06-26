@@ -8,6 +8,7 @@ import DivConvertTextToHtml from '@/baseComponents/ReusableComps/DivConvertTextT
 import { COLORS } from '@/constants/vars';
 
 import styles from './Text.module.scss';
+import { LIST_OF_ICONS } from '@/constants/devDesignVars';
 
 const Text = ({
   textMessage,
@@ -78,7 +79,11 @@ const Text = ({
       <Div
         ref={(el) => (textRef.current = el)}
         style={{ height: textContainerHeight }}
-        className={cx('pos-rel width-per-100 pos-rel', styles.textContainer, className)}
+        className={cx(
+          'pos-rel width-per-100 pos-rel p-b-temp-7 global-paragraph global-paragraph-justified',
+          styles.textContainer,
+          className
+        )}
         {...props}>
         <Div style={{ display: 'inline' }}>{shownText}</Div>
         {mustBeTruncated && isTruncated && !showViewAll ? <>...</> : ''}
@@ -91,7 +96,12 @@ const Text = ({
                 setIsTruncated(false);
                 setShownText(arrayOfVocabs.join(' '));
               }}>
-              <Icon isBlock={false} type="dashboard" color={iconColor} scale={1.2} />
+              <Icon
+                isBlock={false}
+                type={LIST_OF_ICONS['circle-plus']}
+                color={iconColor}
+                scale={1.2}
+              />
             </span>
           </>
         ) : (
@@ -108,7 +118,12 @@ const Text = ({
                   setShownText(arrayOfVocabs.slice(0, count - 5 * countJump).join(' '));
                 }, 300);
               }}>
-              <Icon isBlock={false} type="dashboard" color={iconColor} scale={1.2} />
+              <Icon
+                isBlock={false}
+                type={LIST_OF_ICONS['circle-minus']}
+                color={iconColor}
+                scale={1.2}
+              />
             </span>
           </>
         ) : (

@@ -31,7 +31,8 @@ const Header = ({ hasStickyHeader, changesThePage = true, headerColorType, isApp
         className={cx(
           'width-per-100 height-header p-x-16',
           // styles.headerContainer,
-          hasStickyHeader && 'pos-fix pos-fix--lt headerZIndex'
+          hasStickyHeader && 'pos-fix pos-fix--lt headerZIndex',
+          isAppPage && 'br-bottom-solid-2 br-gray-dark'
         )}>
         <Div
           type="flex"

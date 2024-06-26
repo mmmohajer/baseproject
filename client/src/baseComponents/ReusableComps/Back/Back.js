@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Div } from 'basedesign-iswad';
 import { useRouter } from 'next/router';
 
-import Icon from '@/baseComponents/Icon';
+import Icon from '@/baseComponents/ReusableComps/Icon';
 
 import { COLORS } from '@/constants/vars';
 import { removeLastVistitedRoute } from '@/reducers/general/visitedRoutes';
@@ -42,9 +42,9 @@ const Back = () => {
             setBtnClicked(true);
           }}>
           <Div type="flex" hAlign="center" vAlign="center" className="width-px-30">
-            <Icon type="arrow-left" color={COLORS.themeOne} scale={1} />
+            <Icon type="angle-left" color={COLORS['theme-one']} scale={1} />
           </Div>
-          <Div className="textThemeOne">Back</Div>
+          <Div className="text-theme-one">Back</Div>
         </Div>
       ) : (
         ''

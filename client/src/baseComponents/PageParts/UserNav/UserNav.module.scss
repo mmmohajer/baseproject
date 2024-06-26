@@ -3,10 +3,9 @@
 
 .container {
   top: 60px;
-  right: 0;
+  right: -100%;
   transition: all 0.3s ease-in-out;
   opacity: 0;
-  right: -100px;
 
   &IsActive {
     opacity: 1;

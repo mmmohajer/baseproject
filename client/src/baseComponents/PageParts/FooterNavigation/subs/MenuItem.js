@@ -23,6 +23,7 @@ const MenuItem = ({ item, ...props }) => {
         type="flex"
         hAlign="center"
         vAlign="center"
+        direction="vertical"
         className="mouse-hand height-px-30 width-px-30"
         {...props}
         onClick={() => {
@@ -32,8 +33,15 @@ const MenuItem = ({ item, ...props }) => {
         <Icon
           type={item?.icon}
           scale={1.5}
-          color={activeDashboardMenu === item?.identifier ? COLORS.themeTwo : COLORS.grayBright}
+          color={activeDashboardMenu === item?.identifier ? 'black' : COLORS['gray-dark']}
         />
+        <Div
+          className={cx(
+            'm-t-8 f-s-px-10',
+            activeDashboardMenu === item?.identifier ? 'text-black' : 'text-gray-dark'
+          )}>
+          {item?.title}
+        </Div>
       </Div>
     </>
   );

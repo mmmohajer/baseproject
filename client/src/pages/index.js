@@ -2,7 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 import { Div } from 'basedesign-iswad';
 
-import PublicRoute from '@/components/RouteHandlers/PublicRoute';
 import RoleBasedRoute from '@/components/RouteHandlers/RoleBasedRoute';
 import Seo from '@/components/PageWrappers/Seo';
 import PageContainer from '@/components/PageWrappers/PageContainer';

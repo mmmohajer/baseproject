@@ -4,7 +4,8 @@
 .dashboard {
   transition: all 0.3s ease-in-out;
   width: map-get($widths, 'side-bar-closed');
-  height: calc(100vh - map-get($heights, 'app-header'));
+  // height: calc(100vh - map-get($heights, 'app-header'));
+  height: 100vh;
 
   &IsActive {
     width: 180px;
@@ -16,20 +17,15 @@
   }
 }
 
-.menuItems {
-  &:hover {
-    color: blue;
-  }
-}
-
 .toggler {
   transition: all 0.3s ease-in-out;
+  top: calc(map-get($heights, 'header') / 4);
 
   &DashboardIsClose {
-    left: calc(map-get($widths, 'side-bar-closed') - 20px);
+    left: calc(map-get($widths, 'side-bar-closed') - 10px);
   }
 
   &DashboardIsOpen {
-    left: calc(map-get($widths, 'side-bar-opened') - 25px);
+    left: calc(map-get($widths, 'side-bar-opened') - 15px);
   }
 }

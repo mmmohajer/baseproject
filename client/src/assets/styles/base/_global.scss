@@ -1,8 +1,8 @@
 %fontclass {
   font-family: 'Manrope', sans-serif;
+  letter-spacing: 1px;
   color: black;
   font-size: map-get($fontSizes, 'regular-xs');
-
   @include atSmall {
     font-size: map-get($fontSizes, 'regular-sm');
   }
@@ -152,7 +152,7 @@ button {
   &error-message {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 4px);
     left: 8px;
     font-size: 10px;
     color: red;
@@ -179,6 +179,74 @@ button {
         #{map-get($colors, 'theme-one')},
         #{map-get($colors, 'theme-two')}
       );
+    }
+  }
+
+  &column-reverse {
+    flex-direction: column-reverse;
+
+    &-in-desktop {
+      @include atMedium {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &row-reverse {
+    flex-direction: row-reverse;
+
+    &-in-desktop {
+      @include atMedium {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &add-margin-bottom-in-mobile {
+    margin-bottom: #{map-get($spacings, 'temp-7')};
+    @include atMedium {
+      margin-bottom: 0;
+    }
+  }
+
+  &add-p-x-in-desktop {
+    padding-left: 0;
+    padding-right: 0;
+    @include atMedium {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &add-br-rad-in-desktop {
+    border-radius: 0;
+    @include atMedium {
+      border-radius: 20px;
+    }
+  }
+
+  &grid {
+    display: grid;
+    width: 100%;
+    gap: 20px;
+    place-items: center;
+
+    &--cols--auto {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    &--cols--auto--2 {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+  }
+
+  &paragraph {
+    line-height: 2rem;
+
+    &-justified {
+      text-align: justify;
+      text-justify: distribute;
+      hyphens: auto;
     }
   }
 }

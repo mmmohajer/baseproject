@@ -86,8 +86,9 @@ const Select = ({
               type="flex"
               hAlign="center"
               vAlign="center"
-              className="pos-abs bg-theme-three br-rad-per-50 width-px-20 height-px-20 box-shadow-type-one z-100"
-              style={{ top: '50%', right: '8px', transform: 'translateY(-50%)' }}>
+              className="pos-abs bg-theme-three br-rad-per-50 width-px-20 height-px-20 box-shadow-type-one z-100 mouse-hand"
+              style={{ top: '50%', right: '8px', transform: 'translateY(-50%)' }}
+              onClick={() => setIsOptionsActive(true)}>
               <Icon type={LIST_OF_ICONS.angleDown} color={COLORS['theme-one']} scale={0.8} />
             </Div>
           ) : (

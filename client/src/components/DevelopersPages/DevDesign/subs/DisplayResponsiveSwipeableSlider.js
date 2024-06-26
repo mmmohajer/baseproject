@@ -16,6 +16,7 @@ const DisplayResponsiveSwipeableSlider = () => {
   const [moveToItemWithNum, setMoveToItemWithNum] = useState(0);
   const [mustShowSlider, setMustShowSlider] = useState(true);
   const [automaticPlay, setAutomaticPlay] = useState(false);
+  const [percentage, setPercentage] = useState(0);
   const [userSwiped, setUserSwiped] = useState(false);
 
   useEffect(() => {
@@ -25,19 +26,29 @@ const DisplayResponsiveSwipeableSlider = () => {
   }, [parentRef?.current?.clientWidth]);
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      setPercentage((prevPercentage) => {
+        if (prevPercentage >= 100) {
+          setAutomaticPlay(true);
+          return 0;
+        }
+        return prevPercentage + (10 / 20000) * 100;
+      });
+    }, 10);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
     if (automaticPlay) {
-      setTimeout(() => {
-        setMoveRight(true);
-        setTimeout(() => {
-          setAutomaticPlay(false);
-        }, 10);
-      }, 5000);
-    } else if (!automaticPlay && !userSwiped) {
-      setTimeout(() => {
-        setAutomaticPlay(true);
-      }, 5000);
+      setMoveRight(true);
+      const timeout = setTimeout(() => {
+        setAutomaticPlay(false);
+      }, 100);
+
+      return () => clearTimeout(timeout);
     }
-  }, [automaticPlay, userSwiped]);
+  }, [automaticPlay]);
 
   return (
     <>

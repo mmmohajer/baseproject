@@ -7,8 +7,10 @@ const generalItems = [
     title: 'Home',
     to: PAGE_ROUTES.HOME,
     hasSubMenu: false,
-    showInDesktop: true,
-    showInMobile: true
+    showInDesktop: false,
+    showInMobile: false,
+    isInApp: false,
+    isInWeb: true
   },
   {
     identifier: 'our-services',
@@ -17,7 +19,9 @@ const generalItems = [
     hasSubMenu: true,
     showInDesktop: true,
     showInMobile: true,
-    submenuTranslteX: '-100px'
+    submenuTranslteX: '-100px',
+    isInApp: false,
+    isInWeb: true
   }
 ];
 
@@ -28,31 +32,31 @@ export const SUB_MENU_ITEMS = {
     {
       identifier: 'mvp-development',
       title: 'MVP Development',
-      to: '/'
+      to: PAGE_ROUTES.HOME
     },
 
     {
       identifier: 'web-app-development',
       title: 'Customized Web/Mobile App Development',
-      to: '/'
+      to: PAGE_ROUTES.HOME
     },
 
     {
       identifier: 'branding',
       title: 'Website Development & Branding',
-      to: '/'
+      to: PAGE_ROUTES.HOME
     },
 
     {
       identifier: 'counselling',
       title: 'Counselling & Coaching',
-      to: '/'
+      to: PAGE_ROUTES.HOME
     },
 
     {
       identifier: 'team-augmentation',
       title: 'Team Augmentation',
-      to: '/'
+      to: PAGE_ROUTES.HOME
     }
   ]
 };

@@ -51,7 +51,7 @@ const DefaultPicker = ({
               vAlign="center"
               className={cx(styles.iconContainer)}
               color="#ccc">
-              <Icon type="upload" color={COLORS.grayDark} scale={4} />
+              <Icon type="upload" color={COLORS['gray-dark']} scale={4} />
             </Div>
           </BaseLabel>
           {previewer === 'default' ? (

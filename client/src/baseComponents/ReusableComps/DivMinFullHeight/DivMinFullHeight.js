@@ -5,7 +5,13 @@ import { Div } from 'basedesign-iswad';
 
 import styles from './DivMinFullHeight.module.scss';
 
-const DivMinFullHeight = ({ divHeightIsConst = false, style = {}, children, ...props }) => {
+const DivMinFullHeight = ({
+  divHeightIsConst = false,
+  withoutFooter = false,
+  style = {},
+  children,
+  ...props
+}) => {
   const elementsHeightStore = useSelector((state) => state.elementsHeightStore);
 
   const [minHeight, setMinHeight] = useState(0);
@@ -15,9 +21,13 @@ const DivMinFullHeight = ({ divHeightIsConst = false, style = {}, children, ...p
     if (window?.innerHeight) {
       let bodyHeight = window.innerHeight || 0;
       if (elementsHeightStore?.headerHeight && elementsHeightStore?.footerHeight) {
-        setMinHeight(
-          bodyHeight - elementsHeightStore.headerHeight - elementsHeightStore.footerHeight
-        );
+        if (!withoutFooter) {
+          setMinHeight(
+            bodyHeight - elementsHeightStore.headerHeight - elementsHeightStore.footerHeight
+          );
+        } else {
+          setMinHeight(bodyHeight - elementsHeightStore.headerHeight);
+        }
       } else if (elementsHeightStore?.headerHeight && !elementsHeightStore?.footerHeight) {
         setMinHeight(bodyHeight - elementsHeightStore.headerHeight);
       } else if (!elementsHeightStore?.headerHeight && elementsHeightStore?.footerHeight) {

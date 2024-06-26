@@ -23,6 +23,7 @@ const TextBox = ({
   hasBorderRadius = true,
   inputFieldClassName = '',
   hasBoxShadow = true,
+  placeHolder,
   ...props
 }) => {
   const [curType, setCurType] = useState(type);
@@ -55,6 +56,7 @@ const TextBox = ({
                 onChange(e);
               }
             }}
+            placeholder={placeHolder}
             {...props}
           />
 

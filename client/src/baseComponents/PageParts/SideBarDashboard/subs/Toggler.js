@@ -13,6 +13,7 @@ import styles from '../SideBarDashboard.module.scss';
 const Toggler = () => {
   const dispatch = useDispatch();
   const sideBarDashboardIsActive = useSelector((state) => state.sideBarDashboardIsActive);
+
   return (
     <>
       <Div
@@ -20,15 +21,15 @@ const Toggler = () => {
         hAlign="center"
         vAlign="center"
         className={cx(
-          'pos-abs height-px-30 width-px-30 bg-white br-rad-px-5 box-shadow-type-one',
+          'pos-abs height-px-20 width-px-20 bg-white br-rad-px-5 box-shadow-type-one br-rad-per-50 br-all-solid-1 br-theme-one',
           styles.toggler,
-          !sideBarDashboardIsActive && 'rotate-180',
+          !sideBarDashboardIsActive && 'global-rotate-180',
           sideBarDashboardIsActive ? styles.togglerDashboardIsOpen : styles.togglerDashboardIsClose
         )}>
         <Div
           className={cx('mouse-hand text-silver')}
           onClick={() => dispatch(toggleSideBarDashboard())}>
-          <Icon type="dashboard" color={COLORS['gray-bright']} />
+          <Icon type="angle-left" color={COLORS['theme-one']} scale={0.6} />
         </Div>
       </Div>
     </>

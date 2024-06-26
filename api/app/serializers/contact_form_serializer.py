@@ -1,12 +1,10 @@
 from rest_framework import serializers
-from core.models import ProfileModel
-from core.serializers.user_serializer import UserSerializer
+from app.models import ContactFormModel
 
 
-class ProfileSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
+class ContactFormSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = ProfileModel
-        fields = ['id', 'uuid', 'name', 'email', 'submitted_date',
-                  'submitted_time', 'submitted_date_time', 'photo', 'created_at', 'updated_at']
+        model = ContactFormModel
+        fields = ['id', 'uuid', 'first_name', 'last_name', 'email',
+                  'subject', 'message', 'created_at', 'updated_at']

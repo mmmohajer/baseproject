@@ -14,12 +14,17 @@ const ResponsiveSwipeableSlider = ({
   setMoveRight,
   moveToItemWithNum,
   setMoveToItemWithNum,
+  handleMoveOnClick = false,
+  setHandleMoveOnClick,
   mustShowSlider,
   setMustShowSlider,
   isDraggable = true,
   swipeTolerance = 1,
   minXDifferenceToMove = 20,
   setUserSwiped,
+  compActiveIdx,
+  setCompActiveIdx,
+  useCompActiveIdx = false,
   children
 }) => {
   const parentRef = useRef();
@@ -91,6 +96,9 @@ const ResponsiveSwipeableSlider = ({
       moveLeftHandler();
     } else {
       setMoveToItemWithNum(false);
+      if (setHandleMoveOnClick) {
+        setHandleMoveOnClick(false);
+      }
     }
   };
 
@@ -139,7 +147,7 @@ const ResponsiveSwipeableSlider = ({
   }, [moveLeft, activeIdx, arrayOfWidths, mustShowSlider]);
 
   useEffect(() => {
-    if (moveToItemWithNum && mustShowSlider) {
+    if (handleMoveOnClick && mustShowSlider) {
       moveToItemWithNumHandler();
     }
   }, [moveToItemWithNum, activeIdx, arrayOfWidths, mustShowSlider]);
@@ -156,6 +164,12 @@ const ResponsiveSwipeableSlider = ({
       }
     }
   }, [xEnd]);
+
+  useEffect(() => {
+    if (useCompActiveIdx) {
+      setCompActiveIdx(activeIdx);
+    }
+  }, [useCompActiveIdx, activeIdx]);
 
   return (
     <>

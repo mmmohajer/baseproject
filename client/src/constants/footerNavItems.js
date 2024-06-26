@@ -6,14 +6,14 @@ const adminFooterNavItems = [
     identifier: 'dashboard',
     title: 'Dashboard',
     to: PAGE_ROUTES.DASHBOARD,
-    icon: 'dashboard2',
+    icon: 'gauge',
     allowedGroups: [USER_GROUPS.APP_ADMIN]
   },
   {
-    identifier: 'settings',
-    title: 'Settings',
+    identifier: 'admin-blogs',
+    title: 'Blogs',
     to: PAGE_ROUTES.DASHBOARD,
-    icon: 'envelope',
+    icon: 'newspaper',
     allowedGroups: [USER_GROUPS.APP_ADMIN]
   }
 ];

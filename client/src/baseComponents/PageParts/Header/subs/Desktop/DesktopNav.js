@@ -35,6 +35,7 @@ const DesktopNav = ({ changesThePage = true, isAppPage }) => {
         {MENU_ITEMS?.map((item, idx) => {
           if (
             item?.showInDesktop &&
+            ((item?.isInWeb && !isAppPage) || (item?.isInApp && isAppPage)) &&
             ((!item?.allowedGroups?.length && !isAppPage) ||
               item?.allowedGroups?.includes(curUserGroup))
           ) {

@@ -1,3 +1,4 @@
+from django.db.models import Func, Q
 from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
 from django.core.files.temp import NamedTemporaryFile
@@ -8,6 +9,8 @@ import os
 from datetime import datetime
 import calendar
 import requests
+import json
+import bleach
 
 
 User = get_user_model()
@@ -149,7 +152,7 @@ def add_row_to_schema(model, request, acceptable_not_date_fields, date_fields=[]
                 return {"success": True, "cur_row": cur_row}
         return {"success": False, "message": "Required fields should not be empty"}
     except Exception as e:
-        {"success": False, "message": f"{str(e)}"}
+        return {"success": False, "message": f"{str(e)}"}
 
 
 def update_row_of_schema(request, cur_schema_qs, updatable_non_file_nor_date_fields, date_fields=[], file_fields=[], required_fields=[]):
@@ -162,35 +165,61 @@ def update_row_of_schema(request, cur_schema_qs, updatable_non_file_nor_date_fie
                     required_fields_passed = False
                     break
         if required_fields_passed:
-            for attr in request.data:
-                if attr in updatable_non_file_nor_date_fields:
-                    update_kwargs[attr] = request.data.get(attr, "")
-                if attr in date_fields:
-                    if request.data.get(attr, ""):
-                        update_kwargs[attr] = datetime.strptime(
-                            request.data.get(attr), "%Y-%m-%d").date()
-            cur_schema_qs.update(**update_kwargs)
-            removable_file_fields = request.data.get(
-                "removable_file_fields", [])
-            updated_file_fields = request.data.get("updated_file_fields", [])
-            if file_fields:
-                for field in file_fields:
-                    if field["name"] in removable_file_fields:
-                        file_field = getattr(
-                            cur_schema_qs.first(), field["name"], None)
-                        clear_file_field_of_schema(file_field)
-                        cur_schema_qs.update(**field["removable_fields_dict"])
-                    if field["name"] in updated_file_fields:
-                        file_field = getattr(
-                            cur_schema_qs.first(), field["name"], None)
-                        clear_file_field_of_schema(file_field)
-                        cur_schema_qs.update(**field["removable_fields_dict"])
-                        new_file_uploaded = request.data.get(
-                            field["name"], None)
-                        if new_file_uploaded:
-                            add_image_to_file_field(
-                                file_field, new_file_uploaded)
-            return {"success": True, "cur_schema": cur_schema_qs.first()}
+            if request.data:
+                for attr in request.data:
+                    if attr in updatable_non_file_nor_date_fields:
+                        update_kwargs[attr] = request.data.get(attr, "")
+                    if attr in date_fields:
+                        if request.data.get(attr, ""):
+                            update_kwargs[attr] = datetime.strptime(
+                                request.data.get(attr), "%Y-%m-%d").date()
+                cur_schema_qs.update(**update_kwargs)
+                removable_file_fields = request.data.get(
+                    "removable_file_fields", [])
+                updated_file_fields = request.data.get(
+                    "updated_file_fields", [])
+                if file_fields:
+                    for field in file_fields:
+                        update_kwargs = {}
+                        if removable_file_fields and field in json.loads(removable_file_fields):
+                            file_field = getattr(
+                                cur_schema_qs.first(), field, None)
+                            clear_file_field_of_schema(file_field)
+                            update_kwargs[field] = None
+                            cur_schema_qs.update(**update_kwargs)
+                        if updated_file_fields and field in json.loads(updated_file_fields):
+                            file_field = getattr(
+                                cur_schema_qs.first(), field, None)
+                            clear_file_field_of_schema(file_field)
+                            update_kwargs[field] = None
+                            cur_schema_qs.update(**update_kwargs)
+                            new_file_uploaded = request.data.get(
+                                field, None)
+                            if new_file_uploaded:
+                                add_image_to_file_field(
+                                    file_field, new_file_uploaded)
+                return {"success": True, "cur_schema": cur_schema_qs.first()}
+            return {"success": False, "message": "No data provided"}
         return {"success": False, "message": "Required fields should not be empty"}
     except Exception as e:
-        {"success": False, "message": f"{str(e)}"}
+        return {"success": False, "message": f"{str(e)}"}
+
+
+def delete_row_of_schema(cur_schema, removable_file_fields=[]):
+    try:
+        for field in removable_file_fields:
+            file_field = getattr(cur_schema, field, None)
+            clear_file_field_of_schema(file_field)
+        cur_schema.delete()
+        return {"success": True}
+    except Exception as e:
+        return {"success": False, "message": f"{str(e)}"}
+
+
+def strip_html_tags(text):
+    return bleach.clean(text, tags=[], strip=True)
+
+
+class StripHTML(Func):
+    function = 'REGEXP_REPLACE'
+    template = "%(function)s(%(expressions)s, '<[^>]*>', '', 'g')"

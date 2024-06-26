@@ -16,6 +16,7 @@ const TextArea = ({
   onChange,
   className,
   hasMarginBottom = true,
+  placeHolder,
   ...props
 }) => {
   return (
@@ -36,6 +37,7 @@ const TextArea = ({
                 onChange(e);
               }
             }}
+            placeholder={placeHolder}
             {...props}
           />
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { render as renderRTL, screen, fireEvent } from "@testing-library/react";
-import VoiceRecorder from "../VoiceRecorder";
+import PercentageBar from "../PercentageBar";
 import * as reactRedux from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
@@ -12,7 +12,7 @@ jest.mock("react-redux", () => ({
   useDispatch: jest.fn(),
 }));
 
-describe("Test VoiceRecorder Component", () => {
+describe("Test PercentageBar Component", () => {
   const useSelectorMock = reactRedux.useSelector;
   const useDispatchMock = reactRedux.useDispatch;
 
@@ -27,8 +27,8 @@ describe("Test VoiceRecorder Component", () => {
   });
 
   test("", () => {
-    render(<VoiceRecorder />);
+    render(<PercentageBar />);
 
-    expect(screen.getByText(/VoiceRecorder/i)).toBeInTheDocument();
+    expect(screen.getByText(/PercentageBar/i)).toBeInTheDocument();
   });
 });

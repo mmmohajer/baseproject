@@ -30,7 +30,7 @@ const OtherItems = () => {
         <MenuItem
           menu={{
             title: 'Logout',
-            icon: 'logout'
+            icon: 'right-from-bracket'
           }}
           isLogOut={true}
         />

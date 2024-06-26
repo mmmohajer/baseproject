@@ -21,26 +21,32 @@ const SideBarDashboard = () => {
   return (
     <>
       <ActivableElement
-        className={cx(
-          'of-y-auto bg-white flex flex--dir--col flex--jc--between p-y-16 box-shadow-type-one',
-          styles.dashboard
-        )}
+        className={cx('of-y-auto  flex flex--dir--col flex--jc--between', styles.dashboard)}
         activeClassName={cx(styles.dashboardIsActive)}
         isActive={sideBarDashboardIsActive}>
-        <Div>
-          {/* <Header /> */}
-          <Div className="">
-            {SIDE_BAR_DASHBOARD_ITEMS?.map((item, identifier) => {
-              if (item?.allowedGroups?.includes(curUserGroup)) {
-                return (
-                  <Div className="m-b-8 p-x-16" key={identifier}>
-                    <MenuItem menu={item} />
-                  </Div>
-                );
-              }
-            })}
-            <Separator />
-            <OtherItems />
+        <Div type="flex" direction="vertical" className="flex--gr--1">
+          <Header />
+          <Div
+            type="flex"
+            direction="vertical"
+            className="flex--gr--1 br-right-solid-2 br-gray-dark p-y-16">
+            <Div type="flex" direction="vertical" distributedBetween className="flex--gr--1">
+              <Div>
+                {SIDE_BAR_DASHBOARD_ITEMS?.map((item, identifier) => {
+                  if (item?.allowedGroups?.includes(curUserGroup)) {
+                    return (
+                      <Div className="m-b-16 p-x-16" key={identifier}>
+                        <MenuItem menu={item} />
+                      </Div>
+                    );
+                  }
+                })}
+              </Div>
+              <Div>
+                <Separator />
+                <OtherItems />
+              </Div>
+            </Div>
           </Div>
         </Div>
         {/* <Separator /> */}

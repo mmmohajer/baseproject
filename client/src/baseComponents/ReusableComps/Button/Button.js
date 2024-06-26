@@ -24,10 +24,10 @@ const Button = ({
           hasBorderRadius && 'br-rad-px-8',
           isDisabled && '',
           btnType === 1 && !isDisabled
-            ? 'bg-theme-one p-y-8 p-x-32 bg-theme-two-on-hover width-per-100 br-none box-shadow-type-one text-black'
+            ? 'bg-theme-one p-y-8 p-x-32 bg-theme-two-on-hover width-per-100 br-none box-shadow-type-one text-white'
             : '',
           btnType === 2 && !isDisabled
-            ? 'bg-white p-y-8 p-x-32 br-theme-one br-theme-two-on-hover br-all-solid-2 width-per-100 text-black'
+            ? 'bg-white p-y-8 p-x-32 br-theme-one br-theme-two-on-hover br-all-solid-2 width-per-100 text-theme-one text-theme-two-on-hover'
             : '',
           btnType === 3 && !isDisabled
             ? 'bg-white p-y-8 p-x-32 bg-theme-one-on-hover width-per-100 br-none text-black box-shadow-type-one'

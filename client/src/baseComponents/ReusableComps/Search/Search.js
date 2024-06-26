@@ -18,10 +18,11 @@ const Search = React.forwardRef(
 
     return (
       <>
-        <Div className={cx('flex')}>
+        <Div type="flex" className="width-per-100">
           <Div
             className={cx(
-              'min-height-px-30 min-width-px-30 br-rad-px-50 bg-white flex flex--jc--center flex--ai--center m-l-8 box-shadow-type-one',
+              'min-height-px-40 width-per-100 bg-white flex flex--jc--center flex--ai--center box-shadow-type-one',
+              !closable ? 'global-row-reverse br-rad-px-6' : 'br-rad-px-50',
               styles.container,
               containerClassName
             )}>
@@ -31,11 +32,11 @@ const Search = React.forwardRef(
                 hAlign="center"
                 vAlign="center"
                 onClick={() => setActiveSearch(!activeSearch)}
-                className="mouse-hand width-px-30 height-px-30 br-rad-px-50 bg-silver">
+                className="mouse-hand width-px-40 height-px-30 br-rad-px-50 bg-silver">
                 <Icon type={activeSearch ? 'close' : 'search'} scale={0.8} color="gray" />
               </Div>
             ) : (
-              <Div className="mouse-hand">
+              <Div className="mouse-hand m-r-8">
                 <Icon
                   type="search"
                   scale={0.8}
@@ -46,7 +47,7 @@ const Search = React.forwardRef(
             )}
             <input
               type="text"
-              className={cx(styles.input, activeSearch && styles.inputActive, className)}
+              className={cx('', styles.input, activeSearch && styles.inputActive, className)}
               {...props}
             />
           </Div>
